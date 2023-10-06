@@ -194,7 +194,7 @@ export default function AdminGood() {
 
                     // If the user's email is available, send an email notification to the user
                     if(userEmail) {
-                        await axios.get(`http://localhost:8080/send-preview-emails?email=${userEmail}`)
+                        await axios.get(`https://kwali2-server.vercel.app/send-preview-emails?email=${userEmail}`)
                     }
                 }
 
