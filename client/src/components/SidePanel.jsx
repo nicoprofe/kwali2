@@ -18,7 +18,7 @@ export default function SidePanel({ isPanelOpen}) {
   const auth = getAuth()
 
   
-  
+
 
   // const subtotal = cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)
   const subtotal =  cartItems.reduce((acc, item) => acc + item.price, 0)
