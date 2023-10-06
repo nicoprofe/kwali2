@@ -402,7 +402,7 @@ mercadopago.configure({
 })
 
 
-app.get('https://kwali2-server.vercel.app/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('MercadoPago and Node Mailer are working on port 8080')
 })
 
