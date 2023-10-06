@@ -3,10 +3,22 @@ import { useCart } from '../TuPutaHermanContext'
 import axios from 'axios'
 import { Wallet, initMercadoPago } from '@mercadopago/sdk-react'
 import { v4 as uuidv4 } from 'uuid'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { addDoc, collection, doc, serverTimestamp, setDoc } from 'firebase/firestore'
+import { db } from '../firebase'
+import { getAuth } from 'firebase/auth'
 
 
 export default function SidePanel({ isPanelOpen}) {
   const { cartItems } = useCart()
+
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const auth = getAuth()
+
+  
+  
 
   // const subtotal = cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)
   const subtotal =  cartItems.reduce((acc, item) => acc + item.price, 0)
@@ -14,7 +26,7 @@ export default function SidePanel({ isPanelOpen}) {
 
   const [ preferenceId, setPreferenceId ] = useState(null)
     // MasterCard 5120 6944 7061 6271, 123 1125
-  // Visa 4509 9535 6623 3704, 123 1125
+    // Visa 4509 9535 6623 3704, 123 1125
 
   useEffect(() => {
     initMercadoPago('TEST-8f106443-ef9a-4ea3-a86e-f004fc2bbf05')
@@ -32,7 +44,7 @@ export default function SidePanel({ isPanelOpen}) {
       // Send a single request to your server with the arrays
       const response = await axios.post('http://localhost:8080/create-preference', {
       
-      description: 'typutahermana',
+      description: descriptions.join(', '),
         price:prices,
         quantity: 1,
         currency_id: 'USD',
@@ -61,6 +73,7 @@ export default function SidePanel({ isPanelOpen}) {
         
       }
   }
+
    
   return (
     <div 

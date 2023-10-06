@@ -42,6 +42,7 @@ import Producto from './components/Producto'
 import Contacto from './pages/Contacto'
 import AddEditUser from './pages/AddEditUser'
 import PlantillasEditables from './pages/PlantillasEditables'
+import SidePanel from './components/SidePanel'
 
 
 function App() {
@@ -94,6 +95,7 @@ function App() {
         <Route path='planillas-de-stickers' element={<PlanillasDeStickers/>}/>
         <Route path='/muestras' element={<Muestras/>}/>
         <Route path='/plantillas-editables' element={<PlantillasEditables/>}/>
+        <Route path='/side-panel' element={<SidePanel/>}/>
       </Routes>
       <Footer/>
      </Router>

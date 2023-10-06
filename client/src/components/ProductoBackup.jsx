@@ -8,10 +8,11 @@ import Tooltip from './Tooltip'
 import { BsQuestionLg } from 'react-icons/bs'
 import { getAuth } from 'firebase/auth'
 import { useCart } from '../TuPutaHermanContext'
-import { addDoc, collection, doc, getFirestore, serverTimestamp, updateDoc } from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, getFirestore, serverTimestamp, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { v4 as uuidv4 } from 'uuid'
+import axios from 'axios'
 import guiaDeDimensiones from '../imagesOutsidePublic/guia dimensiones.jpg'
 import lineasDeCorte from '../imagesOutsidePublic/infografia-lineas de corte.jpg'
 import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.jpg'
@@ -19,7 +20,7 @@ import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño perso
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
 
-export default function ProductoBackup({ imgSrc, product, description }) {
+export default function Producto({ imgSrc, product, description }) {
     // CONFIGS
     const navigate = useNavigate()
     const auth = getAuth()
@@ -109,6 +110,7 @@ export default function ProductoBackup({ imgSrc, product, description }) {
             approval1: false,
             approval2: false,
             changes: [],
+            emailOrderSent: false,
         }
 
        
@@ -145,11 +147,7 @@ export default function ProductoBackup({ imgSrc, product, description }) {
    // FUNCTION TO SAVE FORMDATA TO LOCAL STORAGE AND FIRESTORE
    function saveFormDataToLocalStorageAndFirestore(formData) {
     localStorage.setItem('data', JSON.stringify(formData))
-    if(window.location.href.includes('approved')) {
-        const docRef = collection(db, 'orders')
-        addDoc(docRef, formData)
-        navigate('/profile')
-    }
+   
    }
 
 
@@ -163,6 +161,7 @@ export default function ProductoBackup({ imgSrc, product, description }) {
 
         } 
     }, [window.location.href])
+  
     
   return (
     <>
