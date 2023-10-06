@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
 })
 
 // NEWSLETTER EMAILS
-app.get('https://kwali2-server.vercel.app/send-newsletter-emails', async (req, res ) => {
+app.get('/send-newsletter-emails', async (req, res ) => {
     try {
         let { email } = req.query
 
@@ -90,7 +90,7 @@ app.get('https://kwali2-server.vercel.app/send-newsletter-emails', async (req, r
 })
 
 // REGISTER EMAILS
-app.get('https://kwali2-server.vercel.app/send-register-emails', async (req, res ) => {
+app.get('/send-register-emails', async (req, res ) => {
     try {
         let { email } = req.query
 
@@ -161,7 +161,7 @@ app.get('https://kwali2-server.vercel.app/send-register-emails', async (req, res
 })
 
 // ORDER EMAILS
-app.get('https://kwali2-server.vercel.app/send-order-emails', async (req, res ) => {
+app.get('/send-order-emails', async (req, res ) => {
     try {
         let { email } = req.query
 
@@ -187,7 +187,7 @@ app.get('https://kwali2-server.vercel.app/send-order-emails', async (req, res ) 
                 <tr>
                     <td>
                         <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.app/productos/ejemplo-metalgold.png' width='200' height='150'/>
                         <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
                     </td>
                 </tr>  
@@ -232,7 +232,7 @@ app.get('https://kwali2-server.vercel.app/send-order-emails', async (req, res ) 
 })
 
 // DELIVER EMAILS
-app.get('https://kwali2-server.vercel.app/send-deliver-emails', async (req, res ) => {
+app.get('/send-deliver-emails', async (req, res ) => {
     try {
         let { email } = req.query
 
@@ -304,7 +304,7 @@ app.get('https://kwali2-server.vercel.app/send-deliver-emails', async (req, res 
 
 
 // PREVIEW EMAILS
-app.get('https://kwali2-server.vercel.app/send-preview-emails', async (req, res) => {
+app.get('/send-preview-emails', async (req, res) => {
     try {
         const { email } = req.query
 
@@ -313,9 +313,9 @@ app.get('https://kwali2-server.vercel.app/send-preview-emails', async (req, res)
             to: email,
             subject: 'Confirma tu imagen de prueba Kwali',
             text: `Puedes ver la nueva imagen de prueba Kwali en:` +
-            `https://kwali2-client.vercel.app/profile`,
+            `http://localhost:3000/profile`,
              // You can also use HTML for the email body
-             // html: `<p> Thank you for your order! Here is your <a href:https://kwali2-client.vercel.app/profile/> profile link </a> </p>`  
+             // html: `<p> Thank you for your order! Here is your <a href:'https://kwali2-client.vercel.app/profile/'> profile link </a> </p>`  
             }
 
         // Send the email
@@ -331,7 +331,7 @@ app.get('https://kwali2-server.vercel.app/send-preview-emails', async (req, res)
 
 
 // APPROVAL EMAILS
-app.get('https://kwali2-server.vercel.app/send-approval-emails', async (req, res ) => {
+app.get('/send-approval-emails', async (req, res ) => {
     try {
         let { email } = req.query
 
@@ -348,7 +348,7 @@ app.get('https://kwali2-server.vercel.app/send-approval-emails', async (req, res
             to: process.env.ADMIN_EMAIL,
             subject: `${email} ha confirmado su imagen de prueba Kwali`,
             text: 'Hemos enviado un mail diciendo que sy pedido está en producción.' +
-            'en https://kwali2-client.vercel.app/'
+            'en  https://kwali2-client.vercel.app/profile'
         }
 
 
@@ -363,7 +363,7 @@ app.get('https://kwali2-server.vercel.app/send-approval-emails', async (req, res
 })
 
 // CHANGE EMAILS
-app.get('https://kwali2-server.vercel.app/send-change-emails', async (req, res) => {
+app.get('/send-change-emails', async (req, res) => {
     try {
         let { email, message } = req.query
 
@@ -416,8 +416,8 @@ app.post('/create-preference', (req, res) => {
             }
         ],
         back_urls: {
-            success: 'https://kwali2-client.vercel.app/producto',
-            failure: 'https://kwali2-client.vercel.app/',
+            success: ' https://kwali2-client.vercel.app/producto',
+            failure: ' https://kwali2-client.vercel.app/',
             pending: '',
         },
         auto_return: 'approved',
