@@ -157,7 +157,7 @@ export default function Profile() {
     
                         // If the user's email is available, send an email notification to the user
                         if(userEmail) {
-                            await axios.get(`http://localhost:8080/send-order-emails?email=${userEmail}`)
+                            await axios.get(`https://kwali2-server.vercel.app/send-order-emails?email=${userEmail}`)
                         }
                     }
                 }
@@ -197,7 +197,7 @@ export default function Profile() {
 
                     // If the user's email is available, send an email notification to the user
                     if(userEmail) {
-                        await axios.get(`http://localhost:8080/send-approval-emails?email=${userEmail}`)
+                        await axios.get(`https://kwali2-server.vercel.app/send-approval-emails?email=${userEmail}`)
                     }
                 }
             }
@@ -267,7 +267,7 @@ export default function Profile() {
 
                 // If the user's email is available, send an email notification to the user
                 if(userEmail) {
-                    await axios.get(`http://localhost:8080/send-change-emails?email=${userEmail}&message=${requestedChanges}`) 
+                    await axios.get(`https://kwali2-server.vercel.app/send-change-emails?email=${userEmail}&message=${requestedChanges}`) 
                 }
             }
 
