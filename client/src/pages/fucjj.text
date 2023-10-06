@@ -1,0 +1,107 @@
+
+
+import { getAuth } from 'firebase/auth'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useCart } from '../TuPutaHermanContext'
+import Modal from '../components/Modal'
+import useModal from '../hooks/useModal'
+import { style } from '../components/Styles'
+import { addDoc, collection, getDocs, orderBy, query, where } from 'firebase/firestore'
+import { db } from '../firebase'
+import { toast } from 'react-toastify'
+import { useAuthStatus } from '../hooks/useAuthStatus'
+import { doc, updateDoc } from 'firebase/firestore' // Add this import
+
+export default function Admin() {
+    // ...
+
+    // Create state to track image previews for each order
+    const [orderImagePreviews, setOrderImagePreviews] = useState({});
+
+    // Handle image preview for a specific order
+    function handleImagePreview(e, orderId) {
+        const imageFiles = e.target.files;
+        const previews = [];
+        for (let i = 0; i < imageFiles.length; i++) {
+            previews.push(URL.createObjectURL(imageFiles[i]));
+        }
+
+        // Update the state with the selected image previews for the specific order
+        setOrderImagePreviews(prevState => ({
+            ...prevState,
+            [orderId]: previews,
+        }));
+    }
+
+    // Function to update the 'orders.data.preview' field in Firestore
+    async function updateOrderPreview(orderId) {
+        try {
+            const orderRef = doc(db, 'orders', orderId);
+
+            // Get the current order data
+            const orderSnapshot = await getDocs(orderRef);
+            const orderData = orderSnapshot.data();
+
+            // Update the 'data.preview' field with the selected image previews
+            await updateDoc(orderRef, {
+                'data.preview': orderImagePreviews[orderId], // Assuming 'data.preview' is the field to be updated
+            });
+
+            toast.success('Preview updated successfully!');
+        } catch (error) {
+            console.error('Error updating preview:', error);
+            toast.error('Failed to update preview. Please try again later.');
+        }
+    }
+
+    return (
+        <>
+            {/* ... Existing code ... */}
+
+            {orders.map((order) => (
+                <div className='flex items-center justify-around mt-3 ' key={order.id}>
+                    {/* ... Other order details ... */}
+
+                    <div className='flex space-x-3'>
+                        <div className='bg-white h-[120px] w-[120px] flex items-center justify-center'>
+                            <label htmlFor={`fileInput-${order.id}`} className='cursor-pointer'>
+                                <input 
+                                    id={`fileInput-${order.id}`}
+                                    type="file"
+                                    accept='.jpg,.png,.jpeg'
+                                    onChange={(e) => handleImagePreview(e, order.id)}
+                                    required
+                                    style={{ display: 'none' }}
+                                />
+
+                                {orderImagePreviews[order.id] && orderImagePreviews[order.id].length > 0 ? (
+                                    orderImagePreviews[order.id].map((previewUrl, index) => (
+                                        <img src={previewUrl} key={index} alt={`Preview ${index}`} className='h-24 w-24' />
+                                    ))
+                                ) : (
+                                    <img src="/images/identidad/isotipo.png" alt={order.data.product} className='h-24 w-24' />
+                                )}
+                            </label>
+                        </div>
+
+                        <div className='flex flex-col items-center justify-center space-y-3'>
+                            {/* ... Other buttons ... */}
+
+                            <button 
+                                onClick={() => updateOrderPreview(order.id)} // Call the function to update the preview
+                                className='bg-secondary-blueLight hover:bg-sky-300 active:bg-sky-400 
+                                text-xs active:text-white px-4 py-2 transition duration-200 ease-in-out'>
+                                Update Preview
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* ... Other content ... */}
+                </div>
+            ))}
+
+            {/* ... Other content ... */}
+        </>
+    );
+}

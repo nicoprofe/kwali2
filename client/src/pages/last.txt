@@ -1,0 +1,68 @@
+import { useEffect, useState } from 'react';
+
+// Your other imports...
+
+async function fetchOrdersWithUserData(orders) {
+  const ordersWithUserData = [];
+
+  for (const order of orders) {
+    try {
+      // Fetch user data based on userRef
+      const userDocRef = doc(db, 'users', order.data.userRef);
+      const userDocSnap = await getDoc(userDocRef);
+
+      if (userDocSnap.exists()) {
+        const userData = userDocSnap.data();
+
+        // Add user data to the order
+        order.userData = userData;
+      }
+
+      ordersWithUserData.push(order);
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  }
+
+  return ordersWithUserData;
+}
+
+function YourComponent() {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    // Fetch your orders data from Firestore
+    // ...
+
+    // Call the function to fetch orders with user data
+    fetchOrdersWithUserData(ordersFromFirestore)
+      .then((ordersWithUserData) => {
+        // Update your state with orders including user data
+        setOrders(ordersWithUserData);
+      })
+      .catch((error) => {
+        console.error('Error fetching orders with user data:', error);
+      });
+  }, []);
+
+  // Render your orders with user data
+  return (
+    <div>
+      {orders.map((order, index) => (
+        <div key={index}>
+          {/* Render order details */}
+          <p>Product: {order.data.product}</p>
+          {/* Render user details */}
+          {order.userData && (
+            <>
+              <p>User Name: {order.userData.name}</p>
+              <p>User Email: {order.userData.email}</p>
+            </>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default YourComponent;

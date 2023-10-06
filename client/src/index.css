@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .font-outline-2{
+        -webkit-text-stroke: 2px white;
+        text-shadow: -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000,
+
+    }
+    .font-outline-4{
+        -webkit-text-stroke: 4px white;
+    }
+}
+
+html::-webkit-scrollbar{
+    display: none;
+}
+
+html{
+    scrollbar-width: none;
+}
