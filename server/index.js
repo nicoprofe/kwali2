@@ -313,7 +313,7 @@ app.get('/send-preview-emails', async (req, res) => {
             to: email,
             subject: 'Confirma tu imagen de prueba Kwali',
             text: `Puedes ver la nueva imagen de prueba Kwali en:` +
-            `http://localhost:3000/profile`,
+            `https://kwali2-client.vercel.app/profile`,
              // You can also use HTML for the email body
              // html: `<p> Thank you for your order! Here is your <a href:'https://kwali2-client.vercel.app/profile/'> profile link </a> </p>`  
             }

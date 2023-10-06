@@ -42,7 +42,6 @@ export default function SidePanel({ isPanelOpen}) {
       const ids = cartItems.map(item => item.id)
 
       // Send a single request to your server with the arrays
-      // const response = await axios.post('http://localhost:8080/create-preference', {
          const response = await axios.post('https://kwali2-server.vercel.app/create-preference', { 
       
       description: descriptions.join(', '),
@@ -64,14 +63,6 @@ export default function SidePanel({ isPanelOpen}) {
       const id = await createPreference()
       if(id) {
         setPreferenceId(id)
-        // if (preferenceId) {
-        //   // Redirect the user to the Mercado Pago payment page with the preferenceId
-        //   window.location.href = `http://localhost:8080/create-preference/${preferenceId}`;
-        // } else {
-        //   // Handle the case where preferenceId is missing or not valid
-        //   console.error('Invalid preferenceId or preferenceId is missing.');
-        // }
-        
       }
   }
 

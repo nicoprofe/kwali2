@@ -15,7 +15,7 @@ export default function WaterActivatedTape({imgSrc, product, description}) {
 
   const createPreference = async () => {
       try {
-        const response = await axios.post("http://localhost:8080/create-preference", {
+        const response = await axios.post("https://kwali2-server.vercel.app/create-preference", {
           title: "Stickers",
           price: 100,
           quantity: 1,
