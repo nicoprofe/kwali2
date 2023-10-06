@@ -406,7 +406,7 @@ app.get('/', (req, res) => {
     res.send('MercadoPago and Node Mailer are working on port 8080')
 })
 
-app.post('https://kwali2-server.vercel.app/create-preference', (req, res) => {
+app.post('/create-preference', (req, res) => {
     let preference = {
         items: [
             {
