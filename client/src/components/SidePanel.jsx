@@ -42,7 +42,7 @@ export default function SidePanel({ isPanelOpen}) {
       const ids = cartItems.map(item => item.id)
 
       // Send a single request to your server with the arrays
-         const response = await axios.post('https://kwali2-server.vercel.app/create-preference', { 
+         const response = await axios.post('http://localhost:8080/create-preference', { 
       
       description: descriptions.join(', '),
         price:prices,

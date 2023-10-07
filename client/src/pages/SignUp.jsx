@@ -7,6 +7,7 @@ import { db } from '../firebase'
 import { style } from '../components/Styles'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 import OAuth from '../components/OAuth'
+import axios from 'axios'
 
 export default function SignUp() {
     const navigate = useNavigate()
@@ -59,6 +60,12 @@ export default function SignUp() {
                 role: userRole, // Add the role field with "guest" value here
             })
             
+            // Send welcome email to the newly registered user
+            if(email) {
+                await axios.get(`https://kwali2-server.vercel.app/send-register-emails?email=${email}`)
+            }
+            
+
             navigate("/")
             toast.success("El registro fue exitoso")
 

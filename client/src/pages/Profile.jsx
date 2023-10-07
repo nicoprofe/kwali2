@@ -310,20 +310,11 @@ export default function Profile() {
                         {orders.map((order, index) => (
                             <tr className='bg-white'>
 
-                                {/* <td>
-                                <button
-                                className='bg-blue-500 p-6 text-white'
-                        key={order.id} 
-                        onClick={() => updateOrderStatusAndSendEmail(order, 'emailOrderSent')}>
-                            Send Email
-                        </button>
-                                </td> */}
-
                                 <td className='p-3 text-sm text-gray-700 whitespace-nowrap'>
                                     <div className=' flex flex-col items-start '>
                                         <div className='flex flex-col items-center'>
                                         <img src={order.data.imgSrc} alt={order.data.product} className='h-24 w-24' />
-                                        <p key={order.id} className='text-sm font-medium'>{order.data.product} x{order.data.quantity}</p>
+                                        <p className='text-sm font-medium'>{order.data.product} x{order.data.quantity}</p>
                                         </div>
                                     </div>
                                 </td>

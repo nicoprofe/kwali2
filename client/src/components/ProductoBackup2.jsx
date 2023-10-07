@@ -20,7 +20,7 @@ import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño perso
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
 
-export default function Producto({ imgSrc, product, description }) {
+export default function ProductoBackup2({ imgSrc, product, description }) {
     // CONFIGS
     const navigate = useNavigate()
     const auth = getAuth()
@@ -89,6 +89,8 @@ export default function Producto({ imgSrc, product, description }) {
     function handleAddToCartAndSubmit(e) {
         e.preventDefault()
 
+        
+
         const item = {
             product,
             quantity,
@@ -97,7 +99,17 @@ export default function Producto({ imgSrc, product, description }) {
         }
         addToCart(item)
 
+        // Retrieve existing data from local storage
+        let existingData = JSON.parse(localStorage.getItem('data')) || []
+
+        if(!Array.isArray(existingData)) {
+            existingData = [] // Initialize as an empty array if not already an array
+        }
+
+        console.log('existingData before update', existingData);
+
         const formData = {
+            ...item,
             imgSrc: imgSrc,
             product: product,
             size: size,
@@ -112,6 +124,17 @@ export default function Producto({ imgSrc, product, description }) {
             changes: [],
             emailOrderSent: false,
         }
+
+        // Add the new formData object to the array
+        existingData.push(formData)
+
+        // Store the updated array in localStorage
+        localStorage.setItem('data', JSON.stringify(existingData))
+
+       // Log the updated array
+       console.log('existingData array of items', existingData)
+
+
 
        
 
@@ -136,7 +159,7 @@ export default function Producto({ imgSrc, product, description }) {
 
         formData.stickerUrl = downloadUrl
 
-        saveFormDataToLocalStorageAndFirestore(formData)
+        // saveFormDataToLocalStorageAndFirestore(formData)
 
         console.log(`Image uploaded and stickerUrl set to ${downloadUrl}`)
     } catch (error) {
@@ -145,10 +168,10 @@ export default function Producto({ imgSrc, product, description }) {
    }
 
    // FUNCTION TO SAVE FORMDATA TO LOCAL STORAGE AND FIRESTORE
-   function saveFormDataToLocalStorageAndFirestore(formData) {
-    localStorage.setItem('data', JSON.stringify(formData))
+//    function saveFormDataToLocalStorageAndFirestore(formData) {
+//     localStorage.setItem('data', JSON.stringify(formData))
    
-   }
+//    }
 
 
     //  GET LOCAL STORAGE DATA && ADD DOC ORDERS
