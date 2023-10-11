@@ -59,8 +59,29 @@ const Navbar = () => {
     
             <div className='flex items-center justify-around font-medium h-[102px]'>
     
-                <div className='z-50 p-5 md:w-auto w-full flex justify-between'>
+                <div className='z-50 px-5 md:w-auto w-full flex justify-between'>
     
+                    
+
+                    <div className='relative md:hidden flex p-3 py-4'>
+                        <BsFillCartFill
+                        onClick={() => {
+
+                            togglePanel()
+                        }} 
+                        className='text-xl'/>
+                        {cartItemCount > 0 ? (
+                            <>
+                                <div className='absolute bg-secondary-green h-5 w-5 top-0 left-3 rounded-full flex items-center justify-center
+                                text-white text-xs font-semibold '>
+                                {cartItemCount === 0 ? '' : cartItemCount}
+                                </div>
+                            </>
+                        ) 
+                        : ''}
+
+                    </div>
+
                     <Link to={"/"}>
                     <img src="/images/identidad/isotipo.png" alt="logo"
                     className='md:cursor-pointer h-24' />
@@ -68,7 +89,7 @@ const Navbar = () => {
     
                     <div
                     onClick={() => setOpen(!open)} 
-                    className='text-3xl md:hidden'>
+                    className='text-4xl md:hidden'>
                      <ion-icon name={`${ open ? "close" : "menu"}`}></ion-icon>
                     </div>
     
@@ -214,25 +235,6 @@ const Navbar = () => {
 
                     <div className='p-3'>
                         <FaSearch className='text-xl'/>
-                    </div>
-
-                    <div className='relative flex p-3'>
-                        <BsFillCartFill
-                        onClick={() => {
-                            setOpen(!open)
-                            togglePanel()
-                        }} 
-                        className='text-xl'/>
-                        {cartItemCount > 0 ? (
-                            <>
-                                <div className='absolute bg-secondary-green h-5 w-5 -top-1 left-3 rounded-full flex items-center justify-center
-                                text-white text-xs font-semibold '>
-                                {cartItemCount === 0 ? '' : cartItemCount}
-                                </div>
-                            </>
-                        ) 
-                        : ''}
-
                     </div>
 
                     <div className='p-3 '>
