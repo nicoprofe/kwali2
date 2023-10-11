@@ -45,7 +45,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalLineaDeCorte.isOpen}
                 onClose={modalLineaDeCorte.closeModal}>
-                  <img className='h-[550px]' src="/images/informativos/infografia-lineas de corte.jpg" alt="" />
+                  <img className='md:h-[550px]' src="/images/informativos/infografia-lineas de corte.jpg" alt="" />
                 </Modal>
 
                 <button 
@@ -54,7 +54,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalTamanos.isOpen}
                 onClose={modalTamanos.closeModal}>
-                  <img className='h-[550px]' src="/images/informativos/infografia-seleccion tamano.jpg" alt="" />
+                  <img className='md:h-[550px]' src="/images/informativos/infografia-seleccion tamano.jpg" alt="" />
                 </Modal>
 
                 <button
@@ -63,7 +63,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalCortesSuaje.isOpen}
                 onClose={modalCortesSuaje.closeModal}>
-                  <img className='h-[550px]' src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
+                  <img className='md:h-[550px]' src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
                 </Modal>
 
               </div>
@@ -71,12 +71,12 @@ export default function ComoOrdenar() {
               <div className='flex items-center justify-around md:justify-center md:space-x-28 ml-0 md:ml-16'>
                 <button
                 onClick={modalGuiaDeImpresion.openModal} 
-                className={`${style[0].button_como_ordenar} w-56 md:w-96 whitespace-nowrap`}>Guía de impresión</button>
+                className={`${style[0].button_como_ordenar} md:w-96 whitespace-nowrap`}>Guía de impresión</button>
                
 
                 <button 
                 onClick={modalEjemploDeWaterTape.openModal}
-                className={`${style[0].button_como_ordenar} w-56 md:w-96 whitespace-nowrap`}>Ejemplo de water tape</button>
+                className={`${style[0].button_como_ordenar} md:w-96 whitespace-nowrap`}>Ejemplo de water tape</button>
                 <Modal
                 isOpen={modalEjemploDeWaterTape.isOpen}
                 onClose={modalEjemploDeWaterTape.closeModal}>

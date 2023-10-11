@@ -153,6 +153,88 @@ const Navbar = () => {
                 duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
                   
                     <NavLinks toggleHamburguer={() => setOpen(!open)}/>
+                    <li 
+                    onClick={() => {
+                        setOpen(!open)
+                        navigate('/como-ordenar')
+                    }}
+                    className='px-3 mb-7'>
+                        Como Ordenar
+                    </li>
+                    <li 
+                    onClick={() => {
+                        setOpen(!open)
+                        navigate('/faq')
+                    }}
+                    className='px-3 mb-7'>
+                        Faq
+                    </li>
+                    <li 
+                    onClick={() => {
+                        setOpen(!open)
+                        navigate('/conocenos')
+                    }}
+                    className='px-3 mb-7'>
+                        Conocenos
+                    </li>
+                    <li 
+                    onClick={() => {
+                        setOpen(!open)
+                        navigate('/contacto')
+                    }}
+                    className='px-3 mb-7'>
+                        Contacto
+                    </li>
+                    <li 
+                    onClick={() => {
+                        setOpen(!open)
+                        navigate('/promos')
+                    }}
+                    className='px-3 mb-7'>
+                        Promos
+                    </li>
+                    
+                    <div className='p-3'>
+                        {/* <Button/> */}
+                        {loggedIn && (
+                        <>
+                            {isAdmin && (
+                                <>
+                                    <Link
+                                    onClick={() => setOpen(!open)} 
+                                    to={"/admin"}>
+                                        <RiAdminFill
+                                        className='text-2xl cursor-pointer'/>
+                                    </Link>
+                                </>
+                            )}
+                        </>
+                    )}
+                    </div>
+
+                    <div className='p-3'>
+                        <FaSearch className='text-xl'/>
+                    </div>
+
+                    <div className='relative flex p-3'>
+                        <BsFillCartFill
+                        onClick={() => {
+                            setOpen(!open)
+                            togglePanel()
+                        }} 
+                        className='text-xl'/>
+                        {cartItemCount > 0 ? (
+                            <>
+                                <div className='absolute bg-secondary-green h-5 w-5 -top-1 left-3 rounded-full flex items-center justify-center
+                                text-white text-xs font-semibold '>
+                                {cartItemCount === 0 ? '' : cartItemCount}
+                                </div>
+                            </>
+                        ) 
+                        : ''}
+
+                    </div>
+
                     <div className='p-3 '>
                         <button
                         onClick={() => {

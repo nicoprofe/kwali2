@@ -20,8 +20,10 @@ export default function SidePanel({ isPanelOpen}) {
   
 
 
-  // const subtotal = cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)
-  const subtotal =  cartItems.reduce((acc, item) => acc + item.price, 0)
+  // Calculate subtotal based on currentPrice
+  const subtotal =  cartItems.reduce(
+    (acc, item) => acc + 1 * parseFloat(item.price), 0) // Parse price to float if needed
+
   const total = subtotal
 
   const [ preferenceId, setPreferenceId ] = useState(null)
@@ -69,7 +71,7 @@ export default function SidePanel({ isPanelOpen}) {
    
   return (
     <div 
-    className={`fixed top-[105px] right-0 w-full md:w-1/4 h-full bg-white transition-transform duration-300 ease-in-out ${
+    className={`fixed top-[102px] right-0 w-full md:w-1/4 h-full bg-white transition-transform duration-300 ease-in-out ${
         isPanelOpen 
         ? "translate-x-0" 
         : "translate-x-full"}` }>
