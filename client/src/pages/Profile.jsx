@@ -465,14 +465,14 @@ export default function Profile() {
                                         </div>
                                     </div>
                                 </td>
-                                <td className='p-3 text-sm text-gray-700 whitespace-nowrap'>
+                                <td className='p-3 text-sm text-gray-700'>
                                     
                                     <div className='flex flex-col items-start justify-center space-y-3'>
 
                                         <p className='text-xs font-semibold'>{order.isPreviewAccepted1 || order.isPreviewAccepted2 === true ? 'Tu pedido está en proceso' : 'Pendiente por aprobar'}</p>
                                         <p 
                                         onClick={modalTerminos.openModal}
-                                        className='text-xs underline cursor-pointer'>
+                                        className='text-xs underline cursor-pointer whitespace-nowrap'>
                                             Leer nuestras condiciones <br />
                                             antes de aprobar
                                         </p>
@@ -725,7 +725,7 @@ export default function Profile() {
                            
                             <p 
                             onClick={modalTerminos.openModal}
-                            className='text-xs underline cursor-pointer'>
+                            className='text-xs underline cursor-pointer whitespace-nowrap'>
                                 Leer nuestras condiciones <br />
                                 antes de aprobar
                             </p>
