@@ -135,7 +135,6 @@ app.get('/send-register-emails', async (req, res ) => {
                         <p>Mira aquí todas nuestras guías y tutoriales para que puedas realizar tu pedido sin <br>
                         problemas</p>
                     </td>
-                <tr>
                     <td align='left' style='border-radius: 5px; background-color: #007bff;'> 
                         <a href='https://kwali2-client.vercel.app/como-ordenar' target='_blank' 
                         style='padding: 10px 20px; display: inline-block; font-family: sans-serif; font-size: 14px; 

@@ -23,6 +23,7 @@ import Profile from './pages/Profile'
 import PrivateRoute from './components/PrivateRoute'
 import ForgotPassword from './pages/ForgotPassword'
 import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Mate from './pages/Mate'
 import Brillantes from './pages/Brillantes'
 import Holograficos from './pages/Holograficos'
@@ -43,6 +44,9 @@ import Contacto from './pages/Contacto'
 import AddEditUser from './pages/AddEditUser'
 import PlantillasEditables from './pages/PlantillasEditables'
 import SidePanel from './components/SidePanel'
+import Producto2 from './components/Producto2'
+import Producto22 from './components/Producto22'
+import Producto33 from './components/Producto33'
 
 
 function App() {
@@ -55,6 +59,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path="/producto" element={<Producto/>} />
+        <Route path="/producto22" element={<Producto22/>} />
+        <Route path="/producto33" element={<Producto33/>} />
         <Route path='/success' element={<Success/>} />
         <Route path='/cancel' element={<Cancel/>} />
         <Route path='/profile' element={<PrivateRoute/>}>

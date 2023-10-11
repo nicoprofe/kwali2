@@ -1,10 +1,10 @@
 import React from 'react'
-import Producto from '../components/Producto'
+import Producto3 from '../components/Producto3'
 
 export default function MetalGold() {
   return (
     <div>
-      <Producto
+      <Producto3
       imgSrc="/images/productos/ejemplo-metalgold.png"
       product="Stickers metal gold"
       description={

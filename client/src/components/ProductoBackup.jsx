@@ -20,7 +20,7 @@ import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño perso
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
 
-export default function Producto({ imgSrc, product, description }) {
+export default function ProductoBackup({ imgSrc, product, description }) {
     // CONFIGS
     const navigate = useNavigate()
     const auth = getAuth()
@@ -69,6 +69,8 @@ export default function Producto({ imgSrc, product, description }) {
     }  
 
     const [ currentPrice, setCurrentPrice ] = useState(calculatePrice(size, quantity))
+
+ 
 
 
    

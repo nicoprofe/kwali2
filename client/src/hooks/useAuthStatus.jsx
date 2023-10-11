@@ -25,6 +25,7 @@ export function useAuthStatus() {
                     } else {
                         setIsAdmin(false)
                     }
+                    
                 } else {
                     setIsAdmin(false)
                 }

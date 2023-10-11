@@ -21,15 +21,15 @@ import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
 
 const priceTable = {
-  '5x5': [20.0, 12.4, 10.0, 9.0, 8.0, 6.8, 5.4],
-  '7.5x7.5': [24.0, 14.9, 12.0, 10.8, 9.6, 8.2, 6.5],
-  '10x10': [27.0, 16.7, 13.5, 12.2, 10.8, 9.2, 7.3],
-};
+    '5x5': [22.0, 13.6, 11.0, 9.9, 8.8, 7.5, 5.9],
+    '7.5x7.5': [27.0, 16.7, 13.5, 12.2, 10.8, 9.2, 7.3],
+    '10x10': [32.0, 19.8, 16.0, 14.4, 12.8, 10.9, 8.6],
+  };
   
 const quantityIndexes = [25, 50, 100, 200, 300, 500, 1000]
 
-// HOLOGRAFICO
-export default function Producto2({ imgSrc, product, description }) {
+// METALICO - ESPEJO
+export default function Producto3({ imgSrc, product, description }) {
     // CONFIGS
     const navigate = useNavigate()
     const auth = getAuth()
@@ -62,6 +62,12 @@ export default function Producto2({ imgSrc, product, description }) {
     
     // CORTE
     const [ corte, setCorte] = useState('kis-cut')
+
+   
+
+    
+ 
+
 
    
    // IMAGE PREVIEW

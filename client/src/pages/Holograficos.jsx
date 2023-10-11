@@ -1,10 +1,10 @@
 import React from 'react'
-import Producto from '../components/Producto'
+import Producto2 from '../components/Producto2'
 
 export default function Holograficos() {
   return (
     <div>
-      <Producto
+      <Producto2
       imgSrc="/images/productos/ejemplo-holografico.png"
       product="Sticker holográficos"
       description={
