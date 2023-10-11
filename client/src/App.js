@@ -39,14 +39,12 @@ import Cancel from './pages/Cancel'
 import Success from './pages/Success'
 import { CartProvider } from './TuPutaHermanContext'
 import Admin from './pages/Admin'
-import Producto from './components/Producto'
 import Contacto from './pages/Contacto'
 import AddEditUser from './pages/AddEditUser'
 import PlantillasEditables from './pages/PlantillasEditables'
 import SidePanel from './components/SidePanel'
-import Producto2 from './components/Producto2'
-import Producto22 from './components/Producto22'
-import Producto33 from './components/Producto33'
+import ScrollToTop from './components/ScrollToTop'
+
 
 
 function App() {
@@ -56,11 +54,9 @@ function App() {
     <CartProvider>
      <Router>
       <Navbar/>
+      
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path="/producto" element={<Producto/>} />
-        <Route path="/producto22" element={<Producto22/>} />
-        <Route path="/producto33" element={<Producto33/>} />
         <Route path='/success' element={<Success/>} />
         <Route path='/cancel' element={<Cancel/>} />
         <Route path='/profile' element={<PrivateRoute/>}>
@@ -102,8 +98,11 @@ function App() {
         <Route path='/muestras' element={<Muestras/>}/>
         <Route path='/plantillas-editables' element={<PlantillasEditables/>}/>
         <Route path='/side-panel' element={<SidePanel/>}/>
+        
       </Routes>
+    
       <Footer/>
+      <ScrollToTop/>
      </Router>
      </CartProvider>
     

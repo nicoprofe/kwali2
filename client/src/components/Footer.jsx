@@ -2,8 +2,14 @@ import React from 'react'
 import ItemsContainer from './ItemsContainer'
 import SocialIcons from './SocialIcons'
 import { Icons } from './Menus'
+import useModal from '../hooks/useModal'
+import Modal from './Modal'
+import TermsAndConditions from '../pages/TermsAndConditions'
+import Privacy from '../pages/Privacy'
 
 export default function Footer() {
+    const modalTerminos = useModal()
+    const modalPrivacidad = useModal()
   return (
     <footer className='bg-gray-900 text-white'>
         <div className='md:flex md:justify-between sm:px-12 px-4 py-7 md:items-center bg-[#ffffff19]'>
@@ -21,7 +27,29 @@ export default function Footer() {
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center pt-2 text-gray-400
         text-sm pb-8'>
             <span>© 2023 Kwali. Todos los derechos reservados.</span>
-            <span>Términos . Política de Privacidad</span>
+
+            <div>
+                <span 
+                onClick={modalTerminos.openModal}
+                className='cursor-pointer'>Términos . 
+                </span>
+                <span 
+                onClick={modalPrivacidad.openModal}
+                className='cursor-pointer'>Política de Privacidad</span>
+
+                <Modal
+                isOpen={modalTerminos.isOpen}
+                onClose={modalTerminos.closeModal}>
+                    <TermsAndConditions/>
+
+                </Modal>
+
+                <Modal
+                isOpen={modalPrivacidad.isOpen}
+                onClose={modalPrivacidad.closeModal}>
+                    <Privacy/>
+                </Modal>
+            </div>
             
             <SocialIcons Icons={Icons}/>
         </div>

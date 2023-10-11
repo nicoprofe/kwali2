@@ -1,9 +1,10 @@
 import React from 'react'
 import { TbTruckDelivery } from 'react-icons/tb'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 export default function Home() {
+  const navigate = useNavigate()
   return (
     <div className='items-center justify-center bg-white mb-6 h-full md:px-0'>
 
@@ -23,17 +24,23 @@ export default function Home() {
       <div className='mt-7 flex items-center justify-center'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 
-          <div className='flex flex-col items-center justify-center'>
+          <div
+          onClick={() => navigate('/stickers')}
+           className='flex flex-col items-center justify-center cursor-pointer'>
             <img className='z-10 h-[300px]' src="/images/brillosa.png" alt="productos" />
             <p className='uppercase text-2xl text-gray-700 font-bold '>Stickers</p>
             <div className='absolute bg-secondary-green rounded-full p-32'/>
           </div>
-          <div className='flex flex-col items-center justify-center'>
+          <div
+          onClick={() => navigate('/imanes')}
+           className='flex flex-col items-center justify-center cursor-pointer'>
           <img className='z-10 h-[300px]' src="/images/iman.png" alt="productos" />
           <p className='uppercase text-2xl text-gray-700 font-bold '>Magneticos</p>
           <div className='absolute bg-secondary-green rounded-full p-32'/>
           </div>
-          <div className='flex flex-col items-center justify-center'>
+          <div
+          onClick={() => navigate('/stickers-de-piso')}
+           className='flex flex-col items-center justify-center cursor-pointer'>
           <img className='z-10 h-[300px]' src="/images/piso2-10 1.png" alt="productos" />
           <p className='uppercase text-2xl text-gray-700 font-bold '>Para piso</p>
           <div className='absolute bg-secondary-green rounded-full p-32'/>

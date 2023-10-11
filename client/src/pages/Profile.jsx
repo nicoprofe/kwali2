@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
 import { style } from '../components/Styles'
 import Modal from '../components/Modal'
+import TermsAndConditions from './TermsAndConditions'
 
 export default function Profile() {
     const navigate = useNavigate()
@@ -36,6 +37,8 @@ export default function Profile() {
     const aproveFirst = useModal()
     const aproveSecond = useModal()
     const myProfile = useModal()
+    const modalTerminos = useModal()
+    const modalPrivacidad = useModal()
 
 
     // FETCH USER ORDERS
@@ -467,7 +470,18 @@ export default function Profile() {
                                     <div className='flex flex-col items-start justify-center space-y-3'>
 
                                         <p className='text-xs font-semibold'>{order.isPreviewAccepted1 || order.isPreviewAccepted2 === true ? 'Tu pedido está en proceso' : 'Pendiente por aprobar'}</p>
-                                        <p className='text-xs underline'>Leer nuestras condiciones <br />antes de aprobar</p>
+                                        <p 
+                                        onClick={modalTerminos.openModal}
+                                        className='text-xs underline cursor-pointer'>
+                                            Leer nuestras condiciones <br />
+                                            antes de aprobar
+                                        </p>
+
+                                        <Modal
+                                        isOpen={modalTerminos.isOpen}
+                                        onClose={modalTerminos.closeModal}>
+                                            <TermsAndConditions/>
+                                        </Modal>
                                         
                                         
                                         <button 
@@ -705,8 +719,23 @@ export default function Profile() {
                  <div className='flex items-center justify-between'>
 
                         <div>
-                            <p className='text-xs font-semibold'>{order.isPreviewAccepted1 || order.isPreviewAccepted2 === true ? 'Tu pedido está en proceso' : 'Pendiente por aprobar'}</p>
-                            <p className='text-xs underline'>Leer nuestras condiciones <br />antes de aprobar</p>
+                            <p 
+                            className='text-xs font-semibold'>{order.isPreviewAccepted1 || order.isPreviewAccepted2 === true ? 'Tu pedido está en proceso' : 'Pendiente por aprobar'}</p>
+                            
+                           
+                            <p 
+                            onClick={modalTerminos.openModal}
+                            className='text-xs underline cursor-pointer'>
+                                Leer nuestras condiciones <br />
+                                antes de aprobar
+                            </p>
+                            
+                            <Modal
+                            isOpen={modalTerminos.isOpen}
+                            onClose={modalTerminos.closeModal}>
+                                <TermsAndConditions/>
+                            </Modal>
+                            
                         </div>
 
                                         
