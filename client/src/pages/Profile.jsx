@@ -572,7 +572,7 @@ export default function Profile() {
                 
                 {orders.map((order, index) => (
                     <>
-                    <div className='bg-white shadow rounded-lg p-4 space-y-3 whitespace-nowrap'>
+                    <div className='bg-white shadow rounded-lg p-4 space-y-3'>
                     <div className="flex flex-col items-start text-sm">
                     
                         <p>
