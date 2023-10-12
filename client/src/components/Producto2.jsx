@@ -45,9 +45,10 @@ export default function Producto2({ imgSrc, product, description }) {
     const modalImpresion = useModal()
     const modalCorte = useModal()
 
-    const [size, setSize] = useState('5x5');
-    const [quantity, setQuantity] = useState(25);
-    const [unitPrice, setUnitPrice] = useState(16.0);
+    const [size, setSize] = useState('5x5')
+    const [quantity, setQuantity] = useState(25)
+    const [unitPrice, setUnitPrice] = useState(16.0)
+    const [ currentPrice, setCurrentPrice ] = useState(0.0)
 
     useEffect(() => {
         const sizeIndex = quantityIndexes.indexOf(quantity);
@@ -55,9 +56,14 @@ export default function Producto2({ imgSrc, product, description }) {
         setUnitPrice(newUnitPrice);
     }, [size, quantity]);
 
+    // Update currentPrice whenever unitPrice or quantity changes
+    useEffect(() => {
+        const calculatedPrice = ( unitPrice * quantity ).toFixed(2)
+        setCurrentPrice(calculatedPrice)
+    }, [unitPrice, quantity])
+
     const baseUnitPrice = priceTable[size][0];
     const discountPercentage = ((baseUnitPrice - unitPrice) / baseUnitPrice) * 100;
-    const currentPrice = (unitPrice * quantity).toFixed(2)
 
     
     // CORTE

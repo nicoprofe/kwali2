@@ -68,13 +68,6 @@ export default function Producto({ imgSrc, product, description }) {
     
     // CORTE
     const [ corte, setCorte] = useState('kis-cut')
-
-   
-
-    
- 
-
-
    
    // IMAGE PREVIEW
     const [ imagePreviews, setImagePreviews ] = useState([])
@@ -155,7 +148,7 @@ export default function Producto({ imgSrc, product, description }) {
    }
 
 
-    //  GET LOCAL STORAGE DATA && ADD DOC ORDERS
+    // GET LOCAL STORAGE DATA && ADD DOC ORDERS
     useEffect(() => {
         if(window.location.href.includes('approved')) {
             const retrievedData = JSON.parse(localStorage.getItem('data'))

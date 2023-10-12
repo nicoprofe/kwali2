@@ -438,7 +438,7 @@ export default function Admin() {
                                             onClick={() => handleOpenModalChanges(order.id)}
                                             className='bg-secondary-blueLight hover:bg-sky-300 active:bg-sky-400 
                                             text-xs active:text-white font-medium px-4 py-2 transition duration-200 ease-in-out'>
-                                                Pedir cambios
+                                                Revisar cambios
                                             </button>
 
                                             {/* PREVIEW AND CHANGES MODAL */}
