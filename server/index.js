@@ -415,7 +415,7 @@ app.post('/create-preference', (req, res) => {
             }
         ],
         back_urls: {
-            success: 'https://kwali2-client.vercel.app/producto',
+            success: 'http://kwali2-client.vercel.app/producto',
             failure: 'https://kwali2-client.vercel.app/',
             pending: '',
         },
