@@ -44,6 +44,7 @@ import AddEditUser from './pages/AddEditUser'
 import PlantillasEditables from './pages/PlantillasEditables'
 import SidePanel from './components/SidePanel'
 import ScrollToTop from './components/ScrollToTop'
+import Producto from './components/Producto'
 
 
 
@@ -59,6 +60,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/success' element={<Success/>} />
         <Route path='/cancel' element={<Cancel/>} />
+        <Route path='/producto' element={<Producto/>} />
         <Route path='/profile' element={<PrivateRoute/>}>
           <Route path='/profile' element={<Profile/>}/>
         </Route>
@@ -102,7 +104,7 @@ function App() {
       </Routes>
     
       <Footer/>
-      {/* <ScrollToTop/> */}
+      <ScrollToTop/>
      </Router>
      </CartProvider>
     
