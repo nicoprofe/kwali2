@@ -6,7 +6,7 @@ import Modal from './Modal'
 import useTooltip from '../hooks/useTooltip'
 import Tooltip from './Tooltip'
 import { BsQuestionLg } from 'react-icons/bs'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { getAuth } from 'firebase/auth'
 import { useCart } from '../TuPutaHermanContext'
 import { addDoc, collection, doc, getDoc, getFirestore, serverTimestamp, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase'
@@ -19,18 +19,17 @@ import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.
 import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño personalizado.jpg'
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
-import ModalHover from './ModalHover'
 
 const priceTable = {
-    '5x5': [16.0, 9.6, 6.6, 5.9, 5.3, 4.8, 4.3],
-    '7.5x7.5': [20.0, 12.0, 8.2, 7.4, 6.6, 6.0, 5.4],
-    '10x10': [23.0, 13.8, 9.4, 8.5, 7.6, 6.9, 6.2],
-  }
+    '5x5': [22.0, 13.6, 11.0, 9.9, 8.8, 7.5, 5.9],
+    '7.5x7.5': [27.0, 16.7, 13.5, 12.2, 10.8, 9.2, 7.3],
+    '10x10': [32.0, 19.8, 16.0, 14.4, 12.8, 10.9, 8.6],
+  };
   
 const quantityIndexes = [25, 50, 100, 200, 300, 500, 1000]
 
-// MATE - BRILLOSO - TRANSPARENTE
-export default function Producto({ imgSrc, product, description }) {
+// METALICO - ESPEJO
+export default function Producto3Backup({ imgSrc, product, description }) {
     // CONFIGS
     const navigate = useNavigate()
     const auth = getAuth()
@@ -41,33 +40,14 @@ export default function Producto({ imgSrc, product, description }) {
     const [ isTooltipVisible2, setIsTooltipVisible2 ] = useState(false)
     const [ isTooltipVisible3, setIsTooltipVisible3 ] = useState(false)
 
-    const modalTamano = useModal()
-    const modalPersonalizado = useModal()
-    const modalKissDie = useModal()
-
-    const [ delayedClose, setDelayedClose ] = useState(false)
-
-    useEffect(() => {
-        let closeTimeout
-        if(!modalTamano.isOpen && delayedClose) {
-            closeTimeout = setTimeout(() => {
-                modalTamano.closeModal()
-                setDelayedClose(false)
-            }, 300)
-        }
-        return () => {
-            clearTimeout(closeTimeout)
-        }
-    }, [delayedClose, modalTamano])
-
     // MODAL
     const modalDimensiones = useModal()
     const modalImpresion = useModal()
     const modalCorte = useModal()
 
-    const [size, setSize] = useState('5x5');
-    const [quantity, setQuantity] = useState(25);
-    const [unitPrice, setUnitPrice] = useState(16.0);
+    const [size, setSize] = useState('5x5')
+    const [quantity, setQuantity] = useState(25)
+    const [unitPrice, setUnitPrice] = useState(16.0)
     const [ currentPrice, setCurrentPrice ] = useState(0.0)
 
     useEffect(() => {
@@ -88,6 +68,13 @@ export default function Producto({ imgSrc, product, description }) {
     
     // CORTE
     const [ corte, setCorte] = useState('kis-cut')
+
+   
+
+    
+ 
+
+
    
    // IMAGE PREVIEW
     const [ imagePreviews, setImagePreviews ] = useState([])
@@ -99,8 +86,6 @@ export default function Producto({ imgSrc, product, description }) {
         const previewUrl = URL.createObjectURL(imageFile)
         setImagePreviews([previewUrl])
     }
-
-    const ordersArray = []
     
     // HANDLE ADD TO CART AND SUBMIT TOGHETER
     const { addToCart } = useCart()
@@ -108,48 +93,35 @@ export default function Producto({ imgSrc, product, description }) {
     function handleAddToCartAndSubmit(e) {
         e.preventDefault()
 
-        // Wait for the user's authentication state to become available
-        onAuthStateChanged(auth, (user) => {
-            if(user) {
-                // User is authenticated
-                const item = {
-                    product,
-                    quantity,
-                    size,
-                    price: currentPrice,
-                }
-                addToCart(item)
-        
-                const formData = {
-                    imgSrc: imgSrc,
-                    product: product,
-                    size: size,
-                    corte: corte,
-                    quantity: quantity,
-                    price: currentPrice,
-                    userRef: auth.currentUser.uid,
-                    timestamp: serverTimestamp(),
-                    preview: "/images/identidad/isotipo.png",
-                    approval1: false,
-                    approval2: false,
-                    changes: [],
-                    emailOrderSent: false,
-                }
+        const item = {
+            product,
+            quantity,
+            size,
+            price: currentPrice,
+        }
+        addToCart(item)
 
-                if(selectedImageFile) {
-                    uploadImageAndSetStickerUrl(selectedImageFile, formData)
-                }
-
-            } else {
-                navigate('/sign-in')
-            }
-        })
-
-        
+        const formData = {
+            imgSrc: imgSrc,
+            product: product,
+            size: size,
+            corte: corte,
+            quantity: quantity,
+            price: currentPrice,
+            userRef: auth.currentUser.uid,
+            timestamp: serverTimestamp(),
+            preview: "/images/identidad/isotipo.png",
+            approval1: false,
+            approval2: false,
+            changes: [],
+            emailOrderSent: false,
+        }
 
        
 
-       
+        if(selectedImageFile) {
+            uploadImageAndSetStickerUrl(selectedImageFile, formData)
+        }
 
         
     }
@@ -178,46 +150,21 @@ export default function Producto({ imgSrc, product, description }) {
 
    // FUNCTION TO SAVE FORMDATA TO LOCAL STORAGE AND FIRESTORE
    function saveFormDataToLocalStorageAndFirestore(formData) {
-    const existingData = JSON.parse(localStorage.getItem('data')) || [];
-
-  // Push the new formData into the array
-  existingData.push(formData);
-
-  // Store the updated array back in localStorage
-  localStorage.setItem('data', JSON.stringify(existingData));
-
-  // Also, push the formData into the ordersArray
-  ordersArray.push(formData);
-
-  // Console log the entire data array
-  console.log('Data array:', existingData);
+    localStorage.setItem('data', JSON.stringify(formData))
    
    }
 
-// GET LOCAL STORAGE DATA && ADD DOC ORDERS
-useEffect(() => {
-    if (window.location.href.includes('approved')) {
-      // Retrieve the orders array from localStorage
-      const retrievedData = JSON.parse(localStorage.getItem('data'));
-  
-      // Loop through the retrieved orders and add each order to Firestore
-      if (Array.isArray(retrievedData)) {
-        const docRef = collection(db, 'orders')
-        retrievedData.forEach(async (order) => {
-            try {
-                await addDoc(docRef, order)
-            } catch (error) {
-                console.error('Error adding order to Firestore', error)
-            }
-        })
-      }
 
-      // Clear the data in localStorage
-      localStorage.removeItem('data')
-  
-      navigate('/profile');
-    }
-  }, [window.location.href]);
+    //  GET LOCAL STORAGE DATA && ADD DOC ORDERS
+    useEffect(() => {
+        if(window.location.href.includes('approved')) {
+            const retrievedData = JSON.parse(localStorage.getItem('data'))
+            const docRef = collection(db, 'orders')
+            addDoc(docRef, retrievedData)
+            navigate('/profile')
+
+        } 
+    }, [window.location.href])
   
     
   return (
@@ -252,7 +199,7 @@ useEffect(() => {
             <form>
 
                           <div className='flex flex-col items-center justify-center space-y-6'>
-                                  
+                                    <div>
                                     <div className='flex items-center justity-center space-x-2'>
                                         <p>Tamaño</p>
                                         <select 
@@ -264,43 +211,40 @@ useEffect(() => {
                                           <option value="7.5x7.5">7.5x7.5</option>
                                           <option value="10x10">10x10</option>
                                         </select>
+                                        
 
-                                        <div 
-                                        onClick={modalTamano.openModal}
-                                        className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                            <BsQuestionLg/>
-                                        </div>
-
-                                        <Modal
-                                        isOpen={modalTamano.isOpen}
-                                        onClose={modalTamano.closeModal}>
-                                            <img
-                                            className='w-full md:h-[660px]' 
-                                            src={seleccionTamano} alt="" />
-                                        </Modal>
-
-                                        </div>
-
-                                        <div className='flex items-center justify-center space-x-2 mt-2'>
-                                            <p className='text-xs text-center'>¿No encuentras el tamaño que buscas? <br /> 
-                                            <Link className='underline' to={'/contacto'}>Ponte en contacto con nosotros.</Link>
-                                            </p>
-                                            <div 
-                                                onClick={modalKissDie.openModal}
-                                                className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
+                                        <Tooltip
+                                        isTooltipVisible={isTooltipVisible}
+                                        content={<h1 className='text-lg font-semibold whitespace-nowrap opacity-0'>
+                                            -------------------------------------------</h1>}
+                                        imageSrc={seleccionTamano}>
+                                            <div
+                                            onMouseEnter={() => setIsTooltipVisible(true)}
+                                            onMouseLeave={() => setIsTooltipVisible(false)}
+                                            className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
                                                     <BsQuestionLg/>
-                                                </div>
+                                            </div>
+                                        </Tooltip>
 
-                                            <Modal
-                                            isOpen={modalKissDie.isOpen}
-                                            onClose={modalKissDie.closeModal}>
-                                                <img
-                                                className='w-full md:h-[660px]' 
-                                                src={tamanoPersonalizado} alt="" />
-                                            </Modal>
-                                        </div>
-
-                                    
+                                    </div>
+                                    <div className='flex justify-center items-center mt-2'>
+                                        <p className='text-xs text-start'>¿No encuentras el tamaño que buscas? <br /> 
+                                        <Link className='underline' to={'/contacto'}>Ponte en contacto con nosotros.</Link>
+                                        </p>
+                                        <Tooltip
+                                        isTooltipVisible={isTooltipVisible3}
+                                        content={<h1 className='text-lg font-sembibold whitespace-nowrap opacity-0'>
+                                            -------------------------------------------</h1>}
+                                        imageSrc={tamanoPersonalizado}>
+                                            <div 
+                                            onMouseEnter={() => setIsTooltipVisible3(true)}
+                                            onMouseLeave={() => setIsTooltipVisible3(false)}
+                                            className='bg-gray-300 rounded-full p-0.5 ml-2 cursor-pointer'>
+                                            <BsQuestionLg/>
+                                            </div>
+                                        </Tooltip>
+                                    </div>
+                                    </div>
                                     
 
                                     <div>
@@ -332,19 +276,18 @@ useEffect(() => {
                                             <option value="die-cut">Die-cut</option>
                                             </select>
 
-                                            <div 
-                                            onClick={modalKissDie.openModal}
+                                            <Tooltip
+                                            isTooltipVisible={isTooltipVisible2}
+                                            content={<h1 className='text-lg font-semibold whitespace-nowrap opacity-0'>
+                                            Guía de cortejjjjjjjjjjjjjjjjjjjjjjjjjjjjj</h1>}
+                                            imageSrc="/images/informativos/infografia-tipo de corte.jpg">
+                                            <div
+                                            onMouseEnter={() => setIsTooltipVisible2(true)}
+                                            onMouseLeave={() => setIsTooltipVisible2(false)}
                                             className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
                                                 <BsQuestionLg/>
                                             </div>
-
-                                        <Modal
-                                        isOpen={modalKissDie.isOpen}
-                                        onClose={modalKissDie.closeModal}>
-                                            <img
-                                            className='w-full md:h-[660px]' 
-                                            src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
-                                        </Modal>
+                                            </Tooltip>
 
                                     </div>
 

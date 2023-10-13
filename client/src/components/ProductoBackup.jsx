@@ -20,6 +20,15 @@ import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño perso
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
 
+const priceTable = {
+    '5x5': [16.0, 9.6, 6.6, 5.9, 5.3, 4.8, 4.3],
+    '7.5x7.5': [20.0, 12.0, 8.2, 7.4, 6.6, 6.0, 5.4],
+    '10x10': [23.0, 13.8, 9.4, 8.5, 7.6, 6.9, 6.2],
+  }
+  
+const quantityIndexes = [25, 50, 100, 200, 300, 500, 1000]
+
+// MATE - BRILLOSO - TRANSPARENTE
 export default function ProductoBackup({ imgSrc, product, description }) {
     // CONFIGS
     const navigate = useNavigate()
@@ -36,43 +45,29 @@ export default function ProductoBackup({ imgSrc, product, description }) {
     const modalImpresion = useModal()
     const modalCorte = useModal()
 
-    // SIZES
-    const [ size, setSize ] = useState('2x2cm')
+    const [size, setSize] = useState('5x5');
+    const [quantity, setQuantity] = useState(25);
+    const [unitPrice, setUnitPrice] = useState(16.0);
+    const [ currentPrice, setCurrentPrice ] = useState(0.0)
 
-    const handleSizeChange = (selectedSize) => {
-        setSize(selectedSize)
-        setCurrentPrice(calculatePrice(selectedSize, quantity))
-    }
+    useEffect(() => {
+        const sizeIndex = quantityIndexes.indexOf(quantity);
+        const newUnitPrice = priceTable[size][sizeIndex];
+        setUnitPrice(newUnitPrice);
+    }, [size, quantity]);
 
+    // Update currentPrice whenever unitPrice or quantity changes
+    useEffect(() => {
+        const calculatedPrice = ( unitPrice * quantity ).toFixed(2)
+        setCurrentPrice(calculatedPrice)
+    }, [unitPrice, quantity])
+
+    const baseUnitPrice = priceTable[size][0];
+    const discountPercentage = ((baseUnitPrice - unitPrice) / baseUnitPrice) * 100;
+
+    
     // CORTE
     const [ corte, setCorte] = useState('kis-cut')
-
-    // QUANTITY
-    const [ quantity, setQuantity ] = useState(50)
-
-    const handleQuantityChange = (selectedQuantity) => {
-        setQuantity(selectedQuantity)
-        setCurrentPrice(calculatePrice(size, selectedQuantity))
-    }
-
-    // PRICE
-    const calculatePrice = (selectedSize, selectedQuantity) => {
-        return selectedSize === '2x2cm'
-        ? selectedQuantity * 100
-        : selectedSize === '5x5cm'
-        ? selectedQuantity * 150
-        : selectedSize === '10x10cm'
-        ? selectedQuantity * 200
-        : selectedSize === '15x15cm'
-        ? selectedQuantity * 250
-        : 0
-    }  
-
-    const [ currentPrice, setCurrentPrice ] = useState(calculatePrice(size, quantity))
-
- 
-
-
    
    // IMAGE PREVIEW
     const [ imagePreviews, setImagePreviews ] = useState([])
@@ -153,7 +148,7 @@ export default function ProductoBackup({ imgSrc, product, description }) {
    }
 
 
-    //  GET LOCAL STORAGE DATA && ADD DOC ORDERS
+    // GET LOCAL STORAGE DATA && ADD DOC ORDERS
     useEffect(() => {
         if(window.location.href.includes('approved')) {
             const retrievedData = JSON.parse(localStorage.getItem('data'))
@@ -204,12 +199,10 @@ export default function ProductoBackup({ imgSrc, product, description }) {
                                         id='size' 
                                         value={size}
                                         style={{width: '165px'}}
-                                        onChange={(e) => handleSizeChange(e.target.value)}>
-                                        <option value="2x2cm">2x2cm</option>
-                                        <option value="5x5cm">5x5cm</option>
-                                        <option value="10x10cm">10x10cm</option>
-                                        <option value="15x15cm">15x15cm</option>
-                                        {/* <option value="Personalizado">Personalizado</option> */}
+                                        onChange={(e) => setSize(e.target.value)}>
+                                          <option value="5x5">5x5</option>
+                                          <option value="7.5x7.5">7.5x7.5</option>
+                                          <option value="10x10">10x10</option>
                                         </select>
                                         
 
@@ -294,26 +287,38 @@ export default function ProductoBackup({ imgSrc, product, description }) {
                                     <div className='flex items-center justify-center space-x-2'>
                                                 <p>Cantidad</p>
                                                 <select 
-                                                style={{width: "130px"}} 
+                                                style={{width: "133px"}} 
                                                 id="quantity" 
                                                 value={quantity}
-                                                onChange={(e) => handleQuantityChange(parseInt(e.target.value))}>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                                <option value="250">250</option>
+                                                onChange={(e) => setQuantity(parseInt(e.target.value, 10))}>
+                                                {quantityIndexes.map((q) => (
+                                                    <option key={q} value={q}>{q}</option>
+                                                ))}
                                                 </select>
                                     </div>
 
-                                    <div className='flex items-center justify-center space-x-2'>
-                                        <p>Precio</p>
-                                        <input 
-                                        type="number" 
-                                        id='price' 
-                                        value={currentPrice}
-                                        onChange={(e) => setCurrentPrice(parseFloat(e.target.value))}
-                                        style={{width: "152px"}}
-                                        />
-                                    </div>
+                                    
+                                        <div className='flex items-center justify-center space-x-2'>
+                                           <p>Precio</p>
+                                           <input 
+                                           style={{width: "158px"}}
+                                           disabled value={`$${(unitPrice * quantity).toFixed(2)}` }type="text" />
+                                        </div>
+                                        <div className='flex items-center justify-center space-x-2'>
+                                           <p>Precio Unitario</p>
+                                           <input
+                                           style={{width: "90px"}} 
+                                           disabled value={`$${unitPrice.toFixed(2)}`} type="text" />
+                                        </div>
+                                        <div className='flex items-center justify-center space-x-2'>
+                                           <p>Descuento</p>
+                                           <input
+                                           style={{width: "122px"}} 
+                                           disabled 
+                                           value={`${discountPercentage.toFixed(0)}%`} 
+                                           type="text" />
+                                        </div>
+                                   
 
                                     <div>
                                         <label className='bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400

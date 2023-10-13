@@ -10,14 +10,13 @@ import { getAuth } from 'firebase/auth'
 
 
 export default function SidePanel({ isPanelOpen}) {
-  const { cartItems } = useCart()
+  const { cartItems, setCartItems } = useCart()
 
   const location = useLocation()
+
   const navigate = useNavigate()
 
   const auth = getAuth()
-
-  
 
 
   // Calculate subtotal based on currentPrice
@@ -68,6 +67,18 @@ export default function SidePanel({ isPanelOpen}) {
       }
   }
 
+  // Function to delete a specific order by its index
+  const deleteOrder = (index) => {
+    const updatedCartItems = [...cartItems]
+    updatedCartItems.splice(index, 1) // Remove the order at the specified index
+    setCartItems(updatedCartItems) // Update the cartItems state
+  }
+
+  // Function to clear all orders
+  const clearAllOrders = () => {
+    setCartItems([]) // Set cartItems to an empty array to clear all orders
+  }
+
    
   return (
     <div 
@@ -80,6 +91,9 @@ export default function SidePanel({ isPanelOpen}) {
         <div className='flex flex-col space-y-6'>
 
             <h1 className='uppercase font-semibold text-xl text-center mt-6'>tu carrito</h1>
+            {/* <button
+            onClick={clearAllOrders}
+            className='text-red-500 hover:text-red-700 font-bold cursor-pointer'>All</button> */}
 
             <div className='flex items-center justify-around py-2 text-md font-semibold bg-gray-300'>
                 <p>Descripción</p>
@@ -89,7 +103,7 @@ export default function SidePanel({ isPanelOpen}) {
 
         
 
-            {cartItems.map((item) => (
+            {cartItems.map((item, index) => (
               <>
               <div key={item.id} className='flex items-center justify-around'>
 
@@ -99,7 +113,11 @@ export default function SidePanel({ isPanelOpen}) {
                 </div>
                 <p key={item.id}>{item.quantity}</p>
                 <p key={item.id}>{item.price}</p>
-                {/* <p>{item.price * item.quantity}</p> */}
+                {/* <button 
+                onClick={() => deleteOrder(index)} 
+                className='text-red-500 hover:text-red-700 font-bold cursor-pointer'>
+                  X
+                </button> */}
               </div>
               </>
             ))}

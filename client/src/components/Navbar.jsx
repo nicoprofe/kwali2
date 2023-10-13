@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import NavLinks from './NavLinks'
 import Button from './Button'
@@ -14,7 +14,6 @@ import { createPortal } from 'react-dom'
 
 const Navbar = () => {
     const portalRoot = document.getElementById('portal-root-navbar')
-   
 
    
     // CONFIG
@@ -45,7 +44,7 @@ const Navbar = () => {
     }
 
     // CART ITEM COUNT
-    const { cartItems } = useCart()
+    const { cartItems, setCartItems } = useCart()
 
     const cartItemCount = cartItems.length 
 

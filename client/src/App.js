@@ -45,6 +45,7 @@ import PlantillasEditables from './pages/PlantillasEditables'
 import SidePanel from './components/SidePanel'
 import ScrollToTop from './components/ScrollToTop'
 import Producto from './components/Producto'
+import SidePanelContainer from './components/SidePanelContainer'
 
 
 
@@ -100,6 +101,7 @@ function App() {
         <Route path='/muestras' element={<Muestras/>}/>
         <Route path='/plantillas-editables' element={<PlantillasEditables/>}/>
         <Route path='/side-panel' element={<SidePanel/>}/>
+        <Route path='/side-panel-container' element={<SidePanelContainer/>}/>
         
       </Routes>
     
