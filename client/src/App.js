@@ -46,6 +46,7 @@ import SidePanel from './components/SidePanel'
 import ScrollToTop from './components/ScrollToTop'
 import Producto from './components/Producto'
 import SidePanelContainer from './components/SidePanelContainer'
+import RootLayout from './pages/RootLayout'
 
 
 
@@ -55,7 +56,8 @@ function App() {
    
     <CartProvider>
      <Router>
-      <Navbar/>
+      
+     <RootLayout> 
       
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -105,8 +107,9 @@ function App() {
         
       </Routes>
     
-      <Footer/>
+      </RootLayout>
       <ScrollToTop/>
+      
      </Router>
      </CartProvider>
     

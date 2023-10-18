@@ -43,7 +43,7 @@ export default function PlantillasEditables() {
         </p>
       </div>
 
-      <div className='flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-36 mb-12'>
+      {/* <div className='flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-36 mb-12'>
         <Link 
         onClick={modalGuiaDeDimensiones.openModal}
         className='whitespace-nowrap text-center bg-secondary-blueLight hover:bg-sky-300 active:bg-sky-400 duration-300 
@@ -156,7 +156,7 @@ export default function PlantillasEditables() {
             <img 
             className='md:h-[550px]' 
             src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
-         </Modal>
+         </Modal> */}
     </div>
   )
 }

@@ -4,22 +4,24 @@ import PorqueSomosLosMejores from '../components/PorqueSomosLosMejores'
 export default function Conocenos() {
   return (
     <div className='h-full'>
-      <div className='px-6 flex flex-col items-center justify-center'>
-     
-      <img 
-      className='w-3/4 md:w-1/3  mt-16 mb-16'
-      src="/images/transparentes/textos_holasomoskwali.png" alt="conocenos" />
+      <div className='flex flex-col items-center justify-center h-[800px] mb-16'>
 
-      <p className='text-md font-medium'>Nuestro objetivo es lograr que tu experiencia de compra sea tan sencilla y cómoda como nunca antes. En <br />
-      Kwali nos enorgullecemos de lo que hacemos y por eso queremos asegurarte que nuestros productos son <br />
-      hechos con la mejor calidad. Con nuestro servicio en linea no tienes que salir de tu casa o hacer largas filas <br />
-      para obtener productos de calidad profesional.</p>
+      <div className='w-full -translate-y-[97px] flex flex-col items-center justify-center'>
+        <img src="/images/identidad/elementos web-17.png" alt="" />  
+        <img 
+        className='absolute mb-72 w-3/4 md:w-1/3'
+        src="/images/transparentes/textos_holasomoskwali.png" alt="conocenos" />
 
-      <img
-      className='w-3/4 md:w-1/3 mt-16 mb-16 ' 
-      src="/images/transparentes/texto_experienciakwali.png" alt="experiencia" />
+        <p className='text-md font-medium '>Nuestro objetivo es lograr que tu experiencia de compra sea tan sencilla y cómoda como nunca antes. En <br />
+          Kwali nos enorgullecemos de lo que hacemos y por eso queremos asegurarte que nuestros productos son <br />
+          hechos con la mejor calidad. Con nuestro servicio en linea no tienes que salir de tu casa o hacer largas filas <br />
+          para obtener productos de calidad profesional.</p>
 
-      <p className='text-md font-medium mb-16'>
+          <img
+          className='w-3/4 md:w-1/3 mt-16 mb-16 ' 
+          src="/images/transparentes/texto_experienciakwali.png" alt="experiencia" />
+
+      <p className='text-md font-medium'>
         En Kwali nos aseguraremos de que tus productos salgan justo como los necesitas. Contamos con un equipo <br />
         de diseño que revisará tus archivos y te ayudará en cada paso necesario. En caso de contar con alguna duda o <br />
         no encontrar lo que buscas, puedes comunicarte con nosotros y nos encargaremos de darte una solución. <br /><br />
@@ -28,8 +30,18 @@ export default function Conocenos() {
       </p>
 
       <img
-      className='absolute -z-10 -translate-y-3 md:translate-y-0 md:top-80 -right-14 md:right-20 h-60 md:h-96' 
+      className='absolute -z-10 -translate-y-3 md:translate-y-28 md:top-[460px] -right-14 md:right-10 h-60 md:h-96' 
       src="/images/mascota/kwali-corazon.png" alt="mascota" />
+          
+      </div>
+
+      
+
+     
+
+     
+
+      
 
       </div>
 

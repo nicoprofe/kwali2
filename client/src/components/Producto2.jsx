@@ -44,6 +44,7 @@ export default function Producto2({ imgSrc, product, description }) {
     const modalTamano = useModal()
     const modalPersonalizado = useModal()
     const modalKissDie = useModal()
+    const modalForma = useModal()
 
     const [ delayedClose, setDelayedClose ] = useState(false)
 
@@ -88,6 +89,9 @@ export default function Producto2({ imgSrc, product, description }) {
     
     // CORTE
     const [ corte, setCorte] = useState('kis-cut')
+
+    // FORMA
+    const [ forma, setForma ] = useState('circular')
    
    // IMAGE PREVIEW
     const [ imagePreviews, setImagePreviews ] = useState([])
@@ -125,6 +129,7 @@ export default function Producto2({ imgSrc, product, description }) {
                     product: product,
                     size: size,
                     corte: corte,
+                    forma: forma,
                     quantity: quantity,
                     price: currentPrice,
                     userRef: auth.currentUser.uid,
@@ -344,6 +349,35 @@ useEffect(() => {
                                             <img
                                             className='w-full md:h-[660px]' 
                                             src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
+                                        </Modal>
+
+                                    </div>
+
+                                    <div className='flex items-center justify-center space-x-2'>
+                                            <p>Forma</p>
+                                            <select
+                                            id='forma' 
+                                            onChange={(e) => setForma(e.target.value)}
+                                            style={{width: "181px"}}>
+                                            <option value="circular">Circular</option>
+                                            <option value="cuadrado">Cuadrado</option>
+                                            <option value="rectangular">Rectangular</option>
+                                            <option value="personalizado">Personalizado</option>
+                                           
+                                            </select>
+
+                                            <div 
+                                            onClick={modalForma.openModal}
+                                            className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
+                                                <BsQuestionLg/>
+                                            </div>
+
+                                        <Modal
+                                        isOpen={modalForma.isOpen}
+                                        onClose={modalForma.closeModal}>
+                                            <img
+                                            className='w-full md:h-[660px]' 
+                                            src="/images/informativos/guia formas-01.jpg" alt="" />
                                         </Modal>
 
                                     </div>

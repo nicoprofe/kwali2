@@ -6,22 +6,32 @@ import { Link, useNavigate } from 'react-router-dom'
 export default function Home() {
   const navigate = useNavigate()
   return (
-    <div className='items-center justify-center bg-white mb-6 h-full md:px-0'>
+    <div className='items-center justify-center bg-white '>
 
-      {/* <img className='w-full' src="/images/identidad/elementos web-17.png" alt="" /> */}
 
-      <div className='flex items-center justify-center mt-24 '>
-        <img
-        className='absolute top-28 md:w-[1100px]' 
-        src="/images/transparentes/texto_losmejoresstickers-16.png" alt="" />
+      <div className='w-full md:-translate-y-[110px] flex flex-col items-center justify-center'>
+        <img 
+        className=' ' 
+        src="/images/identidad/elementos web-17.png" alt="" /> 
+        <img 
+        className='absolute top-32 w-[90%]'
+        src="/images/identidad/elementos web-18.png" alt="" />
       </div>
+      
+
+      {/* <div className='flex items-center justify-center mt-24 '>
+         <img
+        className='absolute top-28 md:w-[1100px]' 
+        src="/images/transparentes/texto_losmejoresstickers-16.png" alt="" /> 
+      </div> */}
 
       {/* <h1 className='px-3 md:px-0 text-center mt-24 text-primary-blueDark mt-26 text-4xl md:text-5xl uppercase font-montserrat font-extrabold font-outline-2'>
         Tus calcomanías a un click de distancia</h1> */}
 
-      <p className='text-center mt-56 text-4xl font-bold text-gray-800 '>Productos completamente personalizados</p>  
+      <p className='text-center mt-0 text-4xl font-bold text-gray-800 -translate-y-32 '>
+        Productos completamente personalizados</p>  
       
-      <div className='mt-7 flex items-center justify-center'>
+      <div className='mt-7 flex items-center justify-center -translate-y-32 '>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 
           <div
@@ -53,7 +63,7 @@ export default function Home() {
       </div>
       <div className='mb-14'></div>
 
-      <div className='bg-secondary-blueLight flex flex-col space-y-14'>
+      <div className='bg-secondary-blueLight flex flex-col space-y-14 -translate-y-32'>
       <p className='mt-14 text-center text-5xl font-bold uppercase text-gray-900'>Los mejores stickers</p>
       {/* <img className='' src="/images/transparentes/texto_losmejoresstickers-16.png" alt="" /> */}
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
@@ -78,8 +88,9 @@ export default function Home() {
 
      
 
-     <div className=' bg-white flex flex-wrap items-center justify-center 
-                        space-x-0 md:space-x-40 mt-14 md:mt-0'>
+     <div 
+     className='flex flex-wrap h-[575px] items-center justify-center 
+     space-x-0 md:space-x-40 mt-0 md:mt-0  -translate-y-32'>
 
         <div className='mb-14 flex flex-col items-center justify-center space-y-6'>
           <p className='text-center text-5xl font-bold text-gray-900'>¿Aún no estás <br /> convencido?</p>
@@ -91,9 +102,9 @@ export default function Home() {
           </Link>
         </div>
         
-        <div className='flex flex-col items-center justify-center'>
-          <img className='h-[600px]' src="./images/KWALIHOLA-10 1.png" alt="muestras" />
-          <img className='absolute h-[195px] ml-96 mb-9' src="./images/MUESTRAS MOCKUP-04 1.png" alt="muestras" />
+        <div className='flex flex-col items-center justify-center '>
+          <img className='h-[800px]' src="./images/KWALIHOLA-10 1.png" alt="muestras" />
+          <img className='absolute h-[250px] ml-[500px] mb-0' src="./images/MUESTRAS MOCKUP-04 1.png" alt="muestras" />
         </div>
       
      </div>

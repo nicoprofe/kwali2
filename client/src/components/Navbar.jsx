@@ -8,7 +8,7 @@ import { RiAdminFill } from 'react-icons/ri'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { useAuthStatus } from '../hooks/useAuthStatus'
 import Spinner from './Spinner'
-import SidePanelContainer from './SidePanelContainer'
+import SidePanel from './SidePanel'
 import { useCart } from '../TuPutaHermanContext'
 import { createPortal } from 'react-dom'
 
@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
    
-        <nav className={ `z-96 bg-secondary-blueLight border-b-3 border-b-gray-400 shadow-lg ${
+        <nav className={ `z-50 bg-secondary-blueLight border-b-3 border-b-gray-400 shadow-lg ${
             isPanelOpen ? 
             "sticky top-0" 
             : ""}`}>
@@ -254,7 +254,7 @@ const Navbar = () => {
             </div>
     
             <div>
-                <SidePanelContainer
+                <SidePanel
                 isPanelOpen={isPanelOpen}/>
             </div>
             
