@@ -12,7 +12,7 @@ import ComoOrdenar from './pages/ComoOrdenar'
 import Productos from './pages/Productos'
 import Stickers from './pages/Stickers'
 import Etiquetas from './pages/Etiquetas'
-import StickersDePiso from './pages/StickersDePiso'
+import StickersDePiso from './pages/StickersParaPiso'
 import Imanes from './pages/Imanes'
 import WaterActivatedTape from './pages/WaterActivatedTape'
 import PlanillasDeStickers from './pages/PlanillasDeStickers'
@@ -47,6 +47,7 @@ import ScrollToTop from './components/ScrollToTop'
 import Producto from './components/Producto'
 import SidePanelContainer from './components/SidePanelContainer'
 import RootLayout from './pages/RootLayout'
+import StickersParaPiso from './pages/StickersParaPiso'
 
 
 
@@ -96,7 +97,7 @@ function App() {
         <Route path='/etiquetas/ovaladas' element={<Ovaladas/>}/>
         <Route path='/etiquetas/cuadradas' element={<Cuadradas/>}/>
         <Route path='/etiquetas/rectangulares' element={<Rectangulares/>}/>
-        <Route path='/stickers-de-piso' element={<StickersDePiso/>}/>
+        <Route path='/stickers-para-piso' element={<StickersParaPiso/>}/>
         <Route path='/imanes' element={<Imanes/>}/>
         <Route path='/water-activated-tape' element={<WaterActivatedTape/>}/>
         <Route path='planillas-de-stickers' element={<PlanillasDeStickers/>}/>

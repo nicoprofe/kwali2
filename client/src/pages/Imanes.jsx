@@ -85,7 +85,7 @@ export default function Imanes({imgSrc, product, description}) {
         </div> */}
 
         <div className='flex flex-col items-center justify-center px-6 md:px-0 space-y-6 mb-16 mt-16'>
-           <p className='text-4xl font-semibold text-gray-900'>Magnéticos</p>
+           <p className='text-4xl font-semibold text-gray-900'>Imanes</p>
            <p className='text-gray-900 font-semibold'>Promociona tu marca con nuestros imanes cortados en la<br />
            forma de tu diseño, fáciles de adherir a superficies metálicas<br />
            como autos, refiregeradores, etc.</p>

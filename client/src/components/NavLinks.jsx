@@ -54,9 +54,9 @@ const NavLinks = ({ toggleHamburguer}) => {
                 ],
               },
             {
-                Head: "Stickers de piso",
+                Head: "Stickers para piso",
                 sublink: [
-                    {name: "Stickers de piso", link: "/stickers-de-piso"},
+                    {name: "Stickers para piso", link: "/stickers-para-piso"},
                     
                 ],
               },

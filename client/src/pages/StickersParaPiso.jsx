@@ -4,7 +4,7 @@ import { BsQuestionLg } from 'react-icons/bs'
 import { Wallet, initMercadoPago } from '@mercadopago/sdk-react'
 import axios from 'axios'
 
-export default function StickersDePiso({imgSrc, product, description}) {
+export default function StickersParaPiso({imgSrc, product, description}) {
   // MasterCard 5120 6944 7061 6271, 123 1125
   // Visa 4509 9535 6623 3704, 123 1125
 
