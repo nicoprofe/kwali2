@@ -5,6 +5,10 @@ import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
 import NecesitasAyudaConTusArchivos from '../components/NecesitasAyudaConTusArchivos'
 import { Link } from 'react-router-dom'
+import lineasDeCorte from '../imagesOutsidePublic/infografia-lineas de corte.jpg'
+import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.jpg'
+import tipoDeCorte from '../imagesOutsidePublic/infografia- tipo de corte.jpg'
+import ejemploDeWaterTape from '../imagesOutsidePublic/infografia- water tape.jpg'
 
 export default function ComoOrdenar() {
   const videoId = "Gf_1NScMeFE"
@@ -46,7 +50,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalLineaDeCorte.isOpen}
                 onClose={modalLineaDeCorte.closeModal}>
-                  <img className='md:h-[550px]' src="/images/informativos/infografia- lineas de corte.jpg" alt="" />
+                  <img className='md:h-[550px]' src={lineasDeCorte} alt="" />
                 </Modal>
 
                 <button 
@@ -55,7 +59,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalTamanos.isOpen}
                 onClose={modalTamanos.closeModal}>
-                  <img className='md:h-[550px]' src="/images/informativos/infografia- seleccion tamano.jpg" alt="" />
+                  <img className='md:h-[550px]' src={seleccionTamano} alt="" />
                 </Modal>
 
                 <button
@@ -64,7 +68,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalCortesSuaje.isOpen}
                 onClose={modalCortesSuaje.closeModal}>
-                  <img className='md:h-[550px]' src="/images/informativos/infografia- tipo de corte.jpg" alt="" />
+                  <img className='md:h-[550px]' src={tipoDeCorte} alt="" />
                 </Modal>
 
               </div>
@@ -81,7 +85,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalEjemploDeWaterTape.isOpen}
                 onClose={modalEjemploDeWaterTape.closeModal}>
-                  <img className='h-[550px]' src="/images/informativos/infografia- water tape.jpg" alt="" />
+                  <img className='h-[550px]' src={ejemploDeWaterTape} alt="" />
                 </Modal>
               </div>
 
