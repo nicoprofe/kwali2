@@ -19,7 +19,8 @@ import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.
 import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño personalizado.jpg'
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
-import ModalHover from './ModalHover'
+import tipoDeCorte from '../imagesOutsidePublic/infografia- tipo de corte.jpg'
+import guiaDeFormas from '../imagesOutsidePublic/guia formas-01.jpg'
 
 const priceTable = {
     '5x5': [16.0, 9.6, 6.6, 5.9, 5.3, 4.8, 4.3],
@@ -348,7 +349,7 @@ useEffect(() => {
                                         onClose={modalKissDie.closeModal}>
                                             <img
                                             className='w-full md:h-[660px]' 
-                                            src="/images/informativos/infografia- tipo de corte.jpg" alt="" />
+                                            src={tipoDeCorte} alt="" />
                                         </Modal>
 
                                     </div>
@@ -377,7 +378,7 @@ useEffect(() => {
                                         onClose={modalForma.closeModal}>
                                             <img
                                             className='w-full md:h-[660px]' 
-                                            src="/images/informativos/guia formas-01.jpg" alt="" />
+                                            src={guiaDeFormas} alt="" />
                                         </Modal>
 
                                     </div>
