@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import Accordion from '../components/Accordion'
+import { Link } from 'react-router-dom'
 
 export default function Faq() {
   
@@ -340,9 +341,10 @@ export default function Faq() {
       </div>
 
       <div className='grid place-items-center mt-20 mb-20'>
-      <button className=' bg-secondary-blueLight hover:bg-sky-300 active:bg-sky-400
+      <Link to={'/contacto'}
+      className=' bg-secondary-blueLight hover:bg-sky-300 active:bg-sky-400
       transition duration-150 ease-in-out px-10 md:px-12 py-2 rounded text-lg md:text-xl text-gray-900 active:text-white font-medium'>¿No encuentras lo que que estás buscando? 
-        <br /> Ponte en contacto con nostros</button>
+        <br /> Ponte en contacto con nostros</Link>
       </div>  
     
     

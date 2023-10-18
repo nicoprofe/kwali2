@@ -40,7 +40,7 @@ export default function Productos() {
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> metal gold</p>
           </Link>
           <div className='mt-14 md:mt-0'>
-          <Link to='/stickers-de-piso'>
+          <Link to='/stickers-para-piso'>
             <img className='h-64 mx-auto' src="/images/productos/ejemplo-piso.jpg" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> para piso</p>
           </Link>

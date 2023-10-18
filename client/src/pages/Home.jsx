@@ -49,7 +49,7 @@ export default function Home() {
           <div className='absolute bg-secondary-green rounded-full p-32'/>
           </div>
           <div
-          onClick={() => navigate('/stickers-de-piso')}
+          onClick={() => navigate('/stickers-para-piso')}
            className='flex flex-col items-center justify-center cursor-pointer'>
           <img className='z-10 h-[300px]' src="/images/piso2-10 1.png" alt="productos" />
           <p className='uppercase text-2xl text-gray-700 font-bold '>Para piso</p>

@@ -4,6 +4,7 @@ import { style } from '../components/Styles'
 import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
 import NecesitasAyudaConTusArchivos from '../components/NecesitasAyudaConTusArchivos'
+import { Link } from 'react-router-dom'
 
 export default function ComoOrdenar() {
   const videoId = "Gf_1NScMeFE"
@@ -45,7 +46,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalLineaDeCorte.isOpen}
                 onClose={modalLineaDeCorte.closeModal}>
-                  <img className='md:h-[550px]' src="/images/informativos/infografia-lineas de corte.jpg" alt="" />
+                  <img className='md:h-[550px]' src="/images/informativos/infografia- lineas de corte.jpg" alt="" />
                 </Modal>
 
                 <button 
@@ -54,7 +55,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalTamanos.isOpen}
                 onClose={modalTamanos.closeModal}>
-                  <img className='md:h-[550px]' src="/images/informativos/infografia-seleccion tamano.jpg" alt="" />
+                  <img className='md:h-[550px]' src="/images/informativos/infografia- seleccion tamano.jpg" alt="" />
                 </Modal>
 
                 <button
@@ -63,7 +64,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalCortesSuaje.isOpen}
                 onClose={modalCortesSuaje.closeModal}>
-                  <img className='md:h-[550px]' src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
+                  <img className='md:h-[550px]' src="/images/informativos/infografia- tipo de corte.jpg" alt="" />
                 </Modal>
 
               </div>
@@ -80,7 +81,7 @@ export default function ComoOrdenar() {
                 <Modal
                 isOpen={modalEjemploDeWaterTape.isOpen}
                 onClose={modalEjemploDeWaterTape.closeModal}>
-                  <img className='h-[550px]' src="/images/informativos/infografia-water tape.jpg" alt="" />
+                  <img className='h-[550px]' src="/images/informativos/infografia- water tape.jpg" alt="" />
                 </Modal>
               </div>
 
@@ -221,8 +222,9 @@ export default function ComoOrdenar() {
           </div>
 
           <div className='flex items-center justify-center mb-10 md:mb-20'>
-              <button className=' text-gray-900 active:text-white bg-secondary-blueLight hover:bg-sky-300 active:bg-sky-400
-              transition duration-150 ease-in-out rounded px-6 md:px-12 py-2 font-medium text-lg md:text-2xl uppercase'>Ir a comprar</button>
+              <Link to={'/productos'} 
+              className=' text-gray-900 active:text-white bg-secondary-blueLight hover:bg-sky-300 active:bg-sky-400
+              transition duration-150 ease-in-out rounded px-6 md:px-12 py-2 font-medium text-lg md:text-2xl uppercase'>Ir a comprar</Link>
           </div>
           
 
