@@ -25,7 +25,7 @@ const NavLinks = ({ toggleHamburguer}) => {
                     {name: "Todos los productos", link: "/productos"},
                     {name: "Stickers", link: "/stickers"},
                     {name: "Etiquetas", link: "/etiquetas"},
-                    {name: "Stickers de piso", link: "/stickers-de-piso"},
+                    {name: "Stickers para piso", link: "/stickers-para-piso"},
                     {name: "Imanes", link: "/imanes"},
                     {name: "Water activated tape", link: "/water-activated-tape"},
                     {name: "Planillas de stickers", link: "/planillas-de-stickers"},

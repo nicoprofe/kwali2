@@ -5,7 +5,7 @@ export default function Espejo() {
   return (
     <div>
       <Producto3
-      imgSrc="/images/productos/ejemplo-espejo.png"
+      imgSrc="/images/productos/espejo.png"
       product="Stickers espejo"
       description={
         <>

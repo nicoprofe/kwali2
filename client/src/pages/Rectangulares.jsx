@@ -1,10 +1,10 @@
 import React from 'react'
-import Producto2 from '../components/Producto2'
+import Producto_Rectangular from '../components/Producto_Rectangular'
 
 export default function Rectangulares() {
   return (
     <div>
-      <Producto2
+      <Producto_Rectangular
       imgSrc="/images/productos/ejemplo-etiqueta rectangular.jpg"
       product="Etiquetas rectangulares"
       description={

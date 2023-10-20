@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
@@ -9,9 +9,26 @@ export default function PlantillasEditables() {
     const modalLineaDeCorte = useModal()
     const modalGuiaDeCorte = useModal()
 
+    const [ list, setList ] = useState([
+        {
+            text: 'Archivo para stickers 1',
+            file: '/plantillas/plantilla sticker.pdf',
+            category: 'stickers' ,
+        }
+    ])
+
 
   return (
     <div className='px-6 md:px-40 h-full'>
+
+      {/* <div>
+        <select>
+            <option value="all">Todas las plantillas</option>
+            <option value="stickers">Plantillas para Stickers</option>
+            <option value="etiquetas">Plantillas para Etiquetas</option>
+            <option value="waterTape">Plantillas para Water Activated Tape</option>
+        </select>
+      </div>   */}
 
       <h1 className='text-center font-semibold uppercase text-3xl text-gray-900 mt-8 mb-2'>Plantillas y Guías</h1>
       <p className='text-center font-semibold text-sm text-gray-900 mb-8'>Descarga nuestras plantillas y archivos</p>

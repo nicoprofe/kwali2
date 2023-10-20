@@ -1,10 +1,10 @@
 import React from 'react'
-import Producto2 from '../components/Producto2'
+import Producto_Ovalada from '../components/Producto_Ovalada'
 
 export default function Ovaladas() {
   return (
     <div>
-      <Producto2
+      <Producto_Ovalada
       imgSrc="/images/productos/ejemplo-etiquetas ovaladas.jpg"
       product="Etiquetas ovaladas"
       description={

@@ -5,7 +5,7 @@ export default function Holograficos() {
   return (
     <div>
       <Producto2
-      imgSrc="/images/productos/ejemplo-holografico.png"
+      imgSrc="/images/productos/holografico.png"
       product="Sticker holográficos"
       description={
         <>

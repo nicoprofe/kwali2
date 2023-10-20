@@ -8,7 +8,7 @@ export default function Modal({ isOpen, onClose, imageUrl, modalKey, children}) 
       <div className='fixed inset-0 bg-black opacity-50'></div>
 
       <div className='bg-white p-4 rounded-lg shadow-lg z-10'>
-        <div className='max-h-[80vh] overflow-y-auto md:overflow-hidden px-3'>
+        <div className='max-h-[80vh] overflow-y-auto px-3'>
            {children}
            
         </div>

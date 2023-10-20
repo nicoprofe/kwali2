@@ -6,6 +6,7 @@ import Modal from './Modal'
 import useTooltip from '../hooks/useTooltip'
 import Tooltip from './Tooltip'
 import { BsQuestionLg } from 'react-icons/bs'
+import { AiFillCheckCircle } from 'react-icons/ai'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { useCart } from '../TuPutaHermanContext'
 import { addDoc, collection, doc, getDoc, getFirestore, serverTimestamp, updateDoc } from 'firebase/firestore'
@@ -232,7 +233,11 @@ useEffect(() => {
 
             <div className='flex flex-col items-center justify-center mt-6 md:mt-0'>
 
-                    {imagePreviews.length === 0 && (
+                    <img
+                    className='h-[300px] md:h-[450px]' 
+                    src={imgSrc} alt={product} />
+
+                    {/* {imagePreviews.length === 0 && (
                         <img className='h-[300px] md:h-[450px]' src={imgSrc} alt="" />
                     )}
 
@@ -245,7 +250,7 @@ useEffect(() => {
                                 className='h-80 w-80 rounded' />
                             ))}
                         </div>
-                     )}
+                     )} */}
 
             </div>
 
@@ -295,7 +300,7 @@ useEffect(() => {
                                                 onClick={modalPersonalizado.openModal}
                                                 className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
                                                     <BsQuestionLg/>
-                                                </div>
+                                            </div>
 
                                             <Modal
                                             isOpen={modalPersonalizado.isOpen}
@@ -419,9 +424,10 @@ useEffect(() => {
                                         </div>
                                    
 
-                                    <div>
-                                        <label className='bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
-                                        px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out'>
+                                    <div className='flex items-center justify-center space-x-2'>
+                                        <label 
+                                        className={`${imagePreviews.length > 0 ? 'ml-8' : ''} bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
+                                        px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out`}>
                                             Sube tu archivo
                                             <input 
                                             type="file"
@@ -430,6 +436,12 @@ useEffect(() => {
                                             onChange={(e) => handleImagePreview(e)}
                                             style={{display: "none"}} />
                                         </label>
+
+                                        {imagePreviews.length > 0 && (
+                                            <AiFillCheckCircle
+                                            className='text-2xl text-secondary-green'/>
+                                        )}
+                                        
                                     </div>
 
                                     <div>
@@ -439,6 +451,7 @@ useEffect(() => {
                                         bg-gray-300 hover:bg-gray-400 active:bg-slate-500 transition duration-200 ease-in-out'>
                                             Guía de impresión avanzada
                                         </button>
+                                        
                                         <Modal
                                         isOpen={modalImpresion.isOpen}
                                         onClose={modalImpresion.closeModal}>

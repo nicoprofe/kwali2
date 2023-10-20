@@ -226,8 +226,8 @@ export default function Faq() {
       category: 'compra',
     },
     {
-      question: '¿Cómo puedo repetir un pedido?',
-      answer: 'En tu historial de pedidos, podrás ver un botón de “repetir pedido”, al hacer clic este pedido se volverá a agregar a tu carrito listo para comprar de nuevo, solo tienes que pagar y listo; no tendrás que volver a mandar tus archivos o esperar pruebas de impresión. Recuerda que al repetir pedido no puedes hacer ningún tipo de modificación a este, por lo que si deseas hacerlo tendrás que realizar un pedido nuevo.',
+      question: '¿Puedo obtner muestras gratis?',
+      answer: 'Te invitamos a adquirir nuestro paquete de muestras pagando únicamente el costo de envío, esto para que puedas conocer todas las cualidades de nuestros distintos materiales.',
       category: 'compra',
     },
     {

@@ -6,6 +6,7 @@ import Modal from './Modal'
 import useTooltip from '../hooks/useTooltip'
 import Tooltip from './Tooltip'
 import { BsQuestionLg } from 'react-icons/bs'
+import { AiFillCheckCircle } from 'react-icons/ai'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { useCart } from '../TuPutaHermanContext'
 import { addDoc, collection, doc, getDoc, getFirestore, serverTimestamp, updateDoc } from 'firebase/firestore'
@@ -231,20 +232,9 @@ useEffect(() => {
 
             <div className='flex flex-col items-center justify-center mt-6 md:mt-0'>
 
-                    {imagePreviews.length === 0 && (
-                        <img className='h-[300px] md:h-[450px]' src={imgSrc} alt="" />
-                    )}
-
-                    {imagePreviews.length > 0 && (
-                        <div className='h-[400px] w-[450px] rounded-xl border-b-4 border-r-4 shadow-inner
-                        flex items-center justify-center'>
-                            
-                            {imagePreviews.map((previewUrl, index) => (
-                                <img src={previewUrl} key={index} alt={`Preview ${index}`}
-                                className='h-80 w-80 rounded' />
-                            ))}
-                        </div>
-                     )}
+                <img
+                className='h-[300px] md:h-[450px]' 
+                src={imgSrc} alt={product} />
 
             </div>
 
@@ -418,18 +408,25 @@ useEffect(() => {
                                         </div>
                                    
 
-                                    <div>
-                                        <label className='bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
-                                        px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out'>
-                                            Sube tu archivo
-                                            <input 
-                                            type="file"
-                                            required
-                                            accept='.jpg,.png,.jpeg'
-                                            onChange={(e) => handleImagePreview(e)}
-                                            style={{display: "none"}} />
-                                        </label>
-                                    </div>
+                                        <div className='flex items-center justify-center space-x-2'>
+                                            <label 
+                                            className={`${imagePreviews.length > 0 ? 'ml-8' : ''} bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
+                                            px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out`}>
+                                                Sube tu archivo
+                                                <input 
+                                                type="file"
+                                                required
+                                                accept='.jpg,.png,.jpeg'
+                                                onChange={(e) => handleImagePreview(e)}
+                                                style={{display: "none"}} />
+                                            </label>
+
+                                            {imagePreviews.length > 0 && (
+                                                <AiFillCheckCircle
+                                                className='text-2xl text-secondary-green'/>
+                                            )}
+                                        
+                                       </div>
 
                                     <div>
                                         <button

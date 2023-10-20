@@ -5,7 +5,7 @@ export default function MetalSilver() {
   return (
     <div>
       <Producto3
-      imgSrc="/images/productos/ejemplo-metalsilver.png"
+      imgSrc="/images/productos/silver.png"
       product="Stickers metal silver"
       description={
         <>

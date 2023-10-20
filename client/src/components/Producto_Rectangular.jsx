@@ -20,18 +20,20 @@ import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.
 import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño personalizado.jpg'
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
-import ModalHover from './ModalHover'
+import tipoDeCorte from '../imagesOutsidePublic/infografia- tipo de corte.jpg'
+import guiaDeFormas from '../imagesOutsidePublic/guia formas-01.jpg'
 
 const priceTable = {
-    '5x5': [20.0, 12.4, 10.0, 9.0, 8.0, 6.8, 5.4],
-    '7.5x7.5': [24.0, 14.9, 12.0, 10.8, 9.6, 8.2, 6.5],
-    '10x10': [27.0, 16.7, 13.5, 12.2, 10.8, 9.2, 7.3],
-  };
+    '2x1': [2.5, 2.1, 2.0, 1.8],
+    '4x2': [4.0, 3.4, 3.2, 2.8],
+    '5x2.5': [2.5, 2.1, 2.0, 1.8],
+    '10x5': [4.0, 3.4, 3.2, 2.8],
+  }
   
-const quantityIndexes = [25, 50, 100, 200, 300, 500, 1000]
+const quantityIndexes = [100, 200, 300, 500]
 
-// HOLOGRAFICO
-export default function Producto2({ imgSrc, product, description }) {
+// OVALADA? RECTANGULAR
+export default function Producto_Ovalada({ imgSrc, product, description }) {
     // CONFIGS
     const navigate = useNavigate()
     const auth = getAuth()
@@ -67,9 +69,9 @@ export default function Producto2({ imgSrc, product, description }) {
     const modalImpresion = useModal()
     const modalCorte = useModal()
 
-    const [size, setSize] = useState('5x5');
-    const [quantity, setQuantity] = useState(25);
-    const [unitPrice, setUnitPrice] = useState(16.0);
+    const [size, setSize] = useState('2x1');
+    const [quantity, setQuantity] = useState(100);
+    const [unitPrice, setUnitPrice] = useState(2.5);
     const [ currentPrice, setCurrentPrice ] = useState(0.0)
 
     useEffect(() => {
@@ -232,9 +234,9 @@ useEffect(() => {
 
             <div className='flex flex-col items-center justify-center mt-6 md:mt-0'>
 
-                <img
-                className='h-[300px] md:h-[450px]' 
-                src={imgSrc} alt={product} />
+              <img 
+              className='h-[300px] md:h-[450px]' 
+              src={imgSrc} alt={product} />
 
             </div>
 
@@ -255,9 +257,10 @@ useEffect(() => {
                                         value={size}
                                         style={{width: '165px'}}
                                         onChange={(e) => setSize(e.target.value)}>
-                                          <option value="5x5">5x5</option>
-                                          <option value="7.5x7.5">7.5x7.5</option>
-                                          <option value="10x10">10x10</option>
+                                          <option value="2x1">2x1</option>
+                                          <option value="4x2">4x2</option>
+                                          <option value="5x2.50">5x2.5</option>
+                                          <option value="10x5">10x5</option>
                                         </select>
 
                                         <div 
@@ -281,14 +284,14 @@ useEffect(() => {
                                             <Link className='underline' to={'/contacto'}>Ponte en contacto con nosotros.</Link>
                                             </p>
                                             <div 
-                                                onClick={modalKissDie.openModal}
+                                                onClick={modalPersonalizado.openModal}
                                                 className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
                                                     <BsQuestionLg/>
                                                 </div>
 
                                             <Modal
-                                            isOpen={modalKissDie.isOpen}
-                                            onClose={modalKissDie.closeModal}>
+                                            isOpen={modalPersonalizado.isOpen}
+                                            onClose={modalPersonalizado.closeModal}>
                                                 <img
                                                 className='w-full md:h-[660px]' 
                                                 src={tamanoPersonalizado} alt="" />
@@ -315,61 +318,6 @@ useEffect(() => {
                                                 </>
 
                                             </Modal>
-                                    </div>
-
-                                    <div className='flex items-center justify-center space-x-2'>
-                                            <p>Corte</p>
-                                            <select
-                                            id='corte' 
-                                            onChange={(e) => setCorte(e.target.value)}
-                                            style={{width: "190px"}}>
-                                            <option value="kis-cut">Kiss-cut</option>
-                                            <option value="die-cut">Die-cut</option>
-                                            </select>
-
-                                            <div 
-                                            onClick={modalKissDie.openModal}
-                                            className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                                <BsQuestionLg/>
-                                            </div>
-
-                                        <Modal
-                                        isOpen={modalKissDie.isOpen}
-                                        onClose={modalKissDie.closeModal}>
-                                            <img
-                                            className='w-full md:h-[660px]' 
-                                            src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
-                                        </Modal>
-
-                                    </div>
-
-                                    <div className='flex items-center justify-center space-x-2'>
-                                            <p>Forma</p>
-                                            <select
-                                            id='forma' 
-                                            onChange={(e) => setForma(e.target.value)}
-                                            style={{width: "181px"}}>
-                                            <option value="circular">Circular</option>
-                                            <option value="cuadrado">Cuadrado</option>
-                                            <option value="rectangular">Rectangular</option>
-                                            <option value="personalizado">Personalizado</option>
-                                           
-                                            </select>
-
-                                            <div 
-                                            onClick={modalForma.openModal}
-                                            className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                                <BsQuestionLg/>
-                                            </div>
-
-                                        <Modal
-                                        isOpen={modalForma.isOpen}
-                                        onClose={modalForma.closeModal}>
-                                            <img
-                                            className='w-full md:h-[660px]' 
-                                            src="/images/informativos/guia formas-01.jpg" alt="" />
-                                        </Modal>
-
                                     </div>
 
                                     <div className='flex items-center justify-center space-x-2'>
@@ -408,25 +356,25 @@ useEffect(() => {
                                         </div>
                                    
 
-                                        <div className='flex items-center justify-center space-x-2'>
-                                            <label 
-                                            className={`${imagePreviews.length > 0 ? 'ml-8' : ''} bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
-                                            px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out`}>
-                                                Sube tu archivo
-                                                <input 
-                                                type="file"
-                                                required
-                                                accept='.jpg,.png,.jpeg'
-                                                onChange={(e) => handleImagePreview(e)}
-                                                style={{display: "none"}} />
-                                            </label>
+                                    <div className='flex items-center justify-center space-x-2'>
+                                        <label 
+                                        className={`${imagePreviews.length > 0 ? 'ml-8' : ''} bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
+                                        px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out`}>
+                                            Sube tu archivo
+                                            <input 
+                                            type="file"
+                                            required
+                                            accept='.jpg,.png,.jpeg'
+                                            onChange={(e) => handleImagePreview(e)}
+                                            style={{display: "none"}} />
+                                        </label>
 
-                                            {imagePreviews.length > 0 && (
-                                                <AiFillCheckCircle
-                                                className='text-2xl text-secondary-green'/>
-                                            )}
+                                        {imagePreviews.length > 0 && (
+                                            <AiFillCheckCircle
+                                            className='text-2xl text-secondary-green'/>
+                                        )}
                                         
-                                       </div>
+                                    </div>
 
                                     <div>
                                         <button

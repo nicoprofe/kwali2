@@ -1,10 +1,10 @@
 import React from 'react'
-import Producto2 from '../components/Producto2'
+import Producto_Redonda_Cuadrada from '../components/Producto_Rendonda_Cuadrada'
 
 export default function Cuadradas() {
   return (
     <div>
-      <Producto2
+      <Producto_Redonda_Cuadrada
       imgSrc="/images/productos/ejemplo-etiquetas cuadradas.jpg"
       product="Etiquetas cuadradas"
       description={

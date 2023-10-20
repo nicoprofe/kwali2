@@ -1,10 +1,10 @@
 import React from 'react'
-import Producto from '../components/Producto'
+import Producto_Planilla_Stickers from '../components/Producto_Planilla_Stickers'
 
 export default function PlanillasDeStickers() {
   return (
     <div>
-      <Producto
+      <Producto_Planilla_Stickers
       imgSrc='/images/productos/ejemplo_planilla stickers.png'
       product='Planillas de stickers'
       description={

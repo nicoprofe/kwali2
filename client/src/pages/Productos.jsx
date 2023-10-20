@@ -16,7 +16,7 @@ export default function Productos() {
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> mate</p>
           </Link>
           <Link to='/stickers/holograficos'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo-holografico.png" alt="" />
+            <img className='h-64 mx-auto' src="/images/productos/holografico.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> holográficos</p>
           </Link>
           <Link to='/stickers/brillantes'>
@@ -28,15 +28,15 @@ export default function Productos() {
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> transparentes</p>
           </Link>
           <Link to='/stickers/espejo'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo-espejo.png" alt="" />
+            <img className='h-64 mx-auto' src="/images/productos/espejo.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> espejo</p>
           </Link>
           <Link to='/stickers/metal-silver'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo-metalsilver.png" alt="" />
+            <img className='h-64 mx-auto' src="/images/productos/silver.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> metal silver</p>
           </Link>
           <Link to='/stickers/metal-gold'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo-metalgold.png" alt="" />
+            <img className='h-64 mx-auto' src="/images/productos/gold.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> metal gold</p>
           </Link>
           <div className='mt-14 md:mt-0'>
@@ -48,7 +48,7 @@ export default function Productos() {
           <div className='mt-14'>
           <Link to='/imanes' className='mt-14'>
             <img className='h-64 mx-auto' src="/images/productos/ejemplo-iman.png" alt="" />
-            <p className='text-center uppercase font-semibold text-xl mt-4'>Magnéticos</p>
+            <p className='text-center uppercase font-semibold text-xl mt-4'>Imanes</p>
           </Link>
           </div>
           <div className='mt-14'>

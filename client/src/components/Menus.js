@@ -25,9 +25,9 @@ export const COMOORDENAR = [
     {name: "Guia de impresión", link:"/como-ordenar"},
 ]
 export const CONTACTO = [
-    {name: "info@kwaly.us", link:"/"},
-    {name: "Mexicali BC", link:"/"},
-    {name: "+52 686 945 8899", link:"/"},
+    {name: "info@kwaly.us", link:"/contacto"},
+    {name: "Mexicali BC", link:"/contacto"},
+    {name: "+52 686 945 8899", link:"/contacto"},
 ]
 
 export const Icons = [

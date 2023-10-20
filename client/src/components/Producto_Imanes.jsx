@@ -20,18 +20,26 @@ import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.
 import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño personalizado.jpg'
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
-import ModalHover from './ModalHover'
+import tipoDeCorte from '../imagesOutsidePublic/infografia- tipo de corte.jpg'
+import guiaDeFormas from '../imagesOutsidePublic/guia formas-01.jpg'
 
 const priceTable = {
-    '5x5': [20.0, 12.4, 10.0, 9.0, 8.0, 6.8, 5.4],
-    '7.5x7.5': [24.0, 14.9, 12.0, 10.8, 9.6, 8.2, 6.5],
-    '10x10': [27.0, 16.7, 13.5, 12.2, 10.8, 9.2, 7.3],
-  };
+    '8.5x11': [160.0, 136.0, 128.0, 112.0],
+    '11x17': [250.0, 213.0, 200.0, 175.0],
+    '10x20': [260.0, 221.0, 208.0, 182.0],
+    '18x24': [390.0, 332.0, 312.0, 273.0],
+    '24x24': [450.0, 383.0, 360.0, 315.0],
+    '22x28': [160.0, 136.0, 128.0, 112.0],
+    '28x43': [250.0, 213.0, 200.0, 175.0],
+    '25x51': [260.0, 221.0, 208.0, 182.0],
+    '46x61': [390.0, 332.0, 312.0, 273.0],
+    '61x61': [450.0, 383.0, 360.0, 315.0],
+  }
   
-const quantityIndexes = [25, 50, 100, 200, 300, 500, 1000]
+const quantityIndexes = [1, 2, 4, 10]
 
-// HOLOGRAFICO
-export default function Producto2({ imgSrc, product, description }) {
+// IMANES
+export default function Producto_Imanes({ imgSrc, product, description }) {
     // CONFIGS
     const navigate = useNavigate()
     const auth = getAuth()
@@ -44,8 +52,8 @@ export default function Producto2({ imgSrc, product, description }) {
 
     const modalTamano = useModal()
     const modalPersonalizado = useModal()
-    const modalKissDie = useModal()
-    const modalForma = useModal()
+    const modalLongitud = useModal()
+    const modalColor = useModal()
 
     const [ delayedClose, setDelayedClose ] = useState(false)
 
@@ -67,9 +75,9 @@ export default function Producto2({ imgSrc, product, description }) {
     const modalImpresion = useModal()
     const modalCorte = useModal()
 
-    const [size, setSize] = useState('5x5');
-    const [quantity, setQuantity] = useState(25);
-    const [unitPrice, setUnitPrice] = useState(16.0);
+    const [size, setSize] = useState('8.5x11');
+    const [quantity, setQuantity] = useState(1);
+    const [unitPrice, setUnitPrice] = useState(160.0);
     const [ currentPrice, setCurrentPrice ] = useState(0.0)
 
     useEffect(() => {
@@ -88,11 +96,11 @@ export default function Producto2({ imgSrc, product, description }) {
     const discountPercentage = ((baseUnitPrice - unitPrice) / baseUnitPrice) * 100;
 
     
-    // CORTE
-    const [ corte, setCorte] = useState('kis-cut')
+    // LONGITUD
+    const [ longitud, setLongitud] = useState('1')
 
-    // FORMA
-    const [ forma, setForma ] = useState('circular')
+    // COLORES
+    const [ color, setColor] = useState('blanco')
    
    // IMAGE PREVIEW
     const [ imagePreviews, setImagePreviews ] = useState([])
@@ -129,8 +137,7 @@ export default function Producto2({ imgSrc, product, description }) {
                     imgSrc: imgSrc,
                     product: product,
                     size: size,
-                    corte: corte,
-                    forma: forma,
+                    longitud: longitud,
                     quantity: quantity,
                     price: currentPrice,
                     userRef: auth.currentUser.uid,
@@ -255,9 +262,16 @@ useEffect(() => {
                                         value={size}
                                         style={{width: '165px'}}
                                         onChange={(e) => setSize(e.target.value)}>
-                                          <option value="5x5">5x5</option>
-                                          <option value="7.5x7.5">7.5x7.5</option>
-                                          <option value="10x10">10x10</option>
+                                          <option value="8.5x11">8.5x11</option>
+                                          <option value="11x17">11x17</option>
+                                          <option value="10x20">10x20</option>
+                                          <option value="18x24">18x24</option>
+                                          <option value="24x24">24x24</option>
+                                          <option value="22x28">22x28</option>
+                                          <option value="28x43">28x43</option>
+                                          <option value="25x51">25x51</option>
+                                          <option value="46x61">46x61</option>
+                                          <option value="61x61">61x61</option>
                                         </select>
 
                                         <div 
@@ -281,14 +295,14 @@ useEffect(() => {
                                             <Link className='underline' to={'/contacto'}>Ponte en contacto con nosotros.</Link>
                                             </p>
                                             <div 
-                                                onClick={modalKissDie.openModal}
+                                                onClick={modalPersonalizado.openModal}
                                                 className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
                                                     <BsQuestionLg/>
                                                 </div>
 
                                             <Modal
-                                            isOpen={modalKissDie.isOpen}
-                                            onClose={modalKissDie.closeModal}>
+                                            isOpen={modalPersonalizado.isOpen}
+                                            onClose={modalPersonalizado.closeModal}>
                                                 <img
                                                 className='w-full md:h-[660px]' 
                                                 src={tamanoPersonalizado} alt="" />
@@ -317,57 +331,29 @@ useEffect(() => {
                                             </Modal>
                                     </div>
 
-                                    <div className='flex items-center justify-center space-x-2'>
-                                            <p>Corte</p>
+                                    <div className='flex items-center justify-center space-x-2 mr-3'>
+                                            <p>Color</p>
                                             <select
-                                            id='corte' 
-                                            onChange={(e) => setCorte(e.target.value)}
-                                            style={{width: "190px"}}>
-                                            <option value="kis-cut">Kiss-cut</option>
-                                            <option value="die-cut">Die-cut</option>
+                                            id='color' 
+                                            onChange={(e) => setColor(e.target.value)}
+                                            style={{width: "202px"}}>
+                                            <option value="blanco">blanco</option>
+                                            <option value="manila">manila</option>
+                                            <option value="nieve">nieve</option>
                                             </select>
 
                                             <div 
-                                            onClick={modalKissDie.openModal}
+                                            onClick={modalColor.openModal}
                                             className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
                                                 <BsQuestionLg/>
                                             </div>
 
                                         <Modal
-                                        isOpen={modalKissDie.isOpen}
-                                        onClose={modalKissDie.closeModal}>
+                                        isOpen={modalColor.isOpen}
+                                        onClose={modalColor.closeModal}>
                                             <img
                                             className='w-full md:h-[660px]' 
-                                            src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
-                                        </Modal>
-
-                                    </div>
-
-                                    <div className='flex items-center justify-center space-x-2'>
-                                            <p>Forma</p>
-                                            <select
-                                            id='forma' 
-                                            onChange={(e) => setForma(e.target.value)}
-                                            style={{width: "181px"}}>
-                                            <option value="circular">Circular</option>
-                                            <option value="cuadrado">Cuadrado</option>
-                                            <option value="rectangular">Rectangular</option>
-                                            <option value="personalizado">Personalizado</option>
-                                           
-                                            </select>
-
-                                            <div 
-                                            onClick={modalForma.openModal}
-                                            className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                                <BsQuestionLg/>
-                                            </div>
-
-                                        <Modal
-                                        isOpen={modalForma.isOpen}
-                                        onClose={modalForma.closeModal}>
-                                            <img
-                                            className='w-full md:h-[660px]' 
-                                            src="/images/informativos/guia formas-01.jpg" alt="" />
+                                            src={tipoDeCorte} alt="" />
                                         </Modal>
 
                                     </div>
