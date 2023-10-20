@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
@@ -9,32 +9,137 @@ export default function PlantillasEditables() {
     const modalLineaDeCorte = useModal()
     const modalGuiaDeCorte = useModal()
 
+    const [ selectedCategory, setSelectedCategory ] = useState('all')
+
     const [ list, setList ] = useState([
         {
-            text: 'Archivo para stickers 1',
+            text: 'Archivo para sticker',
             file: '/plantillas/plantilla sticker.pdf',
             category: 'stickers' ,
-        }
+        },
+        {
+            text: 'Archivo para sticker circular',
+            file: '/plantillas/plantilla etiqueta circular.pdf',
+            category: 'stickers' ,
+        },
+        {
+            text: 'Archivo para sticker cuadrado',
+            file: '/plantillas/plantilla etiqueta cuadrado.pdf',
+            category: 'stickers' ,
+        },
+        {
+            text: 'Archivo para sticker rectangular',
+            file: '/plantillas/plantilla etiqueta rectangular.pdf',
+            category: 'stickers' ,
+        },
+        {
+            text: 'Archivo para etiqueta circular',
+            file: '/plantillas/plantilla etiqueta circular.pdf',
+            category: 'etiquetas' ,
+        },
+        {
+            text: 'Archivo para etiqueta ovalada',
+            file: '/plantillas/plantilla etiqueta ovalada.pdf',
+            category: 'etiquetas' ,
+        },
+        {
+            text: 'Archivo para etiqueta cuadrada',
+            file: '/plantillas/plantilla etiqueta cuadrada.pdf',
+            category: 'etiquetas' ,
+        },
+        {
+            text: 'Archivo para etiqueta 2.25x1.25 cuadrada',
+            file: '/plantillas/plantilla etiqueta 2.25x1.25_ rectangular.pdf',
+            category: 'etiquetas' ,
+        },
+        {
+            text: 'Archivo para etiqueta 2.75x4.25 cuadrada',
+            file: '/plantillas/plantilla etiqueta 2.75x4.25_ rectangular.pdf',
+            category: 'etiquetas' ,
+        },
+        {
+            text: 'Archivo para etiqueta 2x1 cuadrada',
+            file: '/plantillas/plantilla etiqueta 2x1_ rectangular.pdf',
+            category: 'etiquetas' ,
+        },
+        {
+            text: 'Archivo para etiqueta 3x5 cuadrada',
+            file: '/plantillas/plantilla etiqueta 3x5_ rectangular.pdf',
+            category: 'etiquetas' ,
+        },
+        {
+            text: 'Archivo para etiqueta 4x1.5 cuadrada',
+            file: '/plantillas/plantilla etiqueta 4x1.5_ rectangular.pdf',
+            category: 'etiquetas' ,
+        },
+        {
+            text: 'Archivo para etiqueta 4x6 cuadrada',
+            file: '/plantillas/plantilla etiqueta 4x6_ rectangular.pdf',
+            category: 'etiquetas' ,
+        },
+        {
+            text: 'Archivo para etiqueta 6x2.25 cuadrada',
+            file: '/plantillas/plantilla etiqueta 6x1.2.25_ rectangular.pdf',
+            category: 'etiquetas' ,
+        },
+        
     ])
+
+    const [ filteredList, setFilteredList ] = useState(list)
+
+    const handleChangeCategory = (event) => {
+        setSelectedCategory(event.target.value)
+    }
+
+    useEffect(() => {
+        if(selectedCategory === 'all') {
+            setFilteredList(list)
+        } else {
+            setFilteredList(list.filter((item) => item.category === selectedCategory))
+        }
+    }, [selectedCategory, list])
 
 
   return (
     <div className='px-6 md:px-40 h-full'>
 
-      {/* <div>
-        <select>
-            <option value="all">Todas las plantillas</option>
-            <option value="stickers">Plantillas para Stickers</option>
-            <option value="etiquetas">Plantillas para Etiquetas</option>
-            <option value="waterTape">Plantillas para Water Activated Tape</option>
-        </select>
-      </div>   */}
+        
 
       <h1 className='text-center font-semibold uppercase text-3xl text-gray-900 mt-8 mb-2'>Plantillas y Guías</h1>
       <p className='text-center font-semibold text-sm text-gray-900 mb-8'>Descarga nuestras plantillas y archivos</p>
 
+      <div>
+        <select
+        vavlue={selectedCategory}
+        onChange={handleChangeCategory}
+        className='text-gray-900 text-xl pl-6 pr-12 mb-8  font-medium underline tracking-wider
+        bg-gray-200 h-12 px-7 rounded shadow border-transparent ring-transparent outline-none
+        focus:border-transparent focus:ring-transparent focus:outline-none'>
+            <option value="all">Todas las plantillas</option>
+            <option value="stickers">Plantillas para Stickers</option>
+            <option value="etiquetas">Plantillas para Etiquetas</option>
+        </select>
+      </div>
+
+
+
       <div className='flex flex-col space-y-2 mb-12' >
-        <p className='whitespace-nowrap underline font-medium text-xl text-blue-600 hover:text-blue-800 duration-300'>
+
+      
+
+        {filteredList.map((item, key) => (
+            <>
+               <p 
+               key={key} 
+               className='whitespace-nowrap underline font-medium text-xl text-blue-600 hover:text-blue-800 duration-300'>
+                    <a href={item.file} download>{item.text}</a>
+               </p>
+            </>
+        ))}
+       
+       
+       
+        {/* <p className='whitespace-nowrap underline font-medium text-xl text-blue-600 hover:text-blue-800 duration-300'>
             <a href="/plantillas/plantilla sticker.pdf" download>Archivo para stickers 1</a>
         </p>
         <p className='whitespace-nowrap underline font-medium text-xl text-blue-600 hover:text-blue-800 duration-300'>
@@ -57,7 +162,7 @@ export default function PlantillasEditables() {
         </p>
         <p className='whitespace-nowrap underline font-medium text-xl text-blue-600 hover:text-blue-800 duration-300'>
             <a href="/plantillas/plantilla sticker.pdf" download>Archivo para Water Tape</a>
-        </p>
+        </p> */}
       </div>
 
       {/* <div className='flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-36 mb-12'>

@@ -324,11 +324,11 @@ export default function Faq() {
           <option value='compra'>Compra</option>
           <option value='contacto'>Contacto</option>
         </select>
-      </div>
+</div>
 
 
       <div className='h-full px-3 md:px-96 flex items-start justify-center'>
-        <div className='list'>
+        <div className=''>
           {filteredList.map((item, key) => (
             <Accordion
               key={key}
