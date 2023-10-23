@@ -9,7 +9,8 @@ export default function MetalSilver() {
       product="Stickers metal silver"
       description={
         <>
-            Stickers estilo metal silver. 
+            Stickers impresos en un vinilo estilo “plata” que crea un efecto metálico . <br />
+             Dale vida a tus diseños y llama la atención con nuestros stickers metálicos. 
         </>
       }/>
     </div>

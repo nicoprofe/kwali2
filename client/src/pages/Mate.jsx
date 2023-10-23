@@ -13,7 +13,7 @@ export default function Mate() {
        <>
             Stickers impresos en vinil blanco resistente al agua y al sol, <br/> 
             con un acabado suave no-reflejante. Perfectos para <br/>
-            promocionar tu marca o decorar tus ojetos.
+            promocionar tu marca o decorar tus objetos.
        </>
      }/>
 

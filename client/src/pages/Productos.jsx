@@ -7,10 +7,14 @@ export default function Productos() {
       <h1 className=' text-gray-900 font-semibold uppercase text-3xl text-center mt-6 mb-6'>Conoce todos nuestros productos</h1>
 
       <div className='bg-secondary-green'>
-        <p className='text-2xl text-gray-900 font-semibold uppercase text-center py-3'>Envíos gratis a partir de $999 o más</p>
+        <p className='text-2xl text-gray-900 font-semibold uppercase text-center py-3'>Envíos gratis a partir de $600mxn</p>
       </div>
 
-      <div className='sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 mb-10'>
+      <div className='sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mb-10'>
+          <Link to='/stickers/brillantes'>
+            <img className='h-64 mx-auto' src="/images/productos/ejemplo-brillante.png" alt="" />
+            <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> brillantes</p>
+          </Link>
           <Link to='/stickers/mate'>
             <img className='h-64 mx-auto' src="/images/productos/ejemplo-matte.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> mate</p>
@@ -19,10 +23,7 @@ export default function Productos() {
             <img className='h-64 mx-auto' src="/images/productos/holografico.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> holográficos</p>
           </Link>
-          <Link to='/stickers/brillantes'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo-brillante.png" alt="" />
-            <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> brillantes</p>
-          </Link>
+          
           <Link to='/stickers/transparentes'>
             <img className='h-64 mx-auto' src="/images/productos/ejemplo-transparente.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> transparentes</p>
@@ -70,12 +71,6 @@ export default function Productos() {
           </Link>
           </div>
           <div className='mt-14'>
-          <Link to='etiquetas/rectangulares' className='mt-14'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo-etiqueta rectangular.jpg" alt="" />
-            <p className='text-center uppercase font-semibold text-xl mt-6'>Etiquetas rectangulares</p>
-          </Link>
-          </div>
-          <div className='mt-14'>
           <Link to='/water-activated-tape' className='mt-14'>
             <img className='h-64 mx-auto' src="/images/productos/ejemplo-watertape.jpg" alt="" />
             <p className='text-center uppercase font-semibold text-xl mt-6'>Water activated tape</p>
@@ -83,7 +78,7 @@ export default function Productos() {
           </div>
           <div className='mt-14'>
           <Link to='/planillas-de-stickers' className='mt-14'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo_planilla stickers.png" alt="" />
+            <img className='h-64 mx-auto' src="/images/productos/planilla ejemplo-04.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl mt-6'>Planillas de stickers</p>
           </Link>
           </div>

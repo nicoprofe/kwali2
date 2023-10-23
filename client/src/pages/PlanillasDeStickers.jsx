@@ -5,13 +5,14 @@ export default function PlanillasDeStickers() {
   return (
     <div>
       <Producto_Planilla_Stickers
-      imgSrc='/images/productos/ejemplo_planilla stickers.png'
+      imgSrc='/images/productos/planilla ejemplo-04.png'
       product='Planillas de stickers'
       description={
         <>
-          Plantillas de stickers para que puedas conocer nuestros productos??? <br />
-          con un acabado suave no-reflejante. Perfectos para <br/>
-          promocionar tu marca o decorar tus ojetos.
+          Planilla de stickers con los diseños que quieras incluir. Impresa en un <br />
+           vinilo brillante resistente, perfecto para regalar y crear sets de <br />
+            stickers llamativos.
+
 
         </>
       }/>

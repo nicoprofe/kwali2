@@ -10,7 +10,7 @@ export default function Etiquetas() {
         <p className='text-2xl text-gray-900 font-semibold uppercase text-center py-3'>Envíos gratis a partir de $999 o más</p>
       </div>
 
-      <div className='sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 mb-10'>
+      <div className='sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mb-10'>
          
          <div className='mt-14'>
           <Link to='/etiquetas/circulares'>
@@ -28,12 +28,6 @@ export default function Etiquetas() {
           <Link to='/etiquetas/cuadradas' className='mt-14'>
             <img className='h-64 mx-auto' src="/images/productos/ejemplo-etiquetas cuadradas.jpg" alt="" />
             <p className='text-center uppercase font-semibold text-xl mt-6'>Etiquetas cuadradas</p>
-          </Link>
-          </div>
-          <div className='mt-14'>
-          <Link to='etiquetas/rectangulares' className='mt-14'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo-etiqueta rectangular.jpg" alt="" />
-            <p className='text-center uppercase font-semibold text-xl mt-6'>Etiquetas rectangulares</p>
           </Link>
           </div>
       </div>

@@ -35,8 +35,8 @@ const NavLinks = ({ toggleHamburguer}) => {
             {
                 Head: "Stickers",
                 sublink: [
-                    {name: "Mate", link: "/stickers/mate"},
                     {name: "Brillantes", link: "/stickers/brillantes"},
+                    {name: "Mate", link: "/stickers/mate"},
                     {name: "Holograficos", link: "/stickers/holograficos"},
                     {name: "Transparentes", link: "/stickers/transparentes"},
                     {name: "Espejo", link: "/stickers/espejo"},
@@ -50,7 +50,6 @@ const NavLinks = ({ toggleHamburguer}) => {
                     {name: "Circulares", link: "/etiquetas/circulares"},
                     {name: "Ovaladas", link: "/etiquetas/ovaladas"},
                     {name: "Cuadradas", link: "/etiquetas/cuadradas"},
-                    {name: "Rectangulares", link: "/etiquetas/rectangulares"},
                 ],
               },
             {

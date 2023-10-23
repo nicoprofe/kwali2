@@ -11,11 +11,10 @@ export default function Muestras() {
      product="Muestras"
      description={
        <>
-            Conoce la calidad de nuestros materiales con tus <br/> 
-            propia manos con este paquete de muestras de los <br/>
-            distintos productos que manejamos, con diseños <br />
-            originales de Kwali. Sin necesidad de mandar un <br />
-            diseño.
+            Conoce la calidad de nuestros materiales con tus propias manos, <br />
+             ¡Solo paga el envío! En este paquete encontrarás una muestra de <br />
+              cada uno de nuestros productos (a excepción de imanes).
+
        </>
      }/>
 

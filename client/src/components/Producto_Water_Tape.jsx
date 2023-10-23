@@ -29,7 +29,6 @@ const priceTable = {
     '60': [850.0],
   }
   
-const quantityIndexes = [1]
 
 // WATER TAPE
 export default function Producto_Water_Tape({ imgSrc, product, description }) {
@@ -45,11 +44,26 @@ export default function Producto_Water_Tape({ imgSrc, product, description }) {
 
     const modalTamano = useModal()
     const modalPersonalizado = useModal()
-    const modalLongitud = useModal()
-    const modalColor = useModal()
+    const modalKissDie = useModal()
+    const modalForma = useModal()
 
     const [ delayedClose, setDelayedClose ] = useState(false)
 
+    const [ size, setSize ] = useState('15');
+    const [ unitPrice, setUnitPrice ] = useState(priceTable['15'][0]);
+    const [ discountPercentage, setDiscountPercentage ] = useState(0)
+    const [ quantity, setQuantity ] = useState(1)
+
+    useEffect(() => {
+        const newUnitPrice = priceTable[size][0]
+        const baseUnitPrice = priceTable['15'][0]
+        const newDiscountPercentage = ((baseUnitPrice - newUnitPrice) / baseUnitPrice) * 100
+
+        setUnitPrice(newUnitPrice)
+        setDiscountPercentage(Math.abs(newDiscountPercentage))
+    }, [size])
+
+    
     useEffect(() => {
         let closeTimeout
         if(!modalTamano.isOpen && delayedClose) {
@@ -68,33 +82,7 @@ export default function Producto_Water_Tape({ imgSrc, product, description }) {
     const modalImpresion = useModal()
     const modalCorte = useModal()
 
-    const [size, setSize] = useState('15');
-    const [quantity, setQuantity] = useState(1);
-    const [unitPrice, setUnitPrice] = useState(16.0);
-    const [ currentPrice, setCurrentPrice ] = useState(0.0)
 
-    useEffect(() => {
-        const sizeIndex = quantityIndexes.indexOf(quantity);
-        const newUnitPrice = priceTable[size][sizeIndex];
-        setUnitPrice(newUnitPrice);
-    }, [size, quantity]);
-
-    // Update currentPrice whenever unitPrice or quantity changes
-    useEffect(() => {
-        const calculatedPrice = ( unitPrice * quantity ).toFixed(2)
-        setCurrentPrice(calculatedPrice)
-    }, [unitPrice, quantity])
-
-    const baseUnitPrice = priceTable[size][0];
-    const discountPercentage = ((baseUnitPrice - unitPrice) / baseUnitPrice) * 100;
-
-    
-    // LONGITUD
-    const [ longitud, setLongitud] = useState('1')
-
-    // COLORES
-    const [ color, setColor] = useState('blanco')
-   
    // IMAGE PREVIEW
     const [ imagePreviews, setImagePreviews ] = useState([])
     const [ selectedImageFile, setSelectedImageFile ] = useState(null)
@@ -122,7 +110,7 @@ export default function Producto_Water_Tape({ imgSrc, product, description }) {
                     product,
                     quantity,
                     size,
-                    price: currentPrice,
+                    price: unitPrice,
                 }
                 addToCart(item)
         
@@ -130,9 +118,8 @@ export default function Producto_Water_Tape({ imgSrc, product, description }) {
                     imgSrc: imgSrc,
                     product: product,
                     size: size,
-                    longitud: longitud,
                     quantity: quantity,
-                    price: currentPrice,
+                    price: unitPrice,
                     userRef: auth.currentUser.uid,
                     timestamp: serverTimestamp(),
                     preview: "/images/identidad/isotipo.png",
@@ -232,9 +219,24 @@ useEffect(() => {
 
             <div className='flex flex-col items-center justify-center mt-6 md:mt-0'>
 
-                <img
-                className='h-[300px] md:h-[450px]' 
-                src={imgSrc} alt={product} />
+                    <img
+                    className='h-[300px] md:h-[450px]' 
+                    src={imgSrc} alt={product} />
+
+                    {/* {imagePreviews.length === 0 && (
+                        <img className='h-[300px] md:h-[450px]' src={imgSrc} alt="" />
+                    )}
+
+                    {imagePreviews.length > 0 && (
+                        <div className='h-[400px] w-[450px] rounded-xl border-b-4 border-r-4 shadow-inner
+                        flex items-center justify-center'>
+                            
+                            {imagePreviews.map((previewUrl, index) => (
+                                <img src={previewUrl} key={index} alt={`Preview ${index}`}
+                                className='h-80 w-80 rounded' />
+                            ))}
+                        </div>
+                     )} */}
 
             </div>
 
@@ -249,15 +251,15 @@ useEffect(() => {
                           <div className='flex flex-col items-center justify-center space-y-6'>
                                   
                                     <div className='flex items-center justity-center space-x-2'>
-                                        <p>Tamaño</p>
+                                        <p>Longitud</p>
                                         <select 
                                         id='size' 
                                         value={size}
-                                        style={{width: '165px'}}
+                                        style={{width: '163px'}}
                                         onChange={(e) => setSize(e.target.value)}>
-                                          <option value="5x5">5x5</option>
-                                          <option value="7.5x7.5">7.5x7.5</option>
-                                          <option value="10x10">10x10</option>
+                                          <option value="15">15</option>
+                                          <option value="30">30</option>
+                                          <option value="60">60</option>
                                         </select>
 
                                         <div 
@@ -276,7 +278,7 @@ useEffect(() => {
 
                                         </div>
 
-                                        <div className='flex items-center justify-center space-x-2 mt-2'>
+                                        <div className='flex items-center justify-center space-x-3 mt-2'>
                                             <p className='text-xs text-center'>¿No encuentras el tamaño que buscas? <br /> 
                                             <Link className='underline' to={'/contacto'}>Ponte en contacto con nosotros.</Link>
                                             </p>
@@ -284,7 +286,7 @@ useEffect(() => {
                                                 onClick={modalPersonalizado.openModal}
                                                 className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
                                                     <BsQuestionLg/>
-                                                </div>
+                                            </div>
 
                                             <Modal
                                             isOpen={modalPersonalizado.isOpen}
@@ -317,68 +319,10 @@ useEffect(() => {
                                             </Modal>
                                     </div>
 
-                                    <div className='flex items-center justify-center space-x-2 mr-3'>
-                                            <p>Longitud (mts)</p>
-                                            <select
-                                            id='longitud' 
-                                            onChange={(e) => setLongitud(e.target.value)}
-                                            style={{width: "125px"}}>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            </select>
 
-                                            <div 
-                                            onClick={modalLongitud.openModal}
-                                            className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                                <BsQuestionLg/>
-                                            </div>
+                                    
 
-                                        <Modal
-                                        isOpen={modalLongitud.isOpen}
-                                        onClose={modalLongitud.closeModal}>
-                                            <img
-                                            className='w-full md:h-[660px]' 
-                                            src={tipoDeCorte} alt="" />
-                                        </Modal>
-
-                                    </div>
-
-                                    <div className='flex items-center justify-center space-x-2 mr-3'>
-                                            <p>Color</p>
-                                            <select
-                                            id='color' 
-                                            onChange={(e) => setColor(e.target.value)}
-                                            style={{width: "202px"}}>
-                                            <option value="blanco">blanco</option>
-                                            <option value="manila">manila</option>
-                                            <option value="nieve">nieve</option>
-                                            </select>
-
-                                            <div 
-                                            onClick={modalColor.openModal}
-                                            className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                                <BsQuestionLg/>
-                                            </div>
-
-                                        <Modal
-                                        isOpen={modalColor.isOpen}
-                                        onClose={modalColor.closeModal}>
-                                            <img
-                                            className='w-full md:h-[660px]' 
-                                            src={tipoDeCorte} alt="" />
-                                        </Modal>
-
-                                    </div>
-
-                                    <div className='flex items-center justify-center space-x-2'>
+                                    {/* <div className='flex items-center justify-center space-x-2'>
                                                 <p>Cantidad</p>
                                                 <select 
                                                 style={{width: "133px"}} 
@@ -389,21 +333,17 @@ useEffect(() => {
                                                     <option key={q} value={q}>{q}</option>
                                                 ))}
                                                 </select>
-                                    </div>
+                                    </div> */}
 
                                     
                                         <div className='flex items-center justify-center space-x-2'>
                                            <p>Precio</p>
                                            <input 
                                            style={{width: "158px"}}
-                                           disabled value={`$${(unitPrice * quantity).toFixed(2)}` }type="text" />
+                                           disabled value={`$${unitPrice.toFixed(2)}`}
+                                           type="text" />
                                         </div>
-                                        <div className='flex items-center justify-center space-x-2'>
-                                           <p>Precio Unitario</p>
-                                           <input
-                                           style={{width: "90px"}} 
-                                           disabled value={`$${unitPrice.toFixed(2)}`} type="text" />
-                                        </div>
+
                                         <div className='flex items-center justify-center space-x-2'>
                                            <p>Descuento</p>
                                            <input
@@ -414,25 +354,25 @@ useEffect(() => {
                                         </div>
                                    
 
-                                        <div className='flex items-center justify-center space-x-2'>
-                                            <label 
-                                            className={`${imagePreviews.length > 0 ? 'ml-8' : ''} bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
-                                            px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out`}>
-                                                Sube tu archivo
-                                                <input 
-                                                type="file"
-                                                required
-                                                accept='.jpg,.png,.jpeg'
-                                                onChange={(e) => handleImagePreview(e)}
-                                                style={{display: "none"}} />
-                                            </label>
+                                    <div className='flex items-center justify-center space-x-2'>
+                                        <label 
+                                        className={`${imagePreviews.length > 0 ? 'ml-8' : ''} bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
+                                        px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out`}>
+                                            Sube tu archivo
+                                            <input 
+                                            type="file"
+                                            required
+                                            accept='.jpg,.png,.jpeg'
+                                            onChange={(e) => handleImagePreview(e)}
+                                            style={{display: "none"}} />
+                                        </label>
 
-                                            {imagePreviews.length > 0 && (
-                                                <AiFillCheckCircle
-                                                className='text-2xl text-secondary-green'/>
-                                            )}
+                                        {imagePreviews.length > 0 && (
+                                            <AiFillCheckCircle
+                                            className='text-2xl text-secondary-green'/>
+                                        )}
                                         
-                                       </div>
+                                    </div>
 
                                     <div>
                                         <button
@@ -441,6 +381,7 @@ useEffect(() => {
                                         bg-gray-300 hover:bg-gray-400 active:bg-slate-500 transition duration-200 ease-in-out'>
                                             Guía de impresión avanzada
                                         </button>
+                                        
                                         <Modal
                                         isOpen={modalImpresion.isOpen}
                                         onClose={modalImpresion.closeModal}>

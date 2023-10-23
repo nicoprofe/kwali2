@@ -103,8 +103,6 @@ export default function PlantillasEditables() {
   return (
     <div className='px-6 md:px-40 h-full'>
 
-        
-
       <h1 className='text-center font-semibold uppercase text-3xl text-gray-900 mt-8 mb-2'>Plantillas y Guías</h1>
       <p className='text-center font-semibold text-sm text-gray-900 mb-8'>Descarga nuestras plantillas y archivos</p>
 

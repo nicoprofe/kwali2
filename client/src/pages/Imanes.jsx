@@ -11,7 +11,7 @@ export default function Imanes() {
         <>
             Promociona tu marca con nuestros imanes cortados en la <br />
             forma de tu diseño, fáciles de adherir a superficies metálicas <br />
-            como autos, refiregeradores, etc.
+            como autos, refrigeradores, etc.
         </>
       }/>
     </div>

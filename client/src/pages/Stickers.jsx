@@ -10,18 +10,18 @@ export default function Stickers() {
         <p className='text-2xl text-gray-900 font-semibold uppercase text-center py-3'>Envíos gratis a partir de $999 o más</p>
       </div>
 
-      <div className='sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 mb-10'>
-      <Link to='/stickers/mate'>
+      <div className='sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mb-10'>
+          <Link to='/stickers/brillantes'>
+            <img className='h-64 mx-auto' src="/images/productos/ejemplo-brillante.png" alt="" />
+            <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> brillantes</p>
+          </Link>
+          <Link to='/stickers/mate'>
             <img className='h-64 mx-auto' src="/images/productos/ejemplo-matte.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> mate</p>
           </Link>
           <Link to='/stickers/holograficos'>
             <img className='h-64 mx-auto' src="/images/productos/holografico.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> holográficos</p>
-          </Link>
-          <Link to='/stickers/brillantes'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo-brillante.png" alt="" />
-            <p className='text-center uppercase font-semibold text-xl'>Stickers <br /> brillantes</p>
           </Link>
           <Link to='/stickers/transparentes'>
             <img className='h-64 mx-auto' src="/images/productos/ejemplo-transparente.png" alt="" />

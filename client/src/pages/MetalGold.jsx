@@ -9,7 +9,8 @@ export default function MetalGold() {
       product="Stickers metal gold"
       description={
         <>
-            Sticker estilo metal gold.
+            Stickers impresos en un vinilo estilo “oro” que crea un efecto metálico. <br />
+             Dale vida a tus diseños y llama la atención con nuestros stickers metálicos.
         </>
       }/>
     </div>

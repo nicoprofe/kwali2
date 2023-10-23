@@ -1,6 +1,6 @@
 export const STICKERS = [
-    {name: "Mate", link:"/stickers/mate"},
     {name: "Brillantes", link:"/stickers/brillantes"},
+    {name: "Mate", link:"/stickers/mate"},
     {name: "Holográficos", link:"/stickers/holograficos"},
     {name: "Transparentes", link:"/stickers/transparentes"},
     {name: "Espejo", link:"/stickers/espejo"},
