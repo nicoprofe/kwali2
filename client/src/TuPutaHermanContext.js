@@ -19,7 +19,7 @@ export function CartProvider({ children }) {
   // Add a function to set the thumbnail images based on product names
   const setThumbnailForProduct = (productName) => {
     const thumbnailMap = {
-        "Sticker brillantes": '/images/productos/brillante.png',
+        "Sticker brillantes": '/images/productos/ejemplo-brillante.png',
         "Stickers mate": '/images/productos/ejemplo-matte.png',
         "Sticker holográficos": '/images/productos/holografico.png',
         "Stickers transparentes": '/images/productos/ejemplo-transparente.png',

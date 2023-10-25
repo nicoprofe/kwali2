@@ -110,7 +110,7 @@ export default function SidePanelBackup({ isPanelOpen}) {
 
             {cartItems.map((item, index) => (
               <>
-              <div key={item.id} className='flex items-center justify-around mt-2'>
+              <div key={item.id} className='flex items-center justify-around'>
 
                 <div key={item.id}>
                   <img src={item.imgSrc }alt={item.product} className='w-12 h-12' />
