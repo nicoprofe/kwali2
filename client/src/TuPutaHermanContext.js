@@ -19,13 +19,22 @@ export function CartProvider({ children }) {
   // Add a function to set the thumbnail images based on product names
   const setThumbnailForProduct = (productName) => {
     const thumbnailMap = {
+        "Sticker brillantes": '/images/productos/brillante.png',
         "Stickers mate": '/images/productos/ejemplo-matte.png',
-        "Sticker brillantes": '/images/productos/ejemplo-brillante.png',
-        "Sticker holográficos": '/images/productos/ejemplo-holografico.png',
+        "Sticker holográficos": '/images/productos/holografico.png',
         "Stickers transparentes": '/images/productos/ejemplo-transparente.png',
-        "Stickers espejo": '/images/productos/ejemplo-espejo.png',
-        "Stickers metal silver": '/images/productos/ejemplo-metalsilver.png',
-        "Stickers metal gold": '/images/productos/ejemplo-metalgold.png',
+        "Stickers espejo": '/images/productos/espejo.png',
+        "Stickers metal silver": '/images/productos/silver.png',
+        "Stickers metal gold": '/images/productos/gold.png',
+        "Etiquetas circulares": '/images/productos/ejemplo-etiquetas circulares.jpg',
+        "Etiquetas ovaladas": '/images/productos/ejemplo-etiquetas ovaladas.jpg',
+        "Etiquetas cuadradas": '/images/productos/ejemplo-etiquetas cuadradas.jpg',
+        "Stickers para piso": '/images/productos/ejemplo-piso.jpg',
+        "Imanes": '/images/productos/ejemplo-iman.png',
+        "Water activated tape": '/images/productos/ejemplo-watertape.jpg',
+        "Planillas de stickers": '/images/productos/ejemplo_planilla stickers.png',
+        "Muestras": '/images/productos/set ejemplo.png',
+
     }
     return thumbnailMap[productName] || ''
   }

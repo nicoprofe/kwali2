@@ -9,7 +9,7 @@ import { db } from '../firebase'
 import { getAuth } from 'firebase/auth'
 
 
-export default function SidePanel({ isPanelOpen}) {
+export default function SidePanelBackup({ isPanelOpen}) {
   const { cartItems, setCartItems } = useCart()
 
   const location = useLocation()
@@ -85,77 +85,79 @@ export default function SidePanel({ isPanelOpen}) {
 
    
   return (
-    <div
-    className={`fixed right-0 w-full md:w-1/4 h-full bg-white
+    <div 
+    className={`fixed top-[102px] right-0 w-full md:w-1/4 h-full bg-white
     transition-transform duration-300 ease-in-out ${
-      isPanelOpen 
-      ? 'translate-x-0'
-      : 'translate-x-[100%]'
-    }`}>
-       <h1 className='uppercase font-semibold text-xl text-center tracking-wider mt-6 mb-6'>Tu Carrito</h1>
-       <div 
-        className='bg-gray-200 flex items-center justify-around py-2 text-md font-semibold'>
-          <p>Descripción</p>
-          <p>Cantidad</p>
-          <p>Total</p>
+        isPanelOpen 
+        ? "translate-x-0" 
+        : "translate-x-full"}` }>
+        
+        {/* Content of your side panel     */}
+        <div className='flex flex-col space-y-6 overflow-auto max-h-[800px]'>
 
-        </div>
+            <h1 className='uppercase font-semibold text-xl text-center mt-6'>tu carrito</h1>
+            {/* <button
+            onClick={clearAllOrders}
+            className='text-red-500 hover:text-red-700 font-bold cursor-pointer'>All</button> */}
 
-        <div className='max-h-[340px] overflow-y-auto'>
-          {cartItems.map((item, index) => (
-            <div key={index} className='grid grid-cols-3 mt-6 items-center justify-center '>
-
-              <div className='flex flex-col items-start justify-start ml-6'>
-                <img src={item.imgSrc} alt={item.product} className='h-12' />
-                <p>{item.product}</p>
-              </div>
-              <p className='text-center'>{item.quantity}</p>
-              <p className='text-center'>{item.price}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className='absolute bottom-[23%] px-12'>
-            { preferenceId && <Wallet initialization={ preferenceId }/> }
-        </div>
-
-        <div className='absolute bottom-[15%] mx-6 space-x-14 flex items-center justify-center'>
-
-            <div>
-              <button
-              onClick={handleBuy}
-              className='bg-gray-300 hover:bg-gray-400 active:bg-gray-600 hover:text-white
-              active:text-white transition duration-300 ease-in-out
-              px-10 py-2'>Pagar</button>
-            </div>
-
-            
-
-         
-            <div className='font-semibold text-base whitespace-nowrap'>
-                <div className='flex items-center justify-between space-x-2'>
-                <p>Subtotal</p>
-                <p>${subtotal.toFixed(2)}</p>
-                </div>
-                <div className='flex items-center justify-between space-x-2'>
-                <p>Envío: </p>
-                <p>${shippingFee.toFixed(2)}</p>
-                </div>
-                <div className='flex items-center justify-between space-x-2'>
+            <div className='flex items-center justify-around py-2 text-md font-semibold bg-gray-300'>
+                <p>Descripción</p>
+                <p>Cantidad</p>
                 <p>Total</p>
-                <p>${total.toFixed(2)}</p>
-                </div>
             </div>
+
+        
+
+            {cartItems.map((item, index) => (
+              <>
+              <div key={item.id} className='flex items-center justify-around mt-2'>
+
+                <div key={item.id}>
+                  <img src={item.imgSrc }alt={item.product} className='w-12 h-12' />
+                <p key={item.id}>{item.product}</p>
+                </div>
+                <p key={item.id}>{item.quantity}</p>
+                <p key={item.id}>{item.price}</p>
+                {/* <button 
+                onClick={() => deleteOrder(index)} 
+                className='text-red-500 hover:text-red-700 font-bold cursor-pointer'>
+                  X
+                </button> */}
+              </div>
+              </>
+            ))}
+          
+
           
         </div>
 
         
-     
+        <div className='absolute top-24 flex mt-[415px] space-x-16 items-center px-10'>
 
-
+          <div className='flex flex-col'>
+            <button
+            onClick={handleBuy} 
+            className='bg-gray-300 hover:bg-gray-400 active:bg-slate-500 
+            hover:text-white active:text-white
+            px-16 h-10 transition duration-300 ease-in-out'>Pagar
+            </button>
+            
+           
+            { preferenceId && <Wallet initialization={ {preferenceId} }/>}
+            
+          </div> 
+        
+          <div
+          className='flex flex-col space-y-2 font-semibold'>
+            <p>Subtotal</p>
+            <p>${subtotal}</p>
+            <p>${shippingFee.toFixed(2)}</p>
+            {<p>${total.toFixed(2)}</p>}
+          </div>
+          
+      </div>
+        
       
-
-
     </div>
   )
 }

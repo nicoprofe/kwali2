@@ -43,12 +43,26 @@ export default function Producto({ imgSrc, product, description }) {
     const [ isTooltipVisible2, setIsTooltipVisible2 ] = useState(false)
     const [ isTooltipVisible3, setIsTooltipVisible3 ] = useState(false)
 
+    // MODAL
+    const modalDimensiones = useModal()
+    const modalImpresion = useModal()
+    const modalCorte = useModal()
     const modalTamano = useModal()
     const modalPersonalizado = useModal()
     const modalKissDie = useModal()
     const modalForma = useModal()
 
+    const [ corte, setCorte] = useState('kis-cut')
+    const [ forma, setForma ] = useState('circular')
+
+    const [size, setSize] = useState('5x5');
+    const [quantity, setQuantity] = useState(25);
+    const [unitPrice, setUnitPrice] = useState(16.0);
+    const [ currentPrice, setCurrentPrice ] = useState(0.0)
+
     const [ delayedClose, setDelayedClose ] = useState(false)
+
+
 
     useEffect(() => {
         let closeTimeout
@@ -63,15 +77,6 @@ export default function Producto({ imgSrc, product, description }) {
         }
     }, [delayedClose, modalTamano])
 
-    // MODAL
-    const modalDimensiones = useModal()
-    const modalImpresion = useModal()
-    const modalCorte = useModal()
-
-    const [size, setSize] = useState('5x5');
-    const [quantity, setQuantity] = useState(25);
-    const [unitPrice, setUnitPrice] = useState(16.0);
-    const [ currentPrice, setCurrentPrice ] = useState(0.0)
 
     useEffect(() => {
         const sizeIndex = quantityIndexes.indexOf(quantity);
@@ -89,11 +94,7 @@ export default function Producto({ imgSrc, product, description }) {
     const discountPercentage = ((baseUnitPrice - unitPrice) / baseUnitPrice) * 100;
 
     
-    // CORTE
-    const [ corte, setCorte] = useState('kis-cut')
-
-    // FORMA
-    const [ forma, setForma ] = useState('circular')
+    
    
    // IMAGE PREVIEW
     const [ imagePreviews, setImagePreviews ] = useState([])
