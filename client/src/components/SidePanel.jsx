@@ -105,12 +105,12 @@ export default function SidePanel({ isPanelOpen}) {
           {cartItems.map((item, index) => (
             <div key={index} className='grid grid-cols-3 mt-6 items-center justify-center '>
 
-              <div className='flex flex-col items-start justify-start ml-6'>
+              <div className='flex flex-col items-start justify-start ml-7'>
                 <img src={item.imgSrc} alt={item.product} className='h-12' />
                 <p>{item.product}</p>
               </div>
-              <p className='text-center'>{item.quantity}</p>
-              <p className='text-center'>{item.price}</p>
+              <p className='text-end mr-10'>{item.quantity}</p>
+              <p className='text-end mr-2'>{item.price}</p>
             </div>
           ))}
         </div>
