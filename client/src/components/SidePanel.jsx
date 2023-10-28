@@ -123,7 +123,7 @@ export default function SidePanel({ isPanelOpen}) {
 
             <div>
               <button
-              onClick={handleBuy}
+              onClick={() => navigate('/proceder-pago')}
               className='bg-gray-300 hover:bg-gray-400 active:bg-gray-600 hover:text-white
               active:text-white transition duration-300 ease-in-out
               px-10 py-2'>Pagar</button>

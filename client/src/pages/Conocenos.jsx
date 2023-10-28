@@ -4,7 +4,7 @@ import PorqueSomosLosMejores from '../components/PorqueSomosLosMejores'
 export default function Conocenos() {
   return (
     <div className='h-full'>
-      <div className='flex flex-col items-center justify-center h-[800px] mb-16'>
+      <div className='flex flex-col items-center justify-center h-[800px] lg:mb-16 xl:mb-40 2xl:mb-96'>
 
       <div className='w-full -translate-y-[97px] flex flex-col items-center justify-center'>
         <img src="/images/identidad/elementos web-17.png" alt="" />  
@@ -30,7 +30,7 @@ export default function Conocenos() {
       </p>
 
       <img
-      className='absolute -z-10 -translate-y-3 md:translate-y-28 md:top-[460px] -right-14 md:right-10 h-60 md:h-96' 
+      className='absolute -z-10 md:top-[60%] xl:top-[65%] 2xl:top-[70%]  left-[75%] xl:left-[71%]  h-60 md:h-96' 
       src="/images/mascota/kwali-corazon.png" alt="mascota" />
           
       </div>

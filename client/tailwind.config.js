@@ -5,6 +5,11 @@ module.exports = {
  ],
  theme: {
    extend: {
+    screens: {
+      'lg': '1400px',
+      'xl': '1600px',
+      '2xl': '2300px',
+    },
      colors: {
        primary: {
          blueLight: "#27a8e0",

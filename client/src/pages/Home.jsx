@@ -63,7 +63,7 @@ export default function Home() {
       </div>
       <div className='mb-14'></div>
 
-      <div className='bg-secondary-blueLight flex flex-col space-y-14 -translate-y-32'>
+      <div className='bg-secondary-blueLight flex flex-col items-center justify-center space-y-14  -translate-y-32'>
       <p className='mt-14 text-center text-5xl font-bold uppercase text-gray-900'>Los mejores stickers</p>
       {/* <img className='' src="/images/transparentes/texto_losmejoresstickers-16.png" alt="" /> */}
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
