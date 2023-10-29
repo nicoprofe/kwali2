@@ -142,6 +142,16 @@ export default function Producto({ imgSrc, product, description }) {
                     approval2: false,
                     changes: [],
                     emailOrderSent: false,
+                    fullName: '',
+                    address: '',
+                    address2: '',
+                    city: '',
+                    municipality: '',
+                    postalCode: '',
+                    state: '',
+                    phone: '',
+                    shippingOption: ''
+
                 }
 
                 if(selectedImageFile) {
