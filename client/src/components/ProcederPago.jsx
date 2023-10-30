@@ -9,8 +9,9 @@ export default function ProcederPago() {
     const { cartItems, setCartItems } = useCart()
     const formRef = useRef(null)
     const [ preferenceId, setPreferenceId ] = useState(null)
-    // MasterCard 5120 6944 7061 6271, 123 1125
-    // Visa 4509 9535 6623 3704, 123 1125
+    // MasterCard 5120 6944 7061 6271 - 123 - 11/25
+    // Visa 4509 9535 6623 3704 - 123 - 11/25
+    // Amercian 3711 803032 57522 - 1234 - 11/25
 
     const [ formData, setFormData ] = useState({
         fullName: '',
@@ -48,7 +49,7 @@ export default function ProcederPago() {
             const prices = subtotal
 
             // Send a single request to your server with the arrays
-            const response = await axios.post('https://kwali2-server.vercel.app/create-preference', {
+            const response = await axios.post('http://localhost:8080/create-preference', {
                 description: descriptions.join(', '),
                 price: prices,
                 quantity: 1,

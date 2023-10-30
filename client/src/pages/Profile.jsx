@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useModal from '../hooks/useModal'
 import { getAuth } from 'firebase/auth'
@@ -13,16 +13,32 @@ import TermsAndConditions from './TermsAndConditions'
 
 export default function Profile() {
     const navigate = useNavigate()
+    const formRef = useRef(null)
 
     // display user's name and email
     const auth = getAuth()
 
     const [ formData, setFormData ] = useState({
-        name: auth.currentUser.displayName,
+        username: auth.currentUser.displayName,
         email: auth.currentUser.email,
     })
 
-    const { name, email } = formData
+    const { username, email } = formData
+
+
+    const [ formData2, setFormData2 ] = useState({
+        fullName: '',
+        address: '',
+        address2: '',
+        city: '',
+        municipality: '',
+        postalCode: '',
+        state: '',
+        phone: '',
+        shippingOption: 'standard',
+    })
+
+    const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption } = formData
 
     // LOGOUT
     function handleLogout() {
@@ -39,6 +55,7 @@ export default function Profile() {
     const myProfile = useModal()
     const modalTerminos = useModal()
     const modalPrivacidad = useModal()
+    const modalDatos = useModal()
 
 
     // FETCH USER ORDERS
@@ -277,15 +294,153 @@ export default function Profile() {
         }
     }
 
+    const handleChange = () => {
+        
+    }
+
+    const handleSubmit = () => {
+
+    }
+
+
   return (
     <div>
-       <p
-                onClick={handleLogout}
-                className='px-2 md:px-7 py-2 text-blue-600 hover:text-blue-800 transiton duration-300 cursor-pointer'>
-                    Cerrar Sesión
+        <p
+            onClick={handleLogout}
+            className='px-2 md:px-7 py-2 text-blue-600 hover:text-blue-800 transiton duration-300 cursor-pointer'>
+                Cerrar Sesión
         </p>
 
-        <p className='text-center font-semibold text-2xl mt-4'>Historial de pruebas de impresión</p> 
+        <div className='flex items-center justify-start mt-6 mb-6 px-7 space-x-6'>
+            <img src="/images/iconos/icono-user.png" alt="" width={110} />
+            <div className='flex flex-col items-start justify-center'>
+                <p className='font-semibold'>{username} </p>
+                <p className=''>{email}</p>
+                <button
+                onClick={modalDatos.openModal} 
+                className='bg-gray-200 hover:bg-gray-300 active:bg-gray-500 active:text-white
+                duration-300 px-4 py-0.5 mt-2 text-sm font-medium'>Mis datos</button>
+            </div>
+            <Modal
+            isOpen={modalDatos.isOpen}
+            onClose={modalDatos.closeModal}>
+                  <div className='flex items-center justify-start mt-6 mb-6 px-6 md:px-0 space-x-6'>
+                    <img src="/images/iconos/icono-user.png" alt="" width={110} />
+                    <div className='flex flex-col items-start justify-center'>
+                        <p className='font-semibold'>{username} </p>
+                        <p className=''>{email} </p>
+                    </div>
+
+                    
+            
+                  </div>
+                  
+        <div className='bg-gray-200 w-full flex flex-col items-center justify-center px-6 md:px-6 '>
+        <h2 className='font-medium mt-3 mb-6'>Editar dirección</h2>
+
+        <form ref={formRef} onSubmit={handleSubmit}>
+            <>
+            <div className='flex items-center justify-between space-x-4 mb-6'>
+                <label htmlFor="">Nombre completo</label>
+                <input 
+                onChange={handleChange}
+                className='py-0.5 w-[370px] md:w-80'
+                name='fullName'
+                id='fullName'
+                value={fullName}
+                type="text" />
+            </div>
+            <div className='flex items-center justify-between space-x-4 mb-3'>
+                <div className='flex flex-col'>
+                    <label htmlFor="">Dirección</label>
+                    <p className='text-xs'>(calle, num. ext, colonia)</p>
+                </div>
+                <input 
+                onChange={handleChange}
+                className='py-0.5 w-[360px] md:w-80'
+                name='address'
+                id='address'
+                value={address}
+                type="text" />
+            </div>
+            <div className='flex items-center justify-between space-x-4 mb-3'>
+                <div className='flex flex-col'>
+                    <label htmlFor="">Dirección</label>
+                    <p className='text-xs'>(datos adicionales)</p>
+                    <p className='text-xs'>(calle, num int.)</p>
+                </div>
+                <input 
+                onChange={handleChange}
+                className='py-0.5 w-80'
+                name='address2'
+                id='address2'
+                value={address2}
+                type="text" />
+            </div>
+            <div className='flex items-center justify-between space-x-4 mb-7'>
+                <label htmlFor="">Ciudad</label>
+                <input 
+                onChange={handleChange}
+                className='py-0.5 w-80'
+                name='city'
+                id='city'
+                value={city}
+                type="text" />
+            </div>
+            <div className='flex items-center justify-between space-x-4 mb-7'>
+                <label htmlFor="">Municipio</label>
+                <input 
+                onChange={handleChange}
+                className='py-0.5 w-80'
+                name='municipality'
+                id='municipality'
+                value={municipality}
+                type="text" />
+            </div>
+            <div className='flex items-center justify-between space-x-4 mb-7'>
+                <label htmlFor="">Código Postal</label>
+                <input 
+                onChange={handleChange}
+                className='py-0.5 w-80'
+                name='postalCode'
+                id='postalCode'
+                value={postalCode}
+                type="text" />
+            </div>
+            <div className='flex items-center justify-between space-x-4 mb-4'>
+                <label htmlFor="">Estado</label>
+                <input 
+                onChange={handleChange}
+                className='py-0.5 w-80'
+                name='state'
+                id='state'
+                value={state}
+                type="text" />
+            </div>
+            <div className='flex items-center justify-between space-x-4 mb-6'>
+                <div className='flex flex-col'>
+                    <label htmlFor="">Teléfono de</label>
+                    <p className=''>contacto</p>
+                </div>
+                <input 
+                onChange={handleChange}
+                className='py-0.5 w-80'
+                name='phone'
+                id='phone'
+                value={phone}
+                type="text" />
+            </div>
+
+            
+            </>
+
+
+        </form>
+    </div>
+            </Modal>
+        </div>
+
+        <p className='text-center font-semibold text-2xl'>Historial de pruebas de impresión</p> 
 
         {/* TABLE */}
         <div className='h-full p-5'>
@@ -336,7 +491,7 @@ export default function Profile() {
                                         )}
                                         {order.data && (
                                             <div>
-                                                <p>Nombre: {name}</p>
+                                                <p>Nombre: {username}</p>
                                                 <p>Email: {email} </p>
                                                 <br />
                                                 <p>Orden nro.: {order.id}</p>
@@ -588,7 +743,7 @@ export default function Profile() {
                             })
                         )}
                         </p>
-                        <p>Nombre: {name}</p>
+                        <p>Nombre: {username}</p>
                         <p>Email: {email} </p>
                         <br />
                         <p>Orden Nro.: {order.id}</p>
