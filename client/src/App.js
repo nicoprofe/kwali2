@@ -49,6 +49,7 @@ import SidePanelContainer from './components/SidePanelContainer'
 import RootLayout from './pages/RootLayout'
 import StickersParaPiso from './pages/StickersParaPiso'
 import ProcederPago from './components/ProcederPago'
+import Timestamp from './components/Timestamp'
 
 
 
@@ -107,6 +108,7 @@ function App() {
         <Route path='/side-panel' element={<SidePanel/>}/>
         <Route path='/side-panel-container' element={<SidePanelContainer/>}/>
         <Route path='/proceder-pago' element={<ProcederPago/>}/>
+        <Route path='/timestamp' element={<Timestamp/>}/>
         
       </Routes>
     

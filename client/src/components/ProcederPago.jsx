@@ -49,7 +49,7 @@ export default function ProcederPago() {
             const prices = subtotal
 
             // Send a single request to your server with the arrays
-            const response = await axios.post('http://localhost:8080/create-preference', {
+            const response = await axios.post('https://kwali2-server.vercel.app/create-preference', {
                 description: descriptions.join(', '),
                 price: prices,
                 quantity: 1,
@@ -76,8 +76,7 @@ export default function ProcederPago() {
         e.preventDefault()
     }
     
-    const handleExternalSubmit = (e) => {
-        e.preventDefault()
+    const handleExternalSubmit = () => {
 
         if(formRef.current) {
             formRef.current.submit()
@@ -156,7 +155,7 @@ export default function ProcederPago() {
     <div className='bg-gray-200 w-full flex flex-col items-center justify-center px-6 md:px-0'>
         <h2 className='font-medium mt-3 mb-6'>Agregar dirección</h2>
 
-        <form ref={formRef} onSubmit={handleSubmit}>
+        <form >
             <>
             <div className='flex items-center justify-between space-x-4 mb-6'>
                 <label htmlFor="">Nombre completo</label>
@@ -279,7 +278,7 @@ export default function ProcederPago() {
                 <p className='font-medium'>${total}mxn</p>
                 <button 
                 onClick={() => {
-                    
+                    handleExternalSubmit()
                     handleBuy()
                 }}
                 className='font-semibold px-2 py-1 bg-gray-300 hover:bg-gray-400

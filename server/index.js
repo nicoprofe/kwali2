@@ -415,8 +415,8 @@ app.post('/create-preference', (req, res) => {
             }
         ],
         back_urls: {
-            success: 'http://localhost:3000/producto',
-            failure: 'http://localhost:3000/',
+            success: 'https://kwali2-client.vercel.app/producto',
+            failure: 'https://kwali2-client.vercel.app/',
             pending: '',
         },
         auto_return: 'approved',

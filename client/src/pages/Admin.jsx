@@ -22,11 +22,11 @@ export default function Admin() {
     }
 
     const [ formData, setFormData ] = useState({
-        name: auth.currentUser.uid,
+        username: auth.currentUser.uid,
         email: auth.currentUser.email,
     })
 
-    const { name, email } = formData
+    const { username, email } = formData
 
      // modal hook
      const changesModal = useModal()
@@ -36,9 +36,10 @@ export default function Admin() {
      
      const imageModal = useModal()
      const showImage = useModal()
+     const modalDatos = useModal()
 
 
-     // FETCH NAME EMAIL TIMESTAMP
+     // FETCH NAME EMAIL CREATEDAT
      async function fetchOrdersWithUserData(orders) {
         const ordersWithUserData = []
 
@@ -51,6 +52,20 @@ export default function Admin() {
                     const userData = userDocSnap.data()
                     // Add user data to the order
                     order.userData = userData
+
+                    const formattedDate = new Date(order.data.createdAt);
+                    const options = {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    }
+
+                    order.data.formattedCreatedAt = formattedDate.toLocaleDateString('es-MX', options);
+
+                    
                 }
 
                 ordersWithUserData.push(order)
@@ -71,7 +86,7 @@ export default function Admin() {
      useEffect(() => {
         async function fetchAllOrders() {
             const ordersRef = collection(db, 'orders')
-            const q = query(ordersRef, orderBy('timestamp', 'desc'))
+            const q = query(ordersRef, )
             const querySnap = await getDocs(q)
             let orders = []
 
@@ -79,12 +94,14 @@ export default function Admin() {
                 const data = doc.data()
                 const isPreviewAccepted1 = data.approval1
                 const isPreviewAccepted2 = data.approval2 
+                const formattedCreatedAt = data.formattedCreatedAt
 
                 orders.push({
                     id: doc.id,
                     data: data,
                     isPreviewAccepted1: isPreviewAccepted1,
                     isPreviewAccepted2: isPreviewAccepted2,
+                    formattedCreatedAt: formattedCreatedAt,
                 })
             })
 
@@ -230,10 +247,10 @@ export default function Admin() {
             // Define your filter conditions
             const nameMatches = userData.name.toLowerCase().includes(searchCriteria.toLowerCase())
             const emailMatches = userData.email.toLowerCase().includes(searchCriteria.toLowerCase())
-            // const dateMatches = data.timestamp.toDate().toLocaleDateString().includes(searchCriteria)
             const productNameMatches = data.product.toLowerCase().includes(searchCriteria.toLowerCase())
             const approval1Matches = data.approval1 === searchCriteria
             const approval2Matches = data.approval2 === searchCriteria
+            const formattedCreatedAtMatches = order.data.formattedCreatedAt.toLowerCase().includes(searchCriteriaLowerCase)
 
             // Check if the order ID matches the search criteria
             const idMatches = id.toLowerCase().includes(searchCriteriaLowerCase)
@@ -245,7 +262,8 @@ export default function Admin() {
                 emailMatches ||
                 productNameMatches ||
                 approval1Matches ||
-                approval2Matches
+                approval2Matches ||
+                formattedCreatedAtMatches
             )
 
         })
@@ -273,7 +291,13 @@ export default function Admin() {
         setFilteredOrders(newFilteredOrders)
      }, [searchInput])
 
-
+     const handleChange = () => {
+        
+     }
+ 
+     const handleSubmit = () => {
+ 
+     }
      
 
 
@@ -372,28 +396,166 @@ export default function Admin() {
                                 </td>
     
                                 <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-                                    {order.data.timestamp 
-                                    && order.data.timestamp._methodName === 'serverTimestamp' && (
-                                        new Date().toLocaleDateString('es-MX', {
-                                            weekday: 'long',
-                                            year: 'numeric',
-                                            month: 'long',
-                                            day: '2-digit',
-                                            hour: '2-digit',
-                                            minute: '2-digit',
-                                        })
-                                    )}
+                                    {order.data.formattedCreatedAt}
                                     {order.userData && (
                                         <div>
                                             <p>Nombre: {order.userData.name}</p>
                                             <p>Email: {order.userData.email} </p>
+                                            <button 
+                                            onClick={modalDatos.openModal}
+                                            className='bg-gray-200 hover:bg-gray-300 active:bg-gray-400 active:text-white
+                                            duration-300 px-4 py-0.5 mt-2 mb-2 text-sm font-medium'>Datos Cliente</button>
                                             <br />
                                             <p>Orden nro.: {order.id}</p>
                                             <p>Producto: {order.data.product}</p>
                                             <p>Cantidad: {order.data.quantity}</p>
                                             <p>Corte: {order.data.corte}</p>
                                             <p>Precio: ${order.data.price} </p>
+                                            <Modal
+                                            onClose={modalDatos.closeModal}
+                                            isOpen={modalDatos.isOpen}>
+                                                <div className='flex items-center justify-start mt-6 mb-6 px-6 md:px-0 space-x-6'>
+                                                    <img src="/images/iconos/icono-user.png" alt="" width={110} />
+                                                    <div className='flex flex-col items-start justify-center'>
+                                                        <p className='font-semibold'>{order.userData.name} </p>
+                                                        <p className=''>{order.userData.email} </p>
+                                                    </div>
+                                                </div>
+                  
+                                            <div className='bg-gray-200 w-full flex flex-col items-center justify-center px-6 md:px-6 '>
+                                                <h2 className='font-medium mt-3 mb-6'>Dirección Cliente</h2>
+
+                                                <form>
+                                                    <>
+                                                    {orders.map((order, index) => (
+                                                        
+                                                    <>
+                                                    <div className='flex items-center justify-between space-x-4 mb-6'>
+                                                        <label htmlFor="">Nombre completo </label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        className='py-0.5 w-[370px] md:w-80'
+                                                        name='fullName'
+                                                        id='fullName'
+                                                        value={order.data.fullName}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-3'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="">Dirección</label>
+                                                            <p className='text-xs'>(calle, num. ext, colonia)</p>
+                                                        </div>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        className='py-0.5 w-[360px] md:w-80'
+                                                        name='address'
+                                                        id='address'
+                                                        value={order.data.address}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-3'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="">Dirección</label>
+                                                            <p className='text-xs'>(datos adicionales)</p>
+                                                            <p className='text-xs'>(calle, num int.)</p>
+                                                        </div>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        className='py-0.5 w-80'
+                                                        name='address2'
+                                                        id='address2'
+                                                        value={order.data.address2}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-7'>
+                                                        <label htmlFor="">Ciudad</label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        className='py-0.5 w-80'
+                                                        name='city'
+                                                        id='city'
+                                                        value={order.data.city}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-7'>
+                                                        <label htmlFor="">Municipio</label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        className='py-0.5 w-80'
+                                                        name='municipality'
+                                                        id='municipality'
+                                                        value={order.data.municipality}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-7'>
+                                                        <label htmlFor="">Código Postal</label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        className='py-0.5 w-80'
+                                                        name='postalCode'
+                                                        id='postalCode'
+                                                        value={order.data.postalCode}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-4'>
+                                                        <label htmlFor="">Estado</label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        className='py-0.5 w-80'
+                                                        name='state'
+                                                        id='state'
+                                                        value={order.data.state}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-6'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="">Teléfono de</label>
+                                                            <p className=''>contacto</p>
+                                                        </div>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        className='py-0.5 w-80'
+                                                        name='phone'
+                                                        id='phone'
+                                                        value={order.data.phone}
+                                                        type="text" />
+                                                    </div>
+
+                                                    <div className='flex items-center justify-between space-x-4 mb-6'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="">Tipo de envío</label>
+                                                        </div>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        className='py-0.5 w-80'
+                                                        name='shippingOption'
+                                                        id='shippingOption'
+                                                        value={order.data.shippingOption}
+                                                        type="text" />
+                                                    </div>
+                                                        </>
+                                                    ))}
+
+                                                    
+                                                    </>
+
+
+                                                </form>
+                                            </div>
+
+                                            </Modal>
+
                                         </div>
+                                        
                                     )}
                                 </td>
     
@@ -565,26 +727,149 @@ export default function Admin() {
                             <div className="flex flex-col items-start text-sm">
                     
                                             <p>
-                                            {order.data.timestamp 
-                                            && order.data.timestamp._methodName === 'serverTimestamp' && (
-                                                new Date().toLocaleDateString('es-Mx', {
-                                                    weekday: 'long',
-                                                    year: 'numeric',
-                                                    month: 'long',
-                                                    day: '2-digit',
-                                                    hour: '2-digit',
-                                                    minute: '2-digit',
-                                                })
-                                            )}
+                                            {order.data.formattedCreatedAt}
                                             </p>
                                             <p>Nombre: {order.userData.name}</p>
                                             <p>Email: {order.userData.email} </p>
-                                            <br />
+                                            <button 
+                                            onClick={modalDatos.openModal}
+                                            className='bg-gray-200 hover:bg-gray-300 active:bg-gray-400 active:text-white
+                                            duration-300 px-4 py-0.5 mt-2 mb-4 text-sm font-medium'>Datos Cliente</button>
+                                            
                                             <p>Orden Nro.: {order.id}</p>
                                             <p>Producto: {order.data.product}</p>
                                             <p>Cantidad: {order.data.quantity}</p>
                                             <p>Corte: {order.data.corte}</p>
                                             <p>Precio: ${order.data.price} </p>
+                                            <Modal
+                                            isOpen={modalDatos.isOpen}
+                                            onClose={modalDatos.closeModal}>
+                                                <div className='bg-gray-200 rounded-lg p-4 mt-2 flex items-center justify-between'>
+                                                    <img src="/images/iconos/icono-user.png" alt="" width={110} />
+                                                    <div className='flex flex-col items-start justify-center mr-2'>
+                                                        <p className='font-semibold'>{order.userData.name}</p>
+                                                        <p>{order.userData.email}</p>
+                                                    </div>
+                                                </div>
+
+                                                <div className='bg-gray-200 rounded-lg p-4 mt-4 '>
+                                                    <h2 className='text-center font-medium mt-3 mb-6'>Dirección cliente</h2>
+                                                    <form>
+                                                       
+                                                            <>
+                                                            <div key={index}>
+                                                            <div className='flex items-center justify-between space-x-4 mb-6'>
+                                                        <label htmlFor="">Nombre completo </label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        name='fullName'
+                                                        id='fullName'
+                                                        value={order.data.fullName}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-3'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="">Dirección</label>
+                                                            <p className='text-xs'>(calle, num. ext, colonia)</p>
+                                                        </div>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        name='address'
+                                                        id='address'
+                                                        value={order.data.address}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-3'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="">Dirección</label>
+                                                            <p className='text-xs'>(datos adicionales)</p>
+                                                            <p className='text-xs'>(calle, num int.)</p>
+                                                        </div>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        name='address2'
+                                                        id='address2'
+                                                        value={order.data.address2}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-7'>
+                                                        <label htmlFor="">Ciudad</label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        name='city'
+                                                        id='city'
+                                                        value={order.data.city}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-7'>
+                                                        <label htmlFor="">Municipio</label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        name='municipality'
+                                                        id='municipality'
+                                                        value={order.data.municipality}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-7'>
+                                                        <label htmlFor="">Código Postal</label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        name='postalCode'
+                                                        id='postalCode'
+                                                        value={order.data.postalCode}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-4'>
+                                                        <label htmlFor="">Estado</label>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        name='state'
+                                                        id='state'
+                                                        value={order.data.state}
+                                                        type="text" />
+                                                    </div>
+                                                    <div className='flex items-center justify-between space-x-4 mb-6'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="">Teléfono de</label>
+                                                            <p className=''>contacto</p>
+                                                        </div>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        name='phone'
+                                                        id='phone'
+                                                        value={order.data.phone}
+                                                        type="text" />
+                                                    </div>
+
+                                                    <div className='flex items-center justify-between space-x-4 mb-6'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="">Tipo de envío</label>
+                                                        </div>
+                                                        <input 
+                                                        disabled
+                                                        onChange={handleChange}
+                                                        name='shippingOption'
+                                                        id='shippingOption'
+                                                        value={order.data.shippingOption}
+                                                        type="text" />
+                                                    </div>
+                                                            </div>
+                                                            
+                                                            
+                                                            </>
+                                                        
+                                                    </form>
+                                                </div>
+                                            </Modal>
+
                             </div>
                         )}
                 

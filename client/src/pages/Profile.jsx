@@ -66,7 +66,7 @@ export default function Profile() {
     useEffect(() => {
         async function fetchUserOrders() {
             const ordersRef = collection(db, "orders")
-            const q = query(ordersRef, where("userRef", "==", auth.currentUser.uid), orderBy("timestamp", "desc"))
+            const q = query(ordersRef, where("userRef", "==", auth.currentUser.uid),)
             const querySnap = await getDocs(q)
             let orders = []
             querySnap.forEach((doc) => {
@@ -338,98 +338,124 @@ export default function Profile() {
         <div className='bg-gray-200 w-full flex flex-col items-center justify-center px-6 md:px-6 '>
         <h2 className='font-medium mt-3 mb-6'>Editar dirección</h2>
 
-        <form ref={formRef} onSubmit={handleSubmit}>
+        <form>
             <>
-            <div className='flex items-center justify-between space-x-4 mb-6'>
-                <label htmlFor="">Nombre completo</label>
-                <input 
-                onChange={handleChange}
-                className='py-0.5 w-[370px] md:w-80'
-                name='fullName'
-                id='fullName'
-                value={fullName}
-                type="text" />
-            </div>
-            <div className='flex items-center justify-between space-x-4 mb-3'>
-                <div className='flex flex-col'>
-                    <label htmlFor="">Dirección</label>
-                    <p className='text-xs'>(calle, num. ext, colonia)</p>
+            {orders.length > 0 && (
+                
+                <div>
+                    <div className='flex items-center justify-between space-x-4 mb-6'>
+                        <label htmlFor="">Nombre completo </label>
+                        <input 
+                        onChange={handleChange}
+                        className='py-0.5 w-[370px] md:w-80'
+                        name='fullName'
+                        id='fullName'
+                        value={orders[0].data.fullName}
+                        type="text" />
+                    </div>
+                    <div className='flex items-center justify-between space-x-4 mb-3'>
+                        <div className='flex flex-col'>
+                            <label htmlFor="">Dirección</label>
+                            <p className='text-xs'>(calle, num. ext, colonia)</p>
+                        </div>
+                        <input 
+                        onChange={handleChange}
+                        className='py-0.5 w-[360px] md:w-80'
+                        name='address'
+                        id='address'
+                        value={orders[0].data.address}
+                        type="text" />
+                    </div>
+                    <div className='flex items-center justify-between space-x-4 mb-3'>
+                        <div className='flex flex-col'>
+                            <label htmlFor="">Dirección</label>
+                            <p className='text-xs'>(datos adicionales)</p>
+                            <p className='text-xs'>(calle, num int.)</p>
+                        </div>
+                        <input 
+                        onChange={handleChange}
+                        className='py-0.5 w-80'
+                        name='address2'
+                        id='address2'
+                        value={orders[0].data.address2}
+                        type="text" />
+                    </div>
+                    <div className='flex items-center justify-between space-x-4 mb-7'>
+                        <label htmlFor="">Ciudad</label>
+                        <input 
+                        onChange={handleChange}
+                        className='py-0.5 w-80'
+                        name='city'
+                        id='city'
+                        value={orders[0].data.city}
+                        type="text" />
+                    </div>
+                    <div className='flex items-center justify-between space-x-4 mb-7'>
+                        <label htmlFor="">Municipio</label>
+                        <input 
+                        onChange={handleChange}
+                        className='py-0.5 w-80'
+                        name='municipality'
+                        id='municipality'
+                        value={orders[0].data.municipality}
+                        type="text" />
+                    </div>
+                    <div className='flex items-center justify-between space-x-4 mb-7'>
+                        <label htmlFor="">Código Postal</label>
+                        <input 
+                        onChange={handleChange}
+                        className='py-0.5 w-80'
+                        name='postalCode'
+                        id='postalCode'
+                        value={orders[0].data.postalCode}
+                        type="text" />
+                    </div>
+                    <div className='flex items-center justify-between space-x-4 mb-4'>
+                        <label htmlFor="">Estado</label>
+                        <input 
+                        onChange={handleChange}
+                        className='py-0.5 w-80'
+                        name='state'
+                        id='state'
+                        value={orders[0].data.state}
+                        type="text" />
+                    </div>
+                    <div className='flex items-center justify-between space-x-4 mb-6'>
+                        <div className='flex flex-col'>
+                            <label htmlFor="">Teléfono de</label>
+                            <p className=''>contacto</p>
+                        </div>
+                        <input 
+                        onChange={handleChange}
+                        className='py-0.5 w-80'
+                        name='phone'
+                        id='phone'
+                        value={orders[0].data.phone}
+                        type="text" />
+                    </div>
+
+                    <div className='flex items-start justify-start space-x-14 mb-4'>
+                        <p className=''>Tipo de envío</p>
+
+                        <div className='space-y-2'>
+                        <div className='flex items-center justify-start space-x-2'>
+                            <input 
+                            onChange={handleChange}
+                            checked={orders[0].data.shippingOption === 'standard'}
+                            type="radio" name="shippingOption" id="standard" value='standard' />
+                            <label className='text-sm' htmlFor="standard">Estandar - $99mxn - 5 a 7 días</label>
+                        </div>
+                        <div className='flex items-center justify-start space-x-2 '>
+                            <input 
+                            onChange={handleChange}
+                            checked={orders[0].data.shippingOption === 'express'}
+                            type="radio" name="shippingOption" id="express" value='express'/>
+                            <label className='text-sm' htmlFor="express">Express - $180mxn - 1 a 2 días</label>
+                        </div>
+                        </div>  
+                    </div>
                 </div>
-                <input 
-                onChange={handleChange}
-                className='py-0.5 w-[360px] md:w-80'
-                name='address'
-                id='address'
-                value={address}
-                type="text" />
-            </div>
-            <div className='flex items-center justify-between space-x-4 mb-3'>
-                <div className='flex flex-col'>
-                    <label htmlFor="">Dirección</label>
-                    <p className='text-xs'>(datos adicionales)</p>
-                    <p className='text-xs'>(calle, num int.)</p>
-                </div>
-                <input 
-                onChange={handleChange}
-                className='py-0.5 w-80'
-                name='address2'
-                id='address2'
-                value={address2}
-                type="text" />
-            </div>
-            <div className='flex items-center justify-between space-x-4 mb-7'>
-                <label htmlFor="">Ciudad</label>
-                <input 
-                onChange={handleChange}
-                className='py-0.5 w-80'
-                name='city'
-                id='city'
-                value={city}
-                type="text" />
-            </div>
-            <div className='flex items-center justify-between space-x-4 mb-7'>
-                <label htmlFor="">Municipio</label>
-                <input 
-                onChange={handleChange}
-                className='py-0.5 w-80'
-                name='municipality'
-                id='municipality'
-                value={municipality}
-                type="text" />
-            </div>
-            <div className='flex items-center justify-between space-x-4 mb-7'>
-                <label htmlFor="">Código Postal</label>
-                <input 
-                onChange={handleChange}
-                className='py-0.5 w-80'
-                name='postalCode'
-                id='postalCode'
-                value={postalCode}
-                type="text" />
-            </div>
-            <div className='flex items-center justify-between space-x-4 mb-4'>
-                <label htmlFor="">Estado</label>
-                <input 
-                onChange={handleChange}
-                className='py-0.5 w-80'
-                name='state'
-                id='state'
-                value={state}
-                type="text" />
-            </div>
-            <div className='flex items-center justify-between space-x-4 mb-6'>
-                <div className='flex flex-col'>
-                    <label htmlFor="">Teléfono de</label>
-                    <p className=''>contacto</p>
-                </div>
-                <input 
-                onChange={handleChange}
-                className='py-0.5 w-80'
-                name='phone'
-                id='phone'
-                value={phone}
-                type="text" />
-            </div>
+            )}
 
             
             </>
@@ -751,6 +777,7 @@ export default function Profile() {
                         <p>Cantidad: {order.data.quantity}</p>
                         <p>Corte: {order.data.corte}</p>
                         <p>Precio: ${order.data.price} </p>
+                        
 
 
                  </div>
