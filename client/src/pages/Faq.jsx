@@ -327,7 +327,7 @@ export default function Faq() {
 </div>
 
 
-      <div className='h-full px-3 md:px-96 flex items-start justify-center'>
+      <div className='h-full px-6 md:px-96 flex items-start justify-center'>
         <div className=''>
           {filteredList.map((item, key) => (
             <Accordion
