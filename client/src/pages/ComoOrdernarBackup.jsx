@@ -1,4 +1,5 @@
 import React from 'react'
+import Youtube from 'react-youtube'
 import { style } from '../components/Styles'
 import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
@@ -8,10 +9,16 @@ import lineasDeCorte from '../imagesOutsidePublic/infografia-lineas de corte.jpg
 import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.jpg'
 import tipoDeCorte from '../imagesOutsidePublic/infografia- tipo de corte.jpg'
 import ejemploDeWaterTape from '../imagesOutsidePublic/infografia- water tape.jpg'
-import YoutubeEmbed from '../components/YoutubeEmbed'
 
-export default function ComoOrdenar() {
+export default function ComoOrdenarBackup() {
   const videoId = "Gf_1NScMeFE"
+  const opts = {
+    height: '480',
+    width: '854',
+    playerVars: {
+      autoplay: 0,
+    },
+  }
 
   const modalLineaDeCorte = useModal()
   const modalTamanos = useModal()
@@ -24,15 +31,14 @@ export default function ComoOrdenar() {
     <div className=''>
       <h1 className='text-gray-900 font-semibold text-3xl text-center mt-8 px-2 md:px-0'>Nunca antes había sido tan fácil ordenar stickers.</h1>
 
-      <YoutubeEmbed embedId={videoId}/>
-
-      <div className='md:-translate-y-24'>
-        <NecesitasAyudaConTusArchivos/>
+      <div className='flex items-center justify-center mt-8 mb-8'>
+          <Youtube videoId={videoId} opts={opts}/>
       </div>
-      
+
+      <NecesitasAyudaConTusArchivos/>
 
       <div>
-        <h1 className='text-gray-900 font-semibold text-3xl text-center mt-8 mb-12 md:mb-36 px-2 md:px-0'>
+        <h1 className='text-gray-900 font-semibold text-3xl text-center mt-8 mb-16 px-2 md:px-0'>
           Aqui te dejamos todos nuestros tutoriales y guías.</h1>
 
           <div className='w-full flex flex-col space-y-6 md:space-y-10 mb-16'>
