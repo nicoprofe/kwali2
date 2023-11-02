@@ -308,7 +308,7 @@ export default function Faq() {
     
         <FaSearch style={{position: "absolute", fontSize: '25px', marginLeft: '10px', marginTop: '5px', marginBottom: '5px'}}/>
       </div> */}
-<div className='mb-8 flex items-center justify-center px-3 md:px-96'>
+<div className='mb-8 flex items-center justify-center px-6 md:px-96'>
         <select
           onChange={handleChangeCategory}
           value={selectedCategory}
