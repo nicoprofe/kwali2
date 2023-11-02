@@ -14,6 +14,7 @@ import { db } from '../firebase'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
+import { useMediaQuery } from 'react-responsive'
 import guiaDeDimensiones from '../imagesOutsidePublic/guia dimensiones.jpg'
 import lineasDeCorte from '../imagesOutsidePublic/infografia-lineas de corte.jpg'
 import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.jpg'
@@ -37,6 +38,7 @@ export default function Producto({ imgSrc, product, description }) {
     const navigate = useNavigate()
     const auth = getAuth()
     const location = useLocation()
+    const isDesktop = useMediaQuery({ minWidth: 993 })
 
     // TOOLTIP
     const [ isTooltipVisible, setIsTooltipVisible ] = useState(false)
@@ -266,9 +268,11 @@ useEffect(() => {
             </div>
 
 
-            <div className='flex flex-col items-center justify-center px-6 md:px-0 space-y-6 mb-16 mt-16'>
+            <div className='flex flex-col items-center justify-center px-10 md:px-0 space-y-6 mb-16 mt-16'>
 
+                     
                     <p className='text-4xl font-semibold text-gray-900'>{product}</p>
+                    
                     <p className='font-semibold text-gray-900'>{description}</p>
 
             <form>

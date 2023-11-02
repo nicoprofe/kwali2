@@ -1,7 +1,9 @@
 import React from 'react'
 import Producto_Imanes from '../components/Producto_Imanes'
+import { useMediaQuery } from 'react-responsive'
 
 export default function Imanes() {
+  const isDesktop = useMediaQuery({ minWidth: 993 })
   return (
     <div>
       <Producto_Imanes
@@ -9,8 +11,8 @@ export default function Imanes() {
       product='Imanes'
       description={
         <>
-            Promociona tu marca con nuestros imanes cortados en la <br />
-            forma de tu diseño, fáciles de adherir a superficies metálicas <br />
+            Promociona tu marca con nuestros imanes cortados en la {isDesktop && <div/>}
+            forma de tu diseño, fáciles de adherir a superficies metálicas {isDesktop && <div/>}
             como autos, refrigeradores, etc.
         </>
       }/>
