@@ -178,7 +178,7 @@ export default function Faq() {
     },
     {
       question: '¿A qué países realizan envíos?',
-      answer: (<>Realizamos envíos a toda la Republica Mexicana. <span className='opacity-0'>dddddddddddddddddddddddddddddddd</span> </>),
+      answer: (<>Realizamos envíos a toda la Republica Mexicana. <span className='opacity-0'></span> </>),
       category: 'envios',
     },
     {
