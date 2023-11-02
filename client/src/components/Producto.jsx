@@ -447,7 +447,7 @@ useEffect(() => {
                                             <input 
                                             type="file"
                                             required
-                                            accept='.jpg,.png,.jpeg'
+                                            accept='.jpg,.png,.jpeg,.pdf'
                                             onChange={(e) => handleImagePreview(e)}
                                             style={{display: "none"}} />
                                         </label>
