@@ -41,17 +41,17 @@ export default function Contacto() {
         <h1 className='text-3xl md:text-5xl font-bold text-center mt-20'>¡Ponte en contacto con nosotros!</h1>
         <div className='flex flex-col items-center justify-center space-y-8 mt-8 mb-8'>
             
-            <div className='flex items-center justify-center space-x-6 md:space-x-36 mt-8 mb-8'>
+            <div className='flex items-end justify-center space-x-6 md:space-x-36 mt-8 mb-8'>
                 <div className='flex flex-col items-center space-y-2'> 
                     <Link to={'/'}>
                     <MdEmail
                     className='hover:text-primary-blueLight transition duration-300 ease-in-out'
                     style={{fontSize: '55px'}}/>
                     </Link>
-                    <p className='text-2xl font-medium text-gray-900'>info@kwali.us</p>
+                    <p className='text-xl md:text-2xl whitespace-nowrap font-medium text-gray-900'>info@kwali.us</p>
                 </div>
 
-                <div className='flex flex-col items-center space-y-2'> 
+                <div className='flex flex-col items-center space-y-3'> 
                     <div className='flex items-center space-x-4'>
                         <Link to={'/'}>
                         <BsFillTelephoneFill
@@ -65,7 +65,7 @@ export default function Contacto() {
                          </Link> */}
                          
                     </div>
-                    <p className='text-2xl font-medium text-gray-900'>+52 686 945 8899</p>
+                    <p className='text-xl md:text-2xl whitespace-nowrap font-medium text-gray-900'>+52 686 945 8899</p>
                 </div>
             </div>
             

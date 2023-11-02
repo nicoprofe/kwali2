@@ -62,13 +62,13 @@ const Navbar = () => {
     
                     
 
-                    <div className='relative md:hidden flex p-3 py-4'>
+                    <div className={`relative md:hidden flex px-2 ${cartItemCount === 0 ? 'py-2' : 'py-3'} `}>
                         <BsFillCartFill
                         onClick={() => {
 
                             togglePanel()
                         }} 
-                        className='text-xl'/>
+                        className='text-2xl'/>
                         {cartItemCount > 0 ? (
                             <>
                                 <div className='absolute bg-secondary-green h-5 w-5 top-0 left-3 rounded-full flex items-center justify-center
