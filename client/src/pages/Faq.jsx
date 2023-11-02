@@ -340,7 +340,7 @@ export default function Faq() {
         </div>
       </div>
 
-      <div className='grid place-items-center mt-20 mb-20'>
+      <div className='grid place-items-center mt-20 mb-20 px-6 md:px-0'>
       <Link to={'/contacto'}
       className=' bg-secondary-blueLight hover:bg-sky-300 active:bg-sky-400
       transition duration-150 ease-in-out px-10 md:px-12 py-2 rounded text-lg md:text-xl text-gray-900 active:text-white font-medium'>¿No encuentras lo que que estás buscando? 
