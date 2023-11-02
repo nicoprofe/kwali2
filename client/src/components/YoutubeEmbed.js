@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useMediaQuery } from 'react-responsive'
 
 const YoutubeEmbed = ({ embedId }) => {
-    const isDesktop = useMediaQuery({ minWidth: '992px'})
+    const isDesktop = useMediaQuery({ minWidth: 992})
 
     return (
         <div 
@@ -16,7 +16,7 @@ const YoutubeEmbed = ({ embedId }) => {
        src={`https://www.youtube.com/embed/${embedId}`}
        frameBorder='0'
        allowFullScreen
-       allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'
+       allow='accelerometer; clipboard-write; encrypted-media; picture-in-picture;'
        title='Kwali - Cómo Ordenar'/>
 
        
