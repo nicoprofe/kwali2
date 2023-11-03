@@ -106,8 +106,8 @@ export default function Home() {
         </div>
         
         <div className='flex flex-col items-center justify-center -translate-x-20 md:translate-x-0 '>
-          <img className='h-[800px]' src="./images/KWALIHOLA-10 1.png" alt="muestras" />
-          <img className='absolute h-[250px] ml-[500px] mb-0' src="./images/MUESTRAS MOCKUP-04 1.png" alt="muestras" />
+          <img className='h-[100%] md:h-[800px]' src="./images/KWALIHOLA-10 1.png" alt="muestras" />
+          <img className='absolute  h-[250px] ml-[500px] mb-0' src="./images/MUESTRAS MOCKUP-04 1.png" alt="muestras" />
         </div>
       
      </div>

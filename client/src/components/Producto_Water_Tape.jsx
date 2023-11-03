@@ -47,6 +47,8 @@ export default function Producto_Water_Tape({ imgSrc, product, description }) {
     const modalKissDie = useModal()
     const modalForma = useModal()
 
+    const modalDescuento = useModal()
+
     const [ delayedClose, setDelayedClose ] = useState(false)
 
     const [ size, setSize ] = useState('15');
@@ -343,6 +345,18 @@ useEffect(() => {
                                            disabled value={`$${unitPrice.toFixed(2)}`}
                                            type="text" />
                                         </div>
+
+                                        <div>
+                                            <p 
+                                            onClick={modalDescuento.openModal}
+                                            className='text-xs text-center underline cursor-pointer'>¿Tienes código de descuento?</p>
+                                        </div>
+                                        <Modal
+                                        isOpen={modalDescuento.isOpen}
+                                        onClose={modalDescuento.closeModal}>
+                                            <input type="text" placeholder='eg.:kwalimx'
+                                            className='border-gray-300' />
+                                        </Modal>
 
                                         <div className='flex items-center justify-center space-x-2'>
                                            <p>Descuento</p>
