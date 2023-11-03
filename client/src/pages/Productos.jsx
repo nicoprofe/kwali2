@@ -48,7 +48,7 @@ export default function Productos() {
           </div>
           <div className='mt-14'>
           <Link to='/imanes' className='mt-14'>
-            <img className='h-64 mx-auto' src="/images/productos/ejemplo-iman.png" alt="" />
+            <img className='h-64 mx-auto' src="/images/productos/iman.png" alt="" />
             <p className='text-center uppercase font-semibold text-xl mt-4'>Imanes</p>
           </Link>
           </div>

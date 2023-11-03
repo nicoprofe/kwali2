@@ -331,7 +331,7 @@ useEffect(() => {
                                             </Modal>
                                     </div>
 
-                                    <div className='flex items-center justify-center space-x-2 mr-3'>
+                                    {/* <div className='flex items-center justify-center space-x-2 mr-3'>
                                             <p>Color</p>
                                             <select
                                             id='color' 
@@ -356,7 +356,7 @@ useEffect(() => {
                                             src={tipoDeCorte} alt="" />
                                         </Modal>
 
-                                    </div>
+                                    </div> */}
 
                                     <div className='flex items-center justify-center space-x-2'>
                                                 <p>Cantidad</p>

@@ -18,6 +18,7 @@ import guiaDeDimensiones from '../imagesOutsidePublic/guia dimensiones.jpg'
 import lineasDeCorte from '../imagesOutsidePublic/infografia-lineas de corte.jpg'
 import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.jpg'
 import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño personalizado.jpg'
+import tipoDeCorte from '../imagesOutsidePublic/infografia- tipo de corte.jpg'
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
 import ModalHover from './ModalHover'
@@ -338,7 +339,7 @@ useEffect(() => {
                                         onClose={modalKissDie.closeModal}>
                                             <img
                                             className='w-full md:h-[660px]' 
-                                            src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
+                                            src={tipoDeCorte} alt="" />
                                         </Modal>
 
                                     </div>

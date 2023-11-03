@@ -30,7 +30,7 @@ export function CartProvider({ children }) {
         "Etiquetas ovaladas": '/images/productos/ejemplo-etiquetas ovaladas.jpg',
         "Etiquetas cuadradas": '/images/productos/ejemplo-etiquetas cuadradas.jpg',
         "Stickers para piso": '/images/productos/ejemplo-piso.jpg',
-        "Imanes": '/images/productos/ejemplo-iman.png',
+        "Imanes": '/images/productos/iman.png',
         "Water activated tape": '/images/productos/ejemplo-watertape.jpg',
         "Planillas de stickers": '/images/productos/ejemplo_planilla stickers.png',
         "Muestras": '/images/productos/set ejemplo.png',

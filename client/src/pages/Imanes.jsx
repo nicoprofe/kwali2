@@ -7,7 +7,7 @@ export default function Imanes() {
   return (
     <div>
       <Producto_Imanes
-      imgSrc='/images/productos/ejemplo-iman.png'
+      imgSrc='/images/productos/iman.png'
       product='Imanes'
       description={
         <>

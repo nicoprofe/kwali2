@@ -17,6 +17,7 @@ import axios from 'axios'
 import guiaDeDimensiones from '../imagesOutsidePublic/guia dimensiones.jpg'
 import lineasDeCorte from '../imagesOutsidePublic/infografia-lineas de corte.jpg'
 import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.jpg'
+import tipoDeCorte from '../imagesOutsidePublic/infografia- tipo de corte.jpg'
 import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño personalizado.jpg'
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
 import PorqueSomosLosMejores from './PorqueSomosLosMejores'
@@ -281,14 +282,14 @@ useEffect(() => {
                                             <Link className='underline' to={'/contacto'}>Ponte en contacto con nosotros.</Link>
                                             </p>
                                             <div 
-                                                onClick={modalKissDie.openModal}
+                                                onClick={modalPersonalizado.openModal}
                                                 className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
                                                     <BsQuestionLg/>
                                                 </div>
 
                                             <Modal
-                                            isOpen={modalKissDie.isOpen}
-                                            onClose={modalKissDie.closeModal}>
+                                            isOpen={modalPersonalizado.isOpen}
+                                            onClose={modalPersonalizado.closeModal}>
                                                 <img
                                                 className='w-full md:h-[660px]' 
                                                 src={tamanoPersonalizado} alt="" />
@@ -338,7 +339,7 @@ useEffect(() => {
                                         onClose={modalKissDie.closeModal}>
                                             <img
                                             className='w-full md:h-[660px]' 
-                                            src="/images/informativos/infografia-tipo de corte.jpg" alt="" />
+                                            src={tipoDeCorte} alt="" />
                                         </Modal>
 
                                     </div>

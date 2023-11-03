@@ -308,7 +308,7 @@ useEffect(() => {
                                     
                                     
 
-                                    <div>
+                                    {/* <div>
                                             <button 
                                             onClick={modalDimensiones.openModal}
                                             className='px-7 py-1 text-xs text-gray-900 active:text-white font-semibold rounded 
@@ -325,7 +325,7 @@ useEffect(() => {
                                                 </>
 
                                             </Modal>
-                                    </div>
+                                    </div> */}
 
                                     <div className='flex items-center justify-center space-x-2 mr-3'>
                                             <p>Acabado</p>

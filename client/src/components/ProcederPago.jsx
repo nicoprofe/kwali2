@@ -28,7 +28,7 @@ export default function ProcederPago() {
     const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption } = formData
 
     // Define shipping fee
-    const shippingFee = 99
+    const [ shippingFee, setShippingFee ] = useState(99)
 
     // Calculate subtotal based on currentPrice
     const subtotal = cartItems.reduce(
@@ -46,7 +46,7 @@ export default function ProcederPago() {
         try {
             // Create arrays for description, price, and quantity
             const descriptions = cartItems.map(item => item.product)
-            const prices = subtotal
+            const prices = subtotal + shippingFee
 
             // Send a single request to your server with the arrays
             const response = await axios.post('https://kwali2-server.vercel.app/create-preference', {
@@ -111,11 +111,17 @@ export default function ProcederPago() {
 
     const handleChange = (e) => {
         const { name, value } = e.target
+        if(name === 'shippingOption') {
+            setShippingFee(value === 'standard' ? 99 : 180)
+        }
+
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value,
+            subtotal: subtotal,
         }))
     }
+
 
 
   return (
@@ -275,7 +281,7 @@ export default function ProcederPago() {
             </div>
             <div className='flex flex-col items-center justify-center mb-2 space-y-1'>
                 <p className='font-medium'>Total</p>
-                <p className='font-medium'>${total}mxn</p>
+                <p className='font-medium'>${subtotal + shippingFee}mxn</p>
                 <button 
                 onClick={() => {
                     handleExternalSubmit()

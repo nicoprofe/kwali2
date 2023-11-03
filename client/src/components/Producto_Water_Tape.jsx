@@ -280,7 +280,7 @@ useEffect(() => {
 
                                         </div>
 
-                                        <div className='flex items-center justify-center space-x-3 mt-2'>
+                                        {/* <div className='flex items-center justify-center space-x-3 mt-2'>
                                             <p className='text-xs text-center'>¿No encuentras el tamaño que buscas? <br /> 
                                             <Link className='underline' to={'/contacto'}>Ponte en contacto con nosotros.</Link>
                                             </p>
@@ -297,12 +297,12 @@ useEffect(() => {
                                                 className='w-full md:h-[660px]' 
                                                 src={tamanoPersonalizado} alt="" />
                                             </Modal>
-                                        </div>
+                                        </div> */}
 
                                     
                                     
 
-                                    <div>
+                                    {/* <div>
                                             <button 
                                             onClick={modalDimensiones.openModal}
                                             className='px-7 py-1 text-xs text-gray-900 active:text-white font-semibold rounded 
@@ -319,7 +319,7 @@ useEffect(() => {
                                                 </>
 
                                             </Modal>
-                                    </div>
+                                    </div> */}
 
 
                                     
