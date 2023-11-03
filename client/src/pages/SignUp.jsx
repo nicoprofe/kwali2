@@ -8,8 +8,11 @@ import { style } from '../components/Styles'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 import OAuth from '../components/OAuth'
 import axios from 'axios'
+import { useMediaQuery } from 'react-responsive'
 
 export default function SignUp() {
+    const isDesktop = useMediaQuery({ minWidth: 993})
+
     const navigate = useNavigate()
 
     const [ showPassword, setShowPassword ] = useState(false)
@@ -125,20 +128,37 @@ export default function SignUp() {
                         )}
                     </div>
 
-                    <div className='flex justify-between whitespace-nowrap text-sm sm:text-[15px]'>
-                        <p className='mb-6'> ¿Tienes una cuenta?  
-                        <Link 
-                        to="/sign-in"
+                    {isDesktop 
+                    ? <div className='flex flex-col justify-between whitespace-nowrap text-sm sm:text-[15px]'>
+                        
+                    <p className='mb-6'> ¿Tienes una cuenta?  
+                    <Link 
+                    to="/sign-in"
+                    className='ml-1 text-red-600 hover:text-red-700 transition duration-200 ease-in-out'>
+                        Login
+                    </Link>
+                    </p>
+                    
+                    <Link 
+                    to="/forgot-password"
+                    className='ml-1 text-blue-600 hover:text-blue-800 transition duration-150 ease-in-out'>
+                        Recuperar password
+                    </Link>
+                      </div>
+                    : <div className='flex flex-col text-md lg:text-lg'>
+
+                        <div className='flex justify-between mb-6'>
+                        <p className=''>¿Tienes una cuenta?</p>
+                        <Link to="/sign-in"
                         className='ml-1 text-red-600 hover:text-red-700 transition duration-200 ease-in-out'>
-                            Login
-                        </Link>
-                        </p>
-                        <Link 
-                        to="/forgot-password"
-                        className='ml-1 text-blue-600 hover:text-blue-800 transition duration-150 ease-in-out'>
-                            Recuperar password
-                        </Link>
-                    </div>    
+                            Login</Link>
+                        </div>    
+
+                        <Link to="/forgot-password" 
+                        className='ml-1 mb-6 text-start text-blue-600 hover:text-blue-800 transition duration-200 ease-in-out'>
+                            Recuperar contraseña</Link>
+                      </div>  
+                    }   
 
                     <button 
                     type='submit'

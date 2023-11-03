@@ -5,9 +5,12 @@ import { toast } from "react-toastify"
 import { style } from "../components/Styles"
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
 import OAuth from "../components/OAuth"
+import { useMediaQuery } from 'react-responsive'
 
 
 export default function SignIn() {
+    const isDesktop = useMediaQuery({ minWidth: 993})
+
     const navigate = useNavigate()
 
     const [ showPassword, setShowPassword ] = useState(false)
@@ -87,8 +90,9 @@ export default function SignIn() {
                         )}
                 </div>  
 
-                <div className='flex justify-between whitespace-nowrap text-sm sm:text-[15px]'>
-                        <p className='mb-6'> ¿No tienes una cuenta?  
+                {isDesktop 
+                ? <div className='flex justify-between whitespace-nowrap text-sm sm:text-[15px]'>
+                        <p className='mb-6'>¿No tienes una cuenta?  
                         <Link 
                         to="/sign-up"
                         className='ml-1 text-red-600 hover:text-red-700 transition duration-200 ease-in-out'>
@@ -100,7 +104,21 @@ export default function SignIn() {
                         className='ml-1 text-blue-600 hover:text-blue-800 transition duration-150 ease-in-out'>
                             Recuperar password
                         </Link>
-                    </div>    
+                  </div>
+                  : <div className='flex flex-col text-md lg:text-lg'>
+
+                        <div className='flex justify-between mb-6'>
+                        <p className=''>¿No tienes una cuenta?</p>
+                        <Link to="/sign-up"
+                        className='ml-1 text-red-600 hover:text-red-700 transition duration-200 ease-in-out'>
+                            Registrate</Link>
+                        </div>    
+
+                        <Link to="/forgot-password" 
+                        className='ml-1 mb-6 text-start text-blue-600 hover:text-blue-800 transition duration-200 ease-in-out'>
+                            Recuperar password</Link>
+                   </div>    
+              } 
 
                     <button 
                     type='submit'
