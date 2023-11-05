@@ -46,7 +46,7 @@ export default function ProcederPago() {
         try {
             // Create arrays for description, price, and quantity
             const descriptions = cartItems.map(item => item.product)
-            const prices = subtotal + shippingFee
+            const prices = subtotal + (formData.shippingOption === 'standard' ? 99 : 180)
 
             // Send a single request to your server with the arrays
             const response = await axios.post('https://kwali2-server.vercel.app/create-preference', {
@@ -118,7 +118,6 @@ export default function ProcederPago() {
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value,
-            subtotal: subtotal,
         }))
     }
 
