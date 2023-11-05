@@ -87,15 +87,20 @@ export default function ProcederPago() {
 
         // Parse the existing data (assuming it's an array)
         let existingArray = []
-        if(existingData) {
-            existingArray = JSON.parse(existingData)
-        }
+
+        const subtotal = cartItems.reduce(
+            (acc, item) => acc + 1 * parseFloat(item.price), 0)
+
+        const shippingFee = shippingOption === 'standard' ? 99 : 180
+        
+        const total = subtotal + shippingFee; 
 
         // Update each object in the existing array with the new formData
         const updatedArray =  existingArray.map((existingFormData) => {
             return {
                 ...existingFormData,
                 ...formData,
+                
             }
 
         })
