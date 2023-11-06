@@ -13,7 +13,19 @@ export default function ProcederPago() {
     // Visa 4509 9535 6623 3704 - 123 - 11/25
     // Amercian 3711 803032 57522 - 1234 - 11/25
 
- 
+    const [ formData, setFormData ] = useState({
+        fullName: '',
+        address: '',
+        address2: '',
+        city: '',
+        municipality: '',
+        postalCode: '',
+        state: '',
+        phone: '',
+        shippingOption: 'standard',
+    })
+
+    const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption } = formData
 
     // Define shipping fee
     const [ shippingFee, setShippingFee ] = useState(99)
@@ -25,21 +37,6 @@ export default function ProcederPago() {
     // Calculate total by adding shipping fee to subtotal
     const total = subtotal + shippingFee    
 
-    const [ formData, setFormData ] = useState({
-        fullName: '',
-        address: '',
-        address2: '',
-        city: '',
-        municipality: '',
-        postalCode: '',
-        state: '',
-        phone: '',
-        shippingOption: 'standard',
-        price: total,
-    })
-
-    const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption, price } = formData
-
     //MERCADO PAGO
     useEffect(() => {
         initMercadoPago('TEST-8f106443-ef9a-4ea3-a86e-f004fc2bbf05')
@@ -49,7 +46,7 @@ export default function ProcederPago() {
         try {
             // Create arrays for description, price, and quantity
             const descriptions = cartItems.map(item => item.product)
-            const prices = subtotal + (formData.shippingOption === 'standard' ? 99 : 180)
+            
 
             // Send a single request to your server with the arrays
             const response = await axios.post('https://kwali2-server.vercel.app/create-preference', {
@@ -90,21 +87,15 @@ export default function ProcederPago() {
 
         // Parse the existing data (assuming it's an array)
         let existingArray = []
-
-        const subtotal = cartItems.reduce(
-            (acc, item) => acc + 1 * parseFloat(item.price), 0)
-
-        const shippingFee = shippingOption === 'standard' ? 99 : 180
-        
-        const total = subtotal + shippingFee; 
+        if(existingData) {
+            existingArray = JSON.parse(existingData)
+        }
 
         // Update each object in the existing array with the new formData
         const updatedArray =  existingArray.map((existingFormData) => {
             return {
                 ...existingFormData,
                 ...formData,
-                price: total,
-                
             }
 
         })
@@ -127,6 +118,7 @@ export default function ProcederPago() {
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value,
+            subtotal: subtotal + shippingFee,
         }))
     }
 
