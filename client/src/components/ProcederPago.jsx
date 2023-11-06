@@ -26,7 +26,7 @@ export default function ProcederPago() {
         price: total,
     })
 
-    const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption } = formData
+    const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption, price } = formData
 
     // Define shipping fee
     const [ shippingFee, setShippingFee ] = useState(99)
