@@ -23,6 +23,7 @@ export default function ProcederPago() {
         state: '',
         phone: '',
         shippingOption: 'standard',
+        price: total,
     })
 
     const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption } = formData
