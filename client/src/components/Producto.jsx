@@ -153,7 +153,6 @@ export default function Producto({ imgSrc, product, description }) {
                     state: '',
                     phone: '',
                     shippingOption: '',
-                    total: 0,
 
                 }
 

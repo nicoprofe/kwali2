@@ -22,7 +22,7 @@ export default function ProcederPago() {
         (acc, item) => acc + 1 * parseFloat(item.price), 0) // Parse price to float if needed
 
     // Calculate total by adding shipping fee to subtotal
-    // const total = subtotal + shippingFee    
+    const total = subtotal + shippingFee    
 
     const [ formData, setFormData ] = useState({
         fullName: '',
@@ -34,10 +34,9 @@ export default function ProcederPago() {
         state: '',
         phone: '',
         shippingOption: 'standard',
-        total: subtotal + shippingFee,
     })
 
-    const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption, total } = formData
+    const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption } = formData
 
 
     //MERCADO PAGO
@@ -121,7 +120,8 @@ export default function ProcederPago() {
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value,
-            subtotal: subtotal
+            subtotal: subtotal,
+            total: total,
         }))
     }
 
