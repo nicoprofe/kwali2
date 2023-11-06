@@ -152,7 +152,8 @@ export default function Producto({ imgSrc, product, description }) {
                     postalCode: '',
                     state: '',
                     phone: '',
-                    shippingOption: ''
+                    shippingOption: '',
+                    total: 0,
 
                 }
 

@@ -13,6 +13,17 @@ export default function ProcederPago() {
     // Visa 4509 9535 6623 3704 - 123 - 11/25
     // Amercian 3711 803032 57522 - 1234 - 11/25
 
+  
+    // Define shipping fee
+    const [ shippingFee, setShippingFee ] = useState(99)
+
+    // Calculate subtotal based on currentPrice
+    const subtotal = cartItems.reduce(
+        (acc, item) => acc + 1 * parseFloat(item.price), 0) // Parse price to float if needed
+
+    // Calculate total by adding shipping fee to subtotal
+    // const total = subtotal + shippingFee    
+
     const [ formData, setFormData ] = useState({
         fullName: '',
         address: '',
@@ -23,19 +34,11 @@ export default function ProcederPago() {
         state: '',
         phone: '',
         shippingOption: 'standard',
+        total: subtotal + shippingFee,
     })
 
-    const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption } = formData
+    const { fullName, address, address2, city, municipality, postalCode, state, phone, shippingOption, total } = formData
 
-    // Define shipping fee
-    const [ shippingFee, setShippingFee ] = useState(99)
-
-    // Calculate subtotal based on currentPrice
-    const subtotal = cartItems.reduce(
-        (acc, item) => acc + 1 * parseFloat(item.price), 0) // Parse price to float if needed
-
-    // Calculate total by adding shipping fee to subtotal
-    const total = subtotal + shippingFee    
 
     //MERCADO PAGO
     useEffect(() => {
@@ -46,7 +49,7 @@ export default function ProcederPago() {
         try {
             // Create arrays for description, price, and quantity
             const descriptions = cartItems.map(item => item.product)
-            
+            const prices = total
 
             // Send a single request to your server with the arrays
             const response = await axios.post('https://kwali2-server.vercel.app/create-preference', {
@@ -118,7 +121,7 @@ export default function ProcederPago() {
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value,
-            subtotal: subtotal + shippingFee,
+            subtotal: subtotal
         }))
     }
 

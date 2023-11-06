@@ -743,6 +743,13 @@ export default function Profile() {
                             </tr>
                         ))}
 
+
+                        <tr>{orders.map((order, index) => (
+                            <td>
+                                {order.data.total}
+                            </td>
+                        ))}</tr>
+
                     </tbody>
 
                 </table>
