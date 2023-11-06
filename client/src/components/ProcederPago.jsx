@@ -103,6 +103,7 @@ export default function ProcederPago() {
             return {
                 ...existingFormData,
                 ...formData,
+                price: total,
                 
             }
 
