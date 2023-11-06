@@ -23,14 +23,14 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     // PAGE STATE SIGNIN || SIGNOUT
-    const [ pageState, setPageState ] = useState(<div className='text-xs'>Inicia sesión <br /> Registrate </div>)
+    const [ pageState, setPageState ] = useState(<div className='text-[1.5vh]'>Inicia sesión <br /> Registrate </div>)
     
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if(user) {
                 setPageState("Mis Pedidos")
             } else {
-                setPageState(<div className='text-xs'>Inicia sesión <br /> Registrate </div>)
+                setPageState(<div className='text-[1.5vh]'>Inicia sesión <br /> Registrate </div>)
             }
         })
     }, [auth])
@@ -56,9 +56,9 @@ const Navbar = () => {
             "sticky top-0" 
             : ""}`}>
     
-            <div className='flex items-center justify-around font-medium h-[102px]'>
+            <div className='flex items-center justify-around font-medium h-[15vh]'>
     
-                <div className='z-50 px-5 md:w-auto w-full flex justify-between'>
+                <div className='z-50 px-[5vh] md:w-auto w-full flex justify-between'>
     
                     
 
@@ -83,7 +83,7 @@ const Navbar = () => {
 
                     <Link to={"/"}>
                     <img src="/images/identidad/isotipo.png" alt="logo"
-                    className='md:cursor-pointer h-24' />
+                    className='md:cursor-pointer h-[15vh]' />
                     </Link>
     
                     <div
@@ -94,36 +94,36 @@ const Navbar = () => {
     
                 </div>
     
-                <ul className='md:flex hidden items-center uppercase gap-8'>
+                <ul className='md:flex hidden items-center uppercase gap-[5vh]'>
                     <NavLinks/>
                     <li>
-                        <Link to={"/como-ordenar"} className='py-7 px-3 inline-block uppercase'>
+                        <Link to={"/como-ordenar"} className='py-[5vh] px-[2vh] text-[2.3vh] inline-block uppercase'>
                             Como ordenar
                         </Link>
                     </li>
                     <li>
-                        <Link to={"/faq"} className='py-7 px-3 inline-block uppercase'>
+                        <Link to={"/faq"} className='py-[5vh] px-[2vh] text-[2.3vh] inline-block uppercase'>
                             Faq
                         </Link>
                     </li>
                     <li>
-                        <Link to={"/conocenos"} className='py-7 px-3 inline-block uppercase'>
+                        <Link to={"/conocenos"} className='py-[5vh] px-[2vh] text-[2.3vh] inline-block uppercase'>
                             Conocenos
                         </Link>
                     </li>
                     <li>
-                        <Link to={"/contacto"} className='py-7 px-3 inline-block uppercase'>
+                        <Link to={"/contacto"} className='py-[5vh] px-[2vh] text-[2.3vh] inline-block uppercase'>
                             Contacto
                         </Link>
                     </li>
                     <li>
-                        <Link to={"/promos"} className='py-7 px-3 inline-block uppercase'>
+                        <Link to={"/promos"} className='py-[5vh] px-[2vh] text-[2.3vh] inline-block uppercase'>
                             Promos
                         </Link>
                     </li>
                 </ul>
              
-                <div className='md:flex hidden items-center justify-center space-x-3'>
+                <div className='md:flex hidden items-center justify-center space-x-[1.5vh]'>
                     {/* <Button/> */}
     
                     {loggedIn && (
@@ -139,11 +139,11 @@ const Navbar = () => {
                         </>
                     )}
                     
-                    <FaSearch className='text-xl cursor-pointer'/>
+                    <FaSearch className='text-[2.7vh] cursor-pointer'/>
                         <div className='flex relative'>
                             <BsFillCartFill 
                             onClick={togglePanel}
-                            className='text-xl cursor-pointer'/>
+                            className='text-[2.7vh] cursor-pointer'/>
                             {cartItemCount > 0 ? (
                                 <>
                                     <div className='absolute top-0 right-0 -mt-4 bg-secondary-green rounded-full w-5 h-5
@@ -156,12 +156,12 @@ const Navbar = () => {
                         </div>
                     
     
-                    <div className='bg-gray-500 py-7 px-[3px] rounded'></div>
+                    <div className='bg-gray-500 py-[4vh] px-[0.3vh] rounded'></div>
     
                     <div
                     onClick={() => navigate("/profile")} 
-                    className='flex items-center justify-center space-x-2 cursor-pointer'>
-                        <BsPersonCircle className='text-xl'/>
+                    className='flex items-center justify-center space-x-[1vh] cursor-pointer'>
+                        <BsPersonCircle className='text-[2.7vh]'/>
                         <div>
                             {pageState}
                         </div>
@@ -244,7 +244,7 @@ const Navbar = () => {
                         }} 
                         className='flex items-center justify-center space-x-2 cursor-pointer'>
                             <BsPersonCircle 
-                            className='text-xl'/>
+                            className='text-[3vh]'/>
                             <div>
                                 {pageState}
                             </div>

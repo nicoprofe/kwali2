@@ -470,6 +470,7 @@ export default function Profile() {
 
         {/* TABLE */}
         <div className='h-full p-5'>
+            {/* DESKTOP */}
             <div className="overflow-auto rounded-lg shadow hidden md:block">
                 <table className='w-full'>
 
@@ -744,15 +745,55 @@ export default function Profile() {
                         ))}
 
 
-                        <tr>{orders.map((order, index) => (
-                            <td>
-                                {order.data.total}
-                            </td>
-                        ))}</tr>
-
                     </tbody>
 
                 </table>
+                
+            </div>
+
+            <div className='h-full px-40'>
+            <p className='text-center font-semibold text-2xl mt-12 mb-6'>Historial de compras</p> 
+            <div className='overflow-auto rounded-lg shadow hidden md:block'>
+                <table className='w-full'>
+                     <thead className='bg-gray-50 border-b-2 border-gray-200'>
+                        <tr>
+                            <th className='p-3 text-sm font-semibold tracking-wide text-left'>
+                                Compra
+                            </th>
+                            <th className='p-3 text-sm font-semibold tracking-wide text-left'>
+                                Total
+                            </th>
+                            <th className='p-3 text-sm font-semibold tracking-wide text-left'>
+                                
+                            </th>
+                        </tr>
+                     </thead>  
+
+                     <tbody className='divide-y divide-gray-100'>
+                        {orders.length > 0 && (
+                            <tr className='bg-white'>
+                                {orders.map((order, index) => (
+                                    <td key={index} 
+                                    className='p-3 text-sm text-gray-700 whitespace-nowrap flex items-start'>
+                                        <div className='flex items-center'>
+                                        <img src={order.data.imgSrc} alt="" width={50} /> &nbsp;
+                                        {order.data.product} &nbsp;
+                                        x{order.data.quantity} &nbsp;
+                                        {/* {order.userData.createdAt} */}
+                                        <div className='bg-gray-400 h-6 w-0.5 rounded'></div>&nbsp;
+                                        Orden nro.: {order.id}
+                                        </div>
+                                        
+                                       
+                                    </td>
+                                ))}
+                                <td>${orders[0].data.total}mxn</td>
+                            </tr>
+                      
+                        )}
+                     </tbody>                                 
+                </table>
+            </div>
             </div>
             
             {/* MOBILE */}

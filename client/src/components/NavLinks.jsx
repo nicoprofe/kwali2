@@ -98,18 +98,18 @@ const NavLinks = ({ toggleHamburguer}) => {
           <>
     {links.map((LinkItem) => (
             <div key={LinkItem.name}>
-                <div className='px-3 text-left md:cursor-pointer group'>
-                    <h1 className='py-7 flex justify-between items-center md:pr-0 pr-5 group' 
+                <div className='text-left md:cursor-pointer group'>
+                    <h1 className='px-[5vh] py-[2vh] text-[2.3vh] flex justify-between items-center md:pr-0 pr-5 group' 
                     onClick={() => {
                     heading !== LinkItem.name 
                     ? setHeading(LinkItem.name)
                     : setHeading("");
                     setSubHeading("")}}>
                         {LinkItem.name}
-                        <span className='text-xl md:hidden inline'>
+                        <span className='text-[2.3vh] md:hidden inline'>
                             <ion-icon name={`${heading === LinkItem.name ? "chevron-up" : "chevron-down"}`}></ion-icon>
                         </span>
-                        <span className='text-xl md:mt-1 md:ml-2 md:block hidden group-hover:rotate-180 group-hover:-mt-2'>
+                        <span className='text-[2.3vh] md:mt-[0.6vh] md:ml-[1vh] md:block hidden group-hover:rotate-180 group-hover:-mt-2'>
                             <ion-icon name="chevron-down"></ion-icon>
                         </span>
                     </h1>
