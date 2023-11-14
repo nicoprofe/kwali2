@@ -247,7 +247,7 @@ useEffect(() => {
             <div className='flex flex-col items-center justify-center mt-6 md:mt-0'>
 
                     <img
-                    className='h-[300px] md:h-[450px]' 
+                    className='h-[300px] md:h-[63vh]' 
                     src={imgSrc} alt={product} />
 
                     {/* {imagePreviews.length === 0 && (
@@ -271,20 +271,20 @@ useEffect(() => {
             <div className='flex flex-col items-center justify-center px-10 md:px-0 space-y-6 mb-16 mt-16'>
 
                      
-                    <p className='text-4xl font-semibold text-gray-900'>{product}</p>
+                    <p className='text-[5vh] font-semibold text-gray-900'>{product}</p>
                     
-                    <p className='font-semibold text-gray-900'>{description}</p>
+                    <p className='text-[2.3vh] font-semibold text-gray-900'>{description}</p>
 
             <form>
 
-                          <div className='flex flex-col items-center justify-center space-y-6'>
+                          <div className='flex flex-col items-center justify-center space-y-[4vh]'>
                                   
-                                    <div className='flex items-center justity-center space-x-2'>
-                                        <p>Tamaño</p>
+                                    <div className='flex items-center justity-center space-x-[1vh]'>
+                                        <p className='text-[2.3vh]'>Tamaño</p>
                                         <select 
                                         id='size' 
                                         value={size}
-                                        style={{width: '165px'}}
+                                        style={{width: '21vh', height: '6vh', fontSize: '2.3vh'}}
                                         onChange={(e) => setSize(e.target.value)}>
                                           <option value="5x5">5x5</option>
                                           <option value="7.5x7.5">7.5x7.5</option>
@@ -293,8 +293,8 @@ useEffect(() => {
 
                                         <div 
                                         onClick={modalTamano.openModal}
-                                        className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                            <BsQuestionLg/>
+                                        className='bg-gray-300 rounded-full p-[0.4vh] cursor-pointer'>
+                                            <BsQuestionLg size='2.3vh'/>
                                         </div>
 
                                         <Modal
@@ -307,14 +307,14 @@ useEffect(() => {
 
                                         </div>
 
-                                        <div className='flex items-center justify-center space-x-2 mt-2'>
-                                            <p className='text-xs text-center'>¿No encuentras el tamaño que buscas? <br /> 
+                                        <div className='flex items-center justify-center space-x-[1vh] mt-2 mr-[0.5vh] md:mr-[2.2vh]'>
+                                            <p className='text-[1.7vh] text-center'>¿No encuentras el tamaño que buscas? <br /> 
                                             <Link className='underline' to={'/contacto'}>Ponte en contacto con nosotros.</Link>
                                             </p>
                                             <div 
                                                 onClick={modalPersonalizado.openModal}
-                                                className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                                    <BsQuestionLg/>
+                                                className='bg-gray-300 rounded-full p-[0.4vh] cursor-pointer'>
+                                                    <BsQuestionLg size='2.3vh'/>
                                             </div>
 
                                             <Modal
@@ -332,7 +332,7 @@ useEffect(() => {
                                     <div>
                                             <button 
                                             onClick={modalDimensiones.openModal}
-                                            className='px-7 py-1 text-xs text-gray-900 active:text-white font-semibold rounded 
+                                            className='w-[30vh] py-[0.5vh] text-[1.7vh] text-gray-900 active:text-white font-semibold rounded 
                                             bg-gray-300 hover:bg-gray-400 active:bg-slate-500 transition duration-200 ease-in-out'>
                                                 Ver guía de dimensiones
                                             </button>
@@ -348,20 +348,20 @@ useEffect(() => {
                                             </Modal>
                                     </div>
 
-                                    <div className='flex items-center justify-center space-x-2'>
-                                            <p>Corte</p>
+                                    <div className='flex items-center justify-center space-x-[1vh]'>
+                                    <p className='text-[2.3vh]'>Corte</p>
                                             <select
                                             id='corte' 
                                             onChange={(e) => setCorte(e.target.value)}
-                                            style={{width: "190px"}}>
+                                            style={{width: "25vh", height: '6vh', fontSize: '2.3vh'}}>
                                             <option value="kis-cut">Kiss-cut</option>
                                             <option value="die-cut">Die-cut</option>
                                             </select>
 
                                             <div 
                                             onClick={modalKissDie.openModal}
-                                            className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                                <BsQuestionLg/>
+                                            className='bg-gray-300 rounded-full p-[0.4vh] cursor-pointer'>
+                                                <BsQuestionLg size='2.3vh'/>
                                             </div>
 
                                         <Modal
@@ -374,12 +374,12 @@ useEffect(() => {
 
                                     </div>
 
-                                    <div className='flex items-center justify-center space-x-2'>
-                                            <p>Forma</p>
+                                    <div className='flex items-center justify-center space-x-[1vh]'>
+                                    <p className='text-[2.3vh]'>Forma</p>
                                             <select
                                             id='forma' 
                                             onChange={(e) => setForma(e.target.value)}
-                                            style={{width: "181px"}}>
+                                            style={{width: "24vh", height: '6vh', fontSize: '2.3vh'}}>
                                             <option value="circular">Circular</option>
                                             <option value="cuadrado">Cuadrado</option>
                                             <option value="rectangular">Rectangular</option>
@@ -389,8 +389,8 @@ useEffect(() => {
 
                                             <div 
                                             onClick={modalForma.openModal}
-                                            className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                                <BsQuestionLg/>
+                                            className='bg-gray-300 rounded-full p-[0.4vh] cursor-pointer'>
+                                                <BsQuestionLg size='2.3vh'/>
                                             </div>
 
                                         <Modal
@@ -403,10 +403,10 @@ useEffect(() => {
 
                                     </div>
 
-                                    <div className='flex items-center justify-center space-x-2'>
-                                                <p>Cantidad</p>
+                                    <div className='flex items-center justify-center space-x-[1vh]'>
+                                    <p className='text-[2.3vh]'>Cantidad</p>
                                                 <select 
-                                                style={{width: "133px"}} 
+                                                style={{width: "17vh", height: '6vh', fontSize: '2.3vh'}} 
                                                 id="quantity" 
                                                 value={quantity}
                                                 onChange={(e) => setQuantity(parseInt(e.target.value, 10))}>
@@ -417,22 +417,22 @@ useEffect(() => {
                                     </div>
 
                                     
-                                        <div className='flex items-center justify-center space-x-2'>
-                                           <p>Precio</p>
+                                        <div className='flex items-center justify-center space-x-[1vh]'>
+                                        <p className='text-[2.3vh]'>Precio</p>
                                            <input 
-                                           style={{width: "158px"}}
+                                           style={{width: "20vh", height: '6vh', fontSize: '2.3vh'}}
                                            disabled value={`$${(unitPrice * quantity).toFixed(2)}` }type="text" />
                                         </div>
-                                        <div className='flex items-center justify-center space-x-2'>
-                                           <p>Precio Unitario</p>
+                                        <div className='flex items-center justify-center space-x-[1vh]'>
+                                        <p className='text-[2.3vh]'>Precio Unitario</p>
                                            <input
-                                           style={{width: "90px"}} 
+                                           style={{width: "11vh", height: '6vh', fontSize: '2.3vh'}} 
                                            disabled value={`$${unitPrice.toFixed(2)}`} type="text" />
                                         </div>
-                                        <div className='flex items-center justify-center space-x-2'>
-                                           <p>Descuento</p>
+                                        <div className='flex items-center justify-center space-x-[1vh]'>
+                                        <p className='text-[2.3vh]'>Descuento</p>
                                            <input
-                                           style={{width: "122px"}} 
+                                           style={{width: "16vh", height: '6vh', fontSize: '2.3vh'}} 
                                            disabled 
                                            value={`${discountPercentage.toFixed(0)}%`} 
                                            type="text" />
@@ -442,7 +442,7 @@ useEffect(() => {
                                     <div className='flex items-center justify-center space-x-2'>
                                         <label 
                                         className={`${imagePreviews.length > 0 ? 'ml-8' : ''} bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
-                                        px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out`}>
+                                        px-[6vh] py-[1.5vh] text-[2.2vh] font-semibold rounded transition duration-300 ease-in-out cursor-pointer`}>
                                             Sube tu archivo
                                             <input 
                                             type="file"
@@ -462,7 +462,7 @@ useEffect(() => {
                                     <div>
                                         <button
                                         onClick={modalImpresion.openModal} 
-                                        className='px-4 py-1 text-xs text-gray-900 active:text-white font-semibold rounded 
+                                        className='w-[30vh] py-[0.5vh] text-[1.7vh] text-gray-900 active:text-white font-semibold rounded 
                                         bg-gray-300 hover:bg-gray-400 active:bg-slate-500 transition duration-200 ease-in-out'>
                                             Guía de impresión avanzada
                                         </button>
@@ -545,7 +545,7 @@ useEffect(() => {
                                     <div>
                                         <button
                                         onClick={modalCorte.openModal} 
-                                        className='px-5 py-1 text-xs text-gray-900 active:text-white font-semibold rounded 
+                                        className='w-[30vh] py-[0.5vh] text-[1.7vh] text-gray-900 active:text-white font-semibold rounded 
                                         bg-gray-300 hover:bg-gray-400 active:bg-slate-500 transition duration-200 ease-in-out'>
                                             Ejemplo de lineas de corte
                                         </button>
@@ -564,7 +564,7 @@ useEffect(() => {
                                         <button 
                                         onClick={handleAddToCartAndSubmit}
                                         className='bg-secondary-green hover:bg-lime-400 active:bg-lime-600
-                                        px-10 py-2.5 font-semibold text-white rounded transition duration-300 ease-in-out'>
+                                        px-[6vh] py-[1.5vh] text-[2.2vh] font-semibold text-white rounded transition duration-300 ease-in-out'>
                                             Añadir al carrito
                                         </button>
                                     </div>

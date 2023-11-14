@@ -68,7 +68,7 @@ export default function SidePanel({ isPanelOpen}) {
    
   return (
     <div 
-    className={`fixed top-[102px] right-0 w-full md:w-1/4 h-full bg-white
+    className={` fixed top-[15vh] right-0 w-full md:w-1/4 h-full bg-white
     transition-transform duration-300 ease-in-out ${
         isPanelOpen 
         ? "translate-x-0" 
@@ -77,12 +77,12 @@ export default function SidePanel({ isPanelOpen}) {
         {/* Content of your side panel     */}
         <div className='flex flex-col space-y-6 overflow-auto max-h-[800px]'>
 
-            <h1 className='uppercase font-semibold text-xl text-center mt-6'>tu carrito</h1>
+            <h1 className='uppercase font-semibold text-[3vh] text-center mt-6'>tu carrito</h1>
             {/* <button
             onClick={clearAllOrders}
             className='text-red-500 hover:text-red-700 font-bold cursor-pointer'>All</button> */}
 
-            <div className='flex items-center justify-around py-2 text-md font-semibold bg-gray-300'>
+            <div className='flex items-center justify-around py-[1vh] text-[2.5vh] font-semibold bg-gray-300'>
                 <p>Descripción</p>
                 <p>Cantidad</p>
                 <p>Total</p>
@@ -114,14 +114,14 @@ export default function SidePanel({ isPanelOpen}) {
         </div>
 
         
-        <div className='absolute top-24 flex mt-[415px] space-x-16 items-center px-10'>
+        <div className='absolute top-24 flex mt-[60vh] space-x-[8vh] items-center px-10'>
 
           <div className='flex flex-col'>
             <button
             onClick={() => navigate('/proceder-pago')} 
             className='bg-gray-300 hover:bg-gray-400 active:bg-slate-500 
-            hover:text-white active:text-white
-            px-16 h-10 transition duration-300 ease-in-out'>Pagar
+            text-[2.5vh] hover:text-white active:text-white
+            px-[9vh] h-[5.5vh] transition duration-300 ease-in-out'>Pagar
             </button>
             
            
@@ -131,8 +131,8 @@ export default function SidePanel({ isPanelOpen}) {
         
           <div
           className='flex flex-col space-y-2 font-semibold'>
-            <p>Subtotal</p>
-            {<p>${total.toFixed(2)}</p>}
+            <p className='text-[2.5vh]'>Subtotal</p>
+            {<p className='text-[2.5vh]'>${total.toFixed(2)}</p>}
           </div>
           
       </div>

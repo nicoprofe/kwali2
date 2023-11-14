@@ -26,7 +26,7 @@ export default function Contacto() {
     }
 
     const icon155 = {
-        fontSize: isMobile ? '55px' : '155px',
+        fontSize: isMobile ? '55px' : '20vh',
         cursor: 'pointer',
         transition: 'font-size 0.3s ease',
     }
@@ -38,25 +38,25 @@ export default function Contacto() {
     }
   return (
     <div>
-        <h1 className='text-3xl md:text-5xl font-bold text-center mt-20'>¡Ponte en contacto con nosotros!</h1>
-        <div className='flex flex-col items-center justify-center space-y-8 mt-8 mb-8'>
+        <h1 className='text-3xl md:text-[6.5vh] font-bold text-center mt-[12vh]'>¡Ponte en contacto con nosotros!</h1>
+        <div className='flex flex-col items-center justify-center space-y-[5vh] mt-[5vh] mb-[5vh]'>
             
-            <div className='flex items-end justify-center space-x-6 md:space-x-36 mt-8 mb-8'>
-                <div className='flex flex-col items-center space-y-2'> 
+            <div className='flex items-end justify-center space-x-[5vh] md:space-x-[20vh] mt-[5vh] mb-[5vh]'>
+                <div className='flex flex-col items-center space-y-[1vh]'> 
                     <Link to={'/'}>
                     <MdEmail
                     className='hover:text-primary-blueLight transition duration-300 ease-in-out'
-                    style={{fontSize: '55px'}}/>
+                    style={{fontSize: '8vh'}}/>
                     </Link>
-                    <p className='text-xl md:text-2xl whitespace-nowrap font-medium text-gray-900'>info@kwali.us</p>
+                    <p className='text-xl md:text-[3vh] whitespace-nowrap font-medium text-gray-900'>info@kwali.us</p>
                 </div>
 
-                <div className='flex flex-col items-center space-y-3'> 
-                    <div className='flex items-center space-x-4'>
+                <div className='flex flex-col items-center space-y-[2vh]'> 
+                    <div className='flex items-center space-x-[3vh]'>
                         <Link to={'/'}>
                         <BsFillTelephoneFill
                         className='hover:text-primary-blueLight transition duration-300 ease-in-out'
-                        style={{fontSize: '45px'}}/>
+                        style={{fontSize: '6vh'}}/>
                         </Link>
                         {/* <Link to={'/'}>
                         <IoLogoWhatsapp
@@ -65,14 +65,14 @@ export default function Contacto() {
                          </Link> */}
                          
                     </div>
-                    <p className='text-xl md:text-2xl whitespace-nowrap font-medium text-gray-900'>+52 686 945 8899</p>
+                    <p className='text-xl md:text-[3vh] whitespace-nowrap font-medium text-gray-900'>+52 686 945 8899</p>
                 </div>
             </div>
             
-               <h2 className='text-2xl md:text-4xl font-bold text-gray-900 '>Síguenos en redes sociales</h2>
+               <h2 className='text-2xl md:text-[5.5vh] font-bold text-gray-900 '>Síguenos en redes sociales</h2>
 
         </div>
-        <div className='flex items-center justify-center space-x-12 mb-8'>
+        <div className='flex items-center justify-center space-x-[8vh] mb-[6vh]'>
                     <Link to={'/'}>
                     <TiSocialFacebookCircular 
                     className='hover:text-primary-blueLight transition duration-300 ease-in-out'

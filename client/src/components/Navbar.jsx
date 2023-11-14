@@ -83,7 +83,7 @@ const Navbar = () => {
 
                     <Link to={"/"}>
                     <img src="/images/identidad/isotipo.png" alt="logo"
-                    className='md:cursor-pointer h-[15vh]' />
+                    className='md:cursor-pointer h-16 md:h-[13vh]' />
                     </Link>
     
                     <div
@@ -173,6 +173,7 @@ const Navbar = () => {
                 duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
                   
                     <NavLinks toggleHamburguer={() => setOpen(!open)}/>
+
                     <li 
                     onClick={() => {
                         setOpen(!open)

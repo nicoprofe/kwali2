@@ -34,7 +34,6 @@ import MetalGold from './pages/MetalGold'
 import Circulares from './pages/Circulares'
 import Ovaladas from './pages/Ovaladas'
 import Cuadradas from './pages/Cuadradas'
-import Rectangulares from './pages/Rectangulares'
 import Cancel from './pages/Cancel'
 import Success from './pages/Success'
 import { CartProvider } from './TuPutaHermanContext'
@@ -98,7 +97,6 @@ function App() {
         <Route path='/etiquetas/circulares' element={<Circulares/>}/>
         <Route path='/etiquetas/ovaladas' element={<Ovaladas/>}/>
         <Route path='/etiquetas/cuadradas' element={<Cuadradas/>}/>
-        <Route path='/etiquetas/rectangulares' element={<Rectangulares/>}/>
         <Route path='/stickers-para-piso' element={<StickersParaPiso/>}/>
         <Route path='/imanes' element={<Imanes/>}/>
         <Route path='/water-activated-tape' element={<WaterActivatedTape/>}/>

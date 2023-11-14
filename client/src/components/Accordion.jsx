@@ -9,18 +9,18 @@ export default function Accordion(props) {
 
   return (
     <div
-      className={`bg-gray-200 p-5 mb-3 border border-[#c9c6c655] rounded-md w-full shadow duration-200 group ${
+      className={`bg-gray-200 p-[2vh] mb-[1.7vh] border border-[#c9c6c655] rounded-md w-full shadow duration-200 group ${
         isActive ? 'is-active bg-white' : ''
       }`}
     >
       <div onClick={handleToggleActive} className='flex items-start cursor-pointer'>
-            <div className='w-full font-medium group-[.is-active]:underline'>{props.datas.question}</div>
+            <div className='w-full font-medium text-[2.5vh] group-[.is-active]:underline'>{props.datas.question}</div>
             <div 
             style={{
                 transform: isActive ? 'rotate(45deg)' : 'rotate(0deg)',
                 transiton: 'transform 0.2s ease-in-out',
             }}
-            className='text-xl duration-200 cursor-pointer'>
+            className='text-[3vh] duration-200 cursor-pointer'>
                 <p className=''>+</p>
             </div>
       </div>

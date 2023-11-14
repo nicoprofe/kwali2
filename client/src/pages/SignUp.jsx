@@ -80,16 +80,18 @@ export default function SignUp() {
     
   return (
     <div>
-      <h1 className='text-3xl text-center font-bold mt-6'>Registrate</h1>
+      <h1 className='text-[4.2vh] text-center font-bold mt-[4vh]'>Registrate</h1>
 
-      <div className='flex justify-center flex-wrap items-center px-6 py-12 max-w-6xl mx-auto'>
+      <div className='flex justify-center flex-wrap items-center px-6 py-[7vh]'>
 
-      <div className='md:w-[67%] lg:w-[50%] mb-12 md:mb-6'>
-                    <img src="/images/brillosa.png" alt="iniciar sesion"
+            <div className='mb-12 md:mb-0'>
+                    <img 
+                    className='h-[45vh]'
+                    src="/images/brillosa.png" alt="iniciar sesion"
                     /> {/* className='w-full rounded-2xl' */} 
-                </div>
+            </div>
 
-            <div className='w-full md:w-[67%] lg:w-[40%] lg:ml-20'>
+            <div className='w-full md:w-[70vh] md:ml-[30vh]'>
                 <form onSubmit={handleSubmit}>
                     <input 
                     type="text"
@@ -118,34 +120,32 @@ export default function SignUp() {
                         {showPassword 
                         ? (
                             <AiFillEyeInvisible 
-                            className='absolute right-3 top-3 text-l cursor-pointer'
+                            className='absolute right-[2vh] top-[2.5vh] text-[2vh] cursor-pointer'
                             onClick={() => setShowPassword((prevState) => !prevState)} />
                         ) 
                         : (
                             <AiFillEye 
-                            className='absolute right-3 top-3 text-l cursor-pointer'
+                            className='absolute right-[2vh] top-[2.5vh] text-[2vh] cursor-pointer'
                             onClick={() => setShowPassword((prevState) => !prevState)}/>
                         )}
                     </div>
 
                     {isDesktop 
-                    ? <div className='flex flex-col justify-between whitespace-nowrap text-sm sm:text-[15px]'>
-                        
-                    <p className='mb-6'> ¿Tienes una cuenta?  
+                    ? <div className='flex justify-between whitespace-nowrap text-sm md:text-[2vh]'>
+                    <p className='mb-[4vh]'>¿Tienes una cuenta?  
                     <Link 
                     to="/sign-in"
-                    className='ml-1 text-red-600 hover:text-red-700 transition duration-200 ease-in-out'>
+                    className='ml-[1vh] text-red-600 hover:text-red-700 transition duration-200 ease-in-out'>
                         Login
                     </Link>
                     </p>
-                    
-                    <Link 
+                    <Link
                     to="/forgot-password"
-                    className='ml-1 text-blue-600 hover:text-blue-800 transition duration-150 ease-in-out'>
+                    className='ml-[1vh] text-blue-600 hover:text-blue-800 transition duration-150 ease-in-out'>
                         Recuperar password
                     </Link>
-                      </div>
-                    : <div className='flex flex-col text-md lg:text-lg'>
+            </div>
+                    : <div className='flex flex-col text-md'>
 
                         <div className='flex justify-between mb-6'>
                         <p className=''>¿Tienes una cuenta?</p>
@@ -166,10 +166,10 @@ export default function SignUp() {
                         Registrate
                     </button>
 
-                    <div className='flex items-center my-4
+                    <div className='flex items-center my-[2vh]
                     before:border-t before:flex-1 before:border-gray-300
                     after:border-t after:flex-1 after:border-gray-300'>
-                        <p className='text-center font-semibold mx-4'>O</p>
+                        <p className='text-[2vh] text-center font-semibold mx-[2vh]'>O</p>
                     </div>
 
                     <OAuth/>
@@ -177,11 +177,6 @@ export default function SignUp() {
                     
                 </form>
             </div>
-
-
-
-
-
 
       </div>
 

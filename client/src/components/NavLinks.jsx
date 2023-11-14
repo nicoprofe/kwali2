@@ -99,7 +99,7 @@ const NavLinks = ({ toggleHamburguer}) => {
     {links.map((LinkItem) => (
             <div key={LinkItem.name}>
                 <div className='text-left md:cursor-pointer group'>
-                    <h1 className='px-[5vh] py-[2vh] text-[2.3vh] flex justify-between items-center md:pr-0 pr-5 group' 
+                    <h1 className='px-3 py-6 md:px-[5vh] md:py-[2vh] text-base md:text-[2.3vh] flex justify-between items-center md:pr-0 pr-5 group' 
                     onClick={() => {
                     heading !== LinkItem.name 
                     ? setHeading(LinkItem.name)
@@ -115,19 +115,19 @@ const NavLinks = ({ toggleHamburguer}) => {
                     </h1>
                     {LinkItem.submenu && (
                         <div>
-                            <div className='absolute top-20 hidden group-hover:md:block hover:md:block z-50'>
+                            <div className='absolute top-[11.5vh] hidden group-hover:md:block hover:md:block z-50'>
                                 <div className='py-3'>
                                     <div className='w-4 h-4 left-3 absolute mt-1 
                                     bg-white rotate-45'></div>
                                 </div>
-                                <div className='bg-white shadow-lg p-5 grid grid-cols-3 gap-10'>
+                                <div className='bg-white shadow-lg p-[3vh] grid grid-cols-3 gap-[6vh]'>
                                     {LinkItem.sublinks.map((mysublinks) => (
                                         <div key={mysublinks.Head}>
-                                            <h1 className='text-lg font-semibold'>
+                                            <h1 className='text-[2.5vh] font-semibold'>
                                                 {mysublinks.Head}
                                             </h1>
                                             {mysublinks.sublink.map((slink) => (
-                                                <li key={slink.name} className='text-sm text-gray-600 my-2.5'>
+                                                <li key={slink.name} className='text-[1.8vh] text-gray-600 my-[1.5vh]'>
                                                     <Link 
                                                     to={slink.link}
                                                     className='hover:text-primary-blueLight'>

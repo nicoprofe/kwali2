@@ -259,13 +259,11 @@ useEffect(() => {
 
                                         
                                     
-                                        <div className='flex items-center justify-center space-x-2'>
-                                           <p>Precio</p>
+                                        <div className='flex items-center justify-center space-x-[1vh]'>
+                                        <p className='text-[2.3vh]'>Precio</p>
                                            <input 
-                                           style={{width: "158px"}}
-                                           disabled 
-                                           value='$0.0'
-                                           type="text" />
+                                           style={{width: "20vh", height: '6vh', fontSize: '2.3vh'}}
+                                           disabled value={`$${(unitPrice * quantity).toFixed(2)}` }type="text" />
                                         </div>
                                        
                                    
@@ -276,11 +274,11 @@ useEffect(() => {
 
                                    
 
-                                    <div>
+                                        <div>
                                         <button 
                                         onClick={handleAddToCartAndSubmit}
                                         className='bg-secondary-green hover:bg-lime-400 active:bg-lime-600
-                                        px-10 py-2.5 font-semibold text-white rounded transition duration-300 ease-in-out'>
+                                        px-[6vh] py-[1.5vh] text-[2.2vh] font-semibold text-white rounded transition duration-300 ease-in-out'>
                                             Añadir al carrito
                                         </button>
                                     </div>

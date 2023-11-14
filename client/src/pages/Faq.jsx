@@ -300,7 +300,7 @@ export default function Faq() {
 
   return (
     <div>
-      <h1 className='mt-8 mb-8 text-4xl font-semibold text-gray-900 text-center'>Preguntas frecuentes</h1>
+      <h1 className='mt-[5vh] mb-[5vh] text-[5vh] font-semibold text-gray-900 text-center'>Preguntas frecuentes</h1>
 
       {/* <div className='mb-8 flex items-center px-3 md:px-96'>
         <input className='text-gray-900 text-xl pl-12 flex items-center px-3 bg-gray-200 h-12 w-full
@@ -308,12 +308,12 @@ export default function Faq() {
     
         <FaSearch style={{position: "absolute", fontSize: '25px', marginLeft: '10px', marginTop: '5px', marginBottom: '5px'}}/>
       </div> */}
-<div className='mb-8 flex items-center justify-center px-6 md:px-96'>
+<div className='mb-[5vh] flex items-center justify-center px-6 md:px-[53vh]'>
         <select
           onChange={handleChangeCategory}
           value={selectedCategory}
-          className='text-gray-900 text-lg pl-6 pr-12 font-medium underline tracking-wider
-           bg-gray-200 h-12 w-full rounded shadow border-transparent ring-transparent outline-none 
+          className='text-gray-900 text-[2.5vh] pl-[3vh] pr-[8vh] font-medium underline tracking-wider
+           bg-gray-200 h-[6vh] w-full rounded shadow border-transparent ring-transparent outline-none 
            focus:border-transparent focus:ring-transparent focus:outline-none'>
           <option value='all'>Todas las categorías</option>
           <option value='stickers'>Stickers</option>
@@ -327,7 +327,7 @@ export default function Faq() {
 </div>
 
 
-      <div className='h-full px-6 md:px-96 flex items-start justify-center'>
+      <div className='h-full px-6 md:px-[53vh] flex items-start justify-center'>
         <div className=''>
           {filteredList.map((item, key) => (
             <Accordion
@@ -340,10 +340,10 @@ export default function Faq() {
         </div>
       </div>
 
-      <div className='grid place-items-center mt-20 mb-20 px-6 md:px-0'>
+      <div className='grid place-items-center mt-[10vh] mb-[10vh] px-6 md:px-0'>
       <Link to={'/contacto'}
       className=' bg-secondary-blueLight hover:bg-sky-300 active:bg-sky-400
-      transition duration-150 ease-in-out px-10 md:px-12 py-2 rounded text-lg md:text-xl text-gray-900 active:text-white font-medium'>¿No encuentras lo que que estás buscando? 
+      transition duration-150 ease-in-out px-10 md:px-[7vh] py-[1.5vh] rounded text-lg md:text-[3vh] leading-[4vh] text-gray-900 active:text-white font-medium'>¿No encuentras lo que que estás buscando? 
         <br /> Ponte en contacto con nostros</Link>
       </div>  
     

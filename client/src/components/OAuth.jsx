@@ -41,9 +41,9 @@ export default function OAuth() {
     type='button'
     onClick={handleGoogleClick}
     className='flex items-center justify-center w-full
-    bg-red-700 text-white px-7 py-3 uppercase text-sm font-medium hover:bg-red-800 active:bg-red-900
+    bg-red-700 text-white px-7 py-[2vh] uppercase text-[2vh] font-medium hover:bg-red-800 active:bg-red-900
     shadow-md hover:shadow-lg acitve:shadow-lg transition duration-150 ease-in-out rounded-md'>
-        <FcGoogle className='text-2xl bg-white rounded-full mr-2'/>
+        <FcGoogle className='text-[3.2vh] bg-white rounded-full mr-[1vh]'/>
         Continuar con Google
     </button>
   )

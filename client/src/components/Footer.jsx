@@ -12,20 +12,20 @@ export default function Footer() {
     const modalPrivacidad = useModal()
   return (
     <footer className='bg-gray-900 text-white'>
-        <div className='md:flex md:justify-between sm:px-12 px-4 py-7 md:items-center bg-[#ffffff19]'>
-            <h1 className='md:text-3xl text-1xl md:mb-0 mb-6 lg:leading-normal font-semibold md:w-2/5'>
-                <span className='text-primary-blueLight text-3xl md:text-6xl'>Newsletter</span><br />Enterate antes que nadie de todas nuestras promociones y descuentos
+        <div className='md:flex md:justify-between sm:px-[7vh] px-[2vh] py-[6vh] md:items-center bg-[#ffffff19]'>
+            <h1 className='md:text-[4vh] text-xl md:mb-0 mb-6 lg:leading-normal font-semibold md:w-2/5'>
+                <span className='text-primary-blueLight text-3xl md:text-[8vh]'>Newsletter</span><br />Enterate antes que nadie de todas nuestras promociones y descuentos
             </h1>
             <div>
                 <input type="text" placeholder='Email'
-                className='text-gray-800 sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none' />
+                className='text-gray-800 sm:w-[40vh] w-full sm:mr-[3vh] mr-[1vh] lg:mb-0 mb-[2vh] py-[1.5vh] text-[2vh] rounded px-[2vh] focus:outline-none' />
                 <button className='bg-sky-500 hover:bg-sky-600 active:bg-sky-800 duration-300 
-                px-5 py-2.5 font-[Poppins] rounded-md text-white md:w-auto w-full'>Suscribirme</button>
+                px-[2.5vh] py-[1.5vh] font-[Poppins] rounded-md text-[2vh] text-white md:w-auto w-full'>Suscribirme</button>
             </div>
         </div>
         <ItemsContainer/>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center pt-2 text-gray-400
-        text-sm pb-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center pt-[1vh] text-gray-400
+        text-[1.9vh] pb-[5vh]'>
             <span>© 2023 Kwali. Todos los derechos reservados.</span>
 
             <div>

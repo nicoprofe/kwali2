@@ -224,273 +224,233 @@ useEffect(() => {
     <>
       <div className='flex flex-wrap items-center justify-center space-x-0 md:space-x-24'>
 
-            <div className='flex flex-col items-center justify-center mt-6 md:mt-0'>
+<div className='flex flex-col items-center justify-center mt-6 md:mt-0'>
 
-                <img
-                className='h-[300px] md:h-[450px]' 
-                src={imgSrc} alt={product} />
+        <img
+        className='h-[300px] md:h-[63vh]' 
+        src={imgSrc} alt={product} />
 
+        {/* {imagePreviews.length === 0 && (
+            <img className='h-[300px] md:h-[450px]' src={imgSrc} alt="" />
+        )}
+
+        {imagePreviews.length > 0 && (
+            <div className='h-[400px] w-[450px] rounded-xl border-b-4 border-r-4 shadow-inner
+            flex items-center justify-center'>
+                
+                {imagePreviews.map((previewUrl, index) => (
+                    <img src={previewUrl} key={index} alt={`Preview ${index}`}
+                    className='h-80 w-80 rounded' />
+                ))}
             </div>
+         )} */}
+
+</div>
 
 
-            <div className='flex flex-col items-center justify-center px-6 md:px-0 space-y-6 mb-16 mt-16'>
+<div className='flex flex-col items-center justify-center px-10 md:px-0 space-y-6 mb-16 mt-16'>
 
-                    <p className='text-4xl font-semibold text-gray-900'>{product}</p>
-                    <p className='font-semibold text-gray-900'>{description}</p>
+         
+        <p className='text-[5vh] font-semibold text-gray-900'>{product}</p>
+        
+        <p className='text-[2.3vh] font-semibold text-gray-900'>{description}</p>
 
-            <form>
+<form>
 
-                          <div className='flex flex-col items-center justify-center space-y-6'>
-                                  
-                                    <div className='flex items-center justity-center space-x-2'>
-                                        <p>Tamaño</p>
-                                        <select 
-                                        id='size' 
-                                        value={size}
-                                        style={{width: '165px'}}
-                                        onChange={(e) => setSize(e.target.value)}>
-                                          <option value="7x11">7x11</option>
-                                          <option value="11x14">11x14</option>
-                                          <option value="14x22">14x22</option>
-                                          <option value="22x28">22x28</option>
-                                        </select>
+              <div className='flex flex-col items-center justify-center space-y-[4vh]'>
+                      
+                        <div className='flex items-center justity-center space-x-[1vh]'>
+                            <p className='text-[2.3vh]'>Tamaño</p>
+                            <select 
+                            id='size' 
+                            value={size}
+                            style={{width: '21vh', height: '6vh', fontSize: '2.3vh'}}
+                            onChange={(e) => setSize(e.target.value)}>
+                              <option value="7x11">7x11</option>
+                              <option value="11x14">11x14</option>
+                              <option value="14x22">14x22</option>
+                              <option value="22x28">22x28</option>
+                            </select>
 
-                                        <div 
-                                        onClick={modalTamano.openModal}
-                                        className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                            <BsQuestionLg/>
+                            <div 
+                            onClick={modalTamano.openModal}
+                            className='bg-gray-300 rounded-full p-[0.4vh] cursor-pointer'>
+                                <BsQuestionLg size='2.3vh'/>
+                            </div>
+
+                            <Modal
+                            isOpen={modalTamano.isOpen}
+                            onClose={modalTamano.closeModal}>
+                                <img
+                                className='w-full md:h-[660px]' 
+                                src={seleccionTamano} alt="" />
+                            </Modal>
+
+                            </div>
+
+
+
+                        <div className='flex items-center justify-center space-x-[1vh]'>
+                        <p className='text-[2.3vh]'>Cantidad</p>
+                                    <select 
+                                    style={{width: "17vh", height: '6vh', fontSize: '2.3vh'}} 
+                                    id="quantity" 
+                                    value={quantity}
+                                    onChange={(e) => setQuantity(parseInt(e.target.value, 10))}>
+                                    {quantityIndexes.map((q) => (
+                                        <option key={q} value={q}>{q}</option>
+                                    ))}
+                                    </select>
+                        </div>
+
+                        
+                            <div className='flex items-center justify-center space-x-[1vh]'>
+                            <p className='text-[2.3vh]'>Precio</p>
+                               <input 
+                               style={{width: "20vh", height: '6vh', fontSize: '2.3vh'}}
+                               disabled value={`$${(unitPrice * quantity).toFixed(2)}` }type="text" />
+                            </div>
+                            <div className='flex items-center justify-center space-x-[1vh]'>
+                            <p className='text-[2.3vh]'>Precio Unitario</p>
+                               <input
+                               style={{width: "11vh", height: '6vh', fontSize: '2.3vh'}} 
+                               disabled value={`$${unitPrice.toFixed(2)}`} type="text" />
+                            </div>
+                            <div className='flex items-center justify-center space-x-[1vh]'>
+                            <p className='text-[2.3vh]'>Descuento</p>
+                               <input
+                               style={{width: "16vh", height: '6vh', fontSize: '2.3vh'}} 
+                               disabled 
+                               value={`${discountPercentage.toFixed(0)}%`} 
+                               type="text" />
+                            </div>
+                       
+
+                        <div className='flex items-center justify-center space-x-2'>
+                            <label 
+                            className={`${imagePreviews.length > 0 ? 'ml-8' : ''} bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
+                            px-[6vh] py-[2vh] text-[2.2vh] font-semibold rounded transition duration-300 ease-in-out cursor-pointer`}>
+                                Sube tu archivo
+                                <input 
+                                type="file"
+                                required
+                                accept='.jpg,.png,.jpeg,.pdf'
+                                onChange={(e) => handleImagePreview(e)}
+                                style={{display: "none"}} />
+                            </label>
+
+                            {imagePreviews.length > 0 && (
+                                <AiFillCheckCircle
+                                className='text-2xl text-secondary-green'/>
+                            )}
+                            
+                        </div>
+
+                        <div>
+                            <button
+                            onClick={modalImpresion.openModal} 
+                            className='w-[30vh] py-[0.5vh] text-[1.7vh] text-gray-900 active:text-white font-semibold rounded 
+                            bg-gray-300 hover:bg-gray-400 active:bg-slate-500 transition duration-200 ease-in-out'>
+                                Guía de impresión avanzada
+                            </button>
+                            
+                            <Modal
+                            isOpen={modalImpresion.isOpen}
+                            onClose={modalImpresion.closeModal}>
+                                {/* <img 
+                                    className='w-full md:h-[680px]'
+                                    src="/images/informativos/infografia-guia impresion avanzada.jpg" alt="" /> */}
+                                <div className='sm:grid grid-cols-2 gap-4 px-6'>
+
+                                    <div className='border-b p-4 flex items-center justify-center text-start'>
+                                           <img className='h-16 mr-8' src="/images/transparentes/infografia-20.png" alt="" />
+                                        <div>
+                                            <h1 className='font-semibold text-semibold text-lg'>Formato</h1>
+                                            <p className='text-sm'>Aceptamos archivos: .pdf, .jpg, .png, .tif, .svg, .eps <span className='opacity-0'>---------------------------------------</span></p>
                                         </div>
-
-                                        <Modal
-                                        isOpen={modalTamano.isOpen}
-                                        onClose={modalTamano.closeModal}>
-                                            <img
-                                            className='w-full md:h-[660px]' 
-                                            src={seleccionTamano} alt="" />
-                                        </Modal>
-
-                                        </div>
-
-                                        {/* <div className='flex items-center justify-center space-x-2 mt-2'>
-                                            <p className='text-xs text-center'>¿No encuentras el tamaño que buscas? <br /> 
-                                            <Link className='underline' to={'/contacto'}>Ponte en contacto con nosotros.</Link>
-                                            </p>
-                                            <div 
-                                                onClick={modalPersonalizado.openModal}
-                                                className='bg-gray-300 rounded-full p-0.5 cursor-pointer'>
-                                                    <BsQuestionLg/>
-                                                </div>
-
-                                            <Modal
-                                            isOpen={modalPersonalizado.isOpen}
-                                            onClose={modalPersonalizado.closeModal}>
-                                                <img
-                                                className='w-full md:h-[660px]' 
-                                                src={tamanoPersonalizado} alt="" />
-                                            </Modal>
-                                        </div> */}
-
-                                    
-                                    
-
-                                    {/* <div>
-                                            <button 
-                                            onClick={modalDimensiones.openModal}
-                                            className='px-7 py-1 text-xs text-gray-900 active:text-white font-semibold rounded 
-                                            bg-gray-300 hover:bg-gray-400 active:bg-slate-500 transition duration-200 ease-in-out'>
-                                                Ver guía de dimensiones
-                                            </button>
-                                            <Modal
-                                            isOpen={modalDimensiones.isOpen}
-                                            onClose={modalDimensiones.closeModal}>
-                                                <>
-                                                <img 
-                                                className='w-full md:h-[600px]'
-                                                src={guiaDeDimensiones} alt="" />
-                                                </>
-
-                                            </Modal>
-                                    </div> */}
-
-
-                                    <div className='flex items-center justify-center space-x-2'>
-                                                <p>Cantidad</p>
-                                                <select 
-                                                style={{width: "133px"}} 
-                                                id="quantity" 
-                                                value={quantity}
-                                                onChange={(e) => setQuantity(parseInt(e.target.value, 10))}>
-                                                {quantityIndexes.map((q) => (
-                                                    <option key={q} value={q}>{q}</option>
-                                                ))}
-                                                </select>
                                     </div>
-
+                                    <div className='border-b p-4 flex items-center justify-center text-start'>
+                                        <img className='h-16 mr-3' src="/images/transparentes/infografia-21.png" alt="" />
+                                        <div>
+                                            <h1 className='font-semibold text-semibold text-lg'>Tu diseño</h1>
+                                            <p className='text-sm'>Se recomienda que mandes tu diseño en curvas/vectores, y en caso de ser <br />
+                                             imagen rasterizada se pide una calidad de 300DPI. Esto para asegurar la calidad <br />
+                                              de imagen de tu producto.</p>
+                                        </div>
+                                    </div>
+                                    <div className='border-b p-4 flex items-center justify-center text-start'>
+                                        <img className='h-14 md:mr-3' src="/images/transparentes/infografia-22.png" alt="" />
+                                        <div>
+                                            <h1 className='font-semibold text-semibold text-lg'>Suaje</h1>
+                                            <p className='text-sm'>Por favor incluye las líneas de corte para que sepamos con seguridad cómo <br />
+                                             quieres que se vea tu producto. Si tienes dificultad para realizar el suaje/líneas de <br />
+                                             corte no hay problema, nuestro equipo de diseño se encargará de ayudarte.</p>
+                                        </div>
+                                    </div>
+                                    <div className='border-b p-4 flex items-center justify-center text-start'>
+                                        <img className='h-16 mr-2 md:mr-3' src="/images/transparentes/infografia-23.png" alt="" />
+                                        <div>
+                                            <h1 className='font-semibold text-semibold text-lg'>Tipografía y textos</h1>
+                                            <p className='text-sm'>Si incluyes alguna tipografía o texto en tu diseño asegúrate de convertir en curvas <br />
+                                             para poder utilizar tu archivo sin problemas.</p>
+                                        </div>
+                                    </div>
+                                    <div className='border-b p-4 flex items-center justify-center text-start'>
+                                        <img className='h-16 mr-3 md:mr-6' src="/images/transparentes/infografia-24.png" alt="" />
+                                        <div>
+                                            <h1 className='font-semibold text-semibold text-lg'>Tipo de corte</h1>
+                                            <p className='text-sm'>En la mayoría de nuestros productos encontrarás la opción entre corte “Kiss-cut” y <br />
+                                             “Die-cut” (también conocido como troquelado). “Kiss-cut” es un corte superficial <br />
+                                              siguiendo la silueta del diseño sin llegar a cortar el papel de despliegue, mientras <br />
+                                               que “Die-cut” corta el papel de despliegue con la forma de tu diseño.</p>
+                                        </div>
+                                    </div>
+                                    <div className='border-b p-4 flex items-center justify-center text-start'>
+                                        <img className='h-16 mr-3' src="/images/transparentes/infografia-25.png" alt="" />
+                                        <div>
+                                            <h1 className='font-semibold text-semibold text-lg'>Prueba de impresión</h1>
+                                            <p className='text-sm'>Nuestro equipo de diseño se encargará de revisar que todo se encuentre en <br />
+                                             orden en tu archivo, en caso de que se requieran ajustes se te notificará en tu <br />
+                                              prueba de impresión digital, así como también se te mostrará cómo quedará tu <br />
+                                              diseño una vez impreso. </p>
+                                        </div>
+                                    </div>
+                                    <div className='border-b p-4 flex items-center justify-center text-start'>
+                                        <img className='h-20 mr-6' src="/images/transparentes/infografia-26.png" alt="" />
+                                        <div>
+                                            <h1 className='font-semibold text-semibold text-lg'>Tamaño de impresión</h1>
+                                            <p className='text-sm'>Al seleccionar tu tamaño de impresión recuerda que nos basaremos en la medida <br />
+                                            más grande de tu diseño, esto para no distorsionar y deformarlo.</p>
+                                        </div>
+                                    </div>
                                     
-                                        <div className='flex items-center justify-center space-x-2'>
-                                           <p>Precio</p>
-                                           <input 
-                                           style={{width: "158px"}}
-                                           disabled value={`$${(unitPrice * quantity).toFixed(2)}` }type="text" />
-                                        </div>
-                                        <div className='flex items-center justify-center space-x-2'>
-                                           <p>Precio Unitario</p>
-                                           <input
-                                           style={{width: "90px"}} 
-                                           disabled value={`$${unitPrice.toFixed(2)}`} type="text" />
-                                        </div>
-                                        <div className='flex items-center justify-center space-x-2'>
-                                           <p>Descuento</p>
-                                           <input
-                                           style={{width: "122px"}} 
-                                           disabled 
-                                           value={`${discountPercentage.toFixed(0)}%`} 
-                                           type="text" />
-                                        </div>
                                    
+                                </div>    
+                            </Modal>
+                        </div>
 
-                                        <div className='flex items-center justify-center space-x-2'>
-                                            <label 
-                                            className={`${imagePreviews.length > 0 ? 'ml-8' : ''} bg-secondary-blueLight hover:bg-blue-300 active:bg-blue-400
-                                            px-10 py-2.5 font-semibold rounded transition duration-300 ease-in-out`}>
-                                                Sube tu archivo
-                                                <input 
-                                                type="file"
-                                                required
-                                                accept='.jpg,.png,.jpeg'
-                                                onChange={(e) => handleImagePreview(e)}
-                                                style={{display: "none"}} />
-                                            </label>
+                        <div>
+                            <button 
+                            onClick={handleAddToCartAndSubmit}
+                            className='bg-secondary-green hover:bg-lime-400 active:bg-lime-600
+                            px-[6vh] py-[1.5vh] text-[2.2vh] font-semibold text-white rounded transition duration-300 ease-in-out'>
+                                Añadir al carrito
+                            </button>
+                        </div>
+                
+                </div> 
+                
 
-                                            {imagePreviews.length > 0 && (
-                                                <AiFillCheckCircle
-                                                className='text-2xl text-secondary-green'/>
-                                            )}
-                                        
-                                       </div>
-
-                                    <div>
-                                        <button
-                                        onClick={modalImpresion.openModal} 
-                                        className='px-4 py-1 text-xs text-gray-900 active:text-white font-semibold rounded 
-                                        bg-gray-300 hover:bg-gray-400 active:bg-slate-500 transition duration-200 ease-in-out'>
-                                            Guía de impresión avanzada
-                                        </button>
-                                        <Modal
-                                        isOpen={modalImpresion.isOpen}
-                                        onClose={modalImpresion.closeModal}>
-                                            {/* <img 
-                                                className='w-full md:h-[680px]'
-                                                src="/images/informativos/infografia-guia impresion avanzada.jpg" alt="" /> */}
-                                            <div className='sm:grid grid-cols-2 gap-4 px-6'>
-
-                                                <div className='border-b p-4 flex items-center justify-center text-start'>
-                                                       <img className='h-16 mr-8' src="/images/transparentes/infografia-20.png" alt="" />
-                                                    <div>
-                                                        <h1 className='font-semibold text-semibold text-lg'>Formato</h1>
-                                                        <p className='text-sm'>Aceptamos archivos: .pdf, .jpg, .png, .tif, .svg, .eps <span className='opacity-0'>---------------------------------------</span></p>
-                                                    </div>
-                                                </div>
-                                                <div className='border-b p-4 flex items-center justify-center text-start'>
-                                                    <img className='h-16 mr-3' src="/images/transparentes/infografia-21.png" alt="" />
-                                                    <div>
-                                                        <h1 className='font-semibold text-semibold text-lg'>Tu diseño</h1>
-                                                        <p className='text-sm'>Se recomienda que mandes tu diseño en curvas/vectores, y en caso de ser <br />
-                                                         imagen rasterizada se pide una calidad de 300DPI. Esto para asegurar la calidad <br />
-                                                          de imagen de tu producto.</p>
-                                                    </div>
-                                                </div>
-                                                <div className='border-b p-4 flex items-center justify-center text-start'>
-                                                    <img className='h-14 md:mr-3' src="/images/transparentes/infografia-22.png" alt="" />
-                                                    <div>
-                                                        <h1 className='font-semibold text-semibold text-lg'>Suaje</h1>
-                                                        <p className='text-sm'>Por favor incluye las líneas de corte para que sepamos con seguridad cómo <br />
-                                                         quieres que se vea tu producto. Si tienes dificultad para realizar el suaje/líneas de <br />
-                                                         corte no hay problema, nuestro equipo de diseño se encargará de ayudarte.</p>
-                                                    </div>
-                                                </div>
-                                                <div className='border-b p-4 flex items-center justify-center text-start'>
-                                                    <img className='h-16 mr-2 md:mr-3' src="/images/transparentes/infografia-23.png" alt="" />
-                                                    <div>
-                                                        <h1 className='font-semibold text-semibold text-lg'>Tipografía y textos</h1>
-                                                        <p className='text-sm'>Si incluyes alguna tipografía o texto en tu diseño asegúrate de convertir en curvas <br />
-                                                         para poder utilizar tu archivo sin problemas.</p>
-                                                    </div>
-                                                </div>
-                                                <div className='border-b p-4 flex items-center justify-center text-start'>
-                                                    <img className='h-16 mr-3 md:mr-6' src="/images/transparentes/infografia-24.png" alt="" />
-                                                    <div>
-                                                        <h1 className='font-semibold text-semibold text-lg'>Tipo de corte</h1>
-                                                        <p className='text-sm'>En la mayoría de nuestros productos encontrarás la opción entre corte “Kiss-cut” y <br />
-                                                         “Die-cut” (también conocido como troquelado). “Kiss-cut” es un corte superficial <br />
-                                                          siguiendo la silueta del diseño sin llegar a cortar el papel de despliegue, mientras <br />
-                                                           que “Die-cut” corta el papel de despliegue con la forma de tu diseño.</p>
-                                                    </div>
-                                                </div>
-                                                <div className='border-b p-4 flex items-center justify-center text-start'>
-                                                    <img className='h-16 mr-3' src="/images/transparentes/infografia-25.png" alt="" />
-                                                    <div>
-                                                        <h1 className='font-semibold text-semibold text-lg'>Prueba de impresión</h1>
-                                                        <p className='text-sm'>Nuestro equipo de diseño se encargará de revisar que todo se encuentre en <br />
-                                                         orden en tu archivo, en caso de que se requieran ajustes se te notificará en tu <br />
-                                                          prueba de impresión digital, así como también se te mostrará cómo quedará tu <br />
-                                                          diseño una vez impreso. </p>
-                                                    </div>
-                                                </div>
-                                                <div className='border-b p-4 flex items-center justify-center text-start'>
-                                                    <img className='h-20 mr-6' src="/images/transparentes/infografia-26.png" alt="" />
-                                                    <div>
-                                                        <h1 className='font-semibold text-semibold text-lg'>Tamaño de impresión</h1>
-                                                        <p className='text-sm'>Al seleccionar tu tamaño de impresión recuerda que nos basaremos en la medida <br />
-                                                        más grande de tu diseño, esto para no distorsionar y deformarlo.</p>
-                                                    </div>
-                                                </div>
-                                                
-                                               
-                                            </div>    
-                                        </Modal>
-                                    </div>
-
-                                    <div>
-                                        <button
-                                        onClick={modalPlanilla.openModal} 
-                                        className='px-[35px] py-1 text-xs text-gray-900 active:text-white font-semibold rounded 
-                                        bg-gray-300 hover:bg-gray-400 active:bg-slate-500 transition duration-200 ease-in-out'>
-                                            ¿Cómo crear planillas?
-                                        </button>
-                                        <Modal
-                                        isOpen={modalPlanilla.isOpen}
-                                        onClose={modalPlanilla.closeModal}>
-                                            <>
-                                            <img 
-                                                className='w-full md:h-[600px]'
-                                                src={comoCrearPlanillas} alt="" />
-                                            </>
-                                        </Modal>
-                                    </div>
-
-                                    <div>
-                                        <button 
-                                        onClick={handleAddToCartAndSubmit}
-                                        className='bg-secondary-green hover:bg-lime-400 active:bg-lime-600
-                                        px-10 py-2.5 font-semibold text-white rounded transition duration-300 ease-in-out'>
-                                            Añadir al carrito
-                                        </button>
-                                    </div>
-                            
-                            </div> 
-                            
-
-            </form>
+</form>
 
 
-            
 
 
-            </div>
+
+</div>
 
 
-      </div>
+</div>
      <NecesitasAyudaConTusArchivos/>
 
      <PorqueSomosLosMejores/>
