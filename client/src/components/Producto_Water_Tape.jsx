@@ -84,6 +84,8 @@ export default function Producto_Water_Tape({ imgSrc, product, description }) {
     const modalImpresion = useModal()
     const modalCorte = useModal()
 
+    const [ color, setColor ] = useState('blanco')
+
 
    // IMAGE PREVIEW
     const [ imagePreviews, setImagePreviews ] = useState([])
@@ -120,6 +122,7 @@ export default function Producto_Water_Tape({ imgSrc, product, description }) {
                     imgSrc: imgSrc,
                     product: product,
                     size: size,
+                    color: 'blanco',
                     quantity: quantity,
                     price: unitPrice,
                     userRef: auth.currentUser.uid,
@@ -255,7 +258,7 @@ useEffect(() => {
               <div className='flex flex-col items-center justify-center space-y-[4vh]'>
                             
 
-              <div className='flex items-center justity-center space-x-2'>
+                                   <div className='flex items-center justity-center space-x-2'>
                                         <p>Longitud</p>
                                         <select 
                                         id='size' 
@@ -281,6 +284,19 @@ useEffect(() => {
                                             src={seleccionTamano} alt="" />
                                         </Modal>
 
+                                    </div>
+
+                                    <div className='flex items-center justify-center space-x-2'>
+                                        <p>Color</p>
+                                            <select 
+                                            id='color' 
+                                            value={color}
+                                            style={{width: '163px'}}
+                                            onChange={(e) => setColor(e.target.value)}>
+                                            <option value="blanco">blanco</option>
+                                            <option value="manila">manila</option>
+                                            <option value="nieve">nieve</option>
+                                            </select>
                                     </div>
                         
 
@@ -312,7 +328,7 @@ useEffect(() => {
                                            disabled 
                                            value={`${discountPercentage.toFixed(0)}%`} 
                                            type="text" />
-                                        </div>
+                                    </div>
                        
 
                         <div className='flex items-center justify-center space-x-2'>
