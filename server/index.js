@@ -99,7 +99,8 @@ app.get('/send-register-emails', async (req, res ) => {
             to: email,
             subject: '¡Bienvenido a Kwali!',
             html: ` 
-            <table role='presentation' cellspacing='0' cellpadding='0' border='0' align='left'>
+            <table role='presentation' cellspacing='0' cellpadding='0' border='0' align='center'
+            style='max-width: 600px; margin: 0 auto; text-align: center; padding: 20px; >
 
                 <tr>
                     <td>
@@ -143,6 +144,14 @@ app.get('/send-register-emails', async (req, res ) => {
                         </a>  
                     </td>
                 </tr>
+
+                <style>
+                    @media screen and (max-width: 600px) {
+                        table {
+                            widh: 100% !important;
+                        }
+                    }
+                </style>
 
             <table> `
             
