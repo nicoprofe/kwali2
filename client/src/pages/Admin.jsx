@@ -433,6 +433,11 @@ export default function Admin() {
                                                     Cantidad: {order.data.quantity}
                                                 </>
                                             )}</p>
+                                            <p>{order.data.color && (
+                                                <>
+                                                    Color: {order.data.color}
+                                                </>
+                                            )}</p>
                                             <p>Precio: ${order.data.price} </p>
                                             <Modal
                                             onClose={modalDatos.closeModal}
@@ -779,6 +784,11 @@ export default function Admin() {
                                               <p>{order.data.acabado && (
                                                 <>
                                                     Acabado: {order.data.acabado}
+                                                </>
+                                            )}</p>
+                                              <p>{order.data.color && (
+                                                <>
+                                                    Color: {order.data.color}
                                                 </>
                                             )}</p>
                                             <p>{order.data.quantity && (
