@@ -408,16 +408,6 @@ export default function Admin() {
                                             <br />
                                             <p>Orden nro.: {order.id}</p>
                                             <p>Producto: {order.data.product}</p>
-                                            <p>{order.data.quantity && (
-                                                <>
-                                                    Cantidad: {order.data.quantity}
-                                                </>
-                                            )}</p>
-                                            <p>{order.data.longitud && (
-                                                <>
-                                                    Longitud: {order.data.longitud}
-                                                </>
-                                            )}</p>
                                             <p>{order.data.corte && (
                                                 <>
                                                     Corte: {order.data.corte}
@@ -428,9 +418,19 @@ export default function Admin() {
                                                     Forma: {order.data.forma}
                                                 </>
                                             )}</p>
+                                             <p>{order.data.longitud && (
+                                                <>
+                                                    Longitud: {order.data.longitud}
+                                                </>
+                                            )}</p>
                                             <p>{order.data.acabado && (
                                                 <>
                                                     Acabado: {order.data.acabado}
+                                                </>
+                                            )}</p>
+                                            <p>{order.data.quantity && (
+                                                <>
+                                                    Cantidad: {order.data.quantity}
                                                 </>
                                             )}</p>
                                             <p>Precio: ${order.data.price} </p>
@@ -761,9 +761,31 @@ export default function Admin() {
                                             
                                             <p>Orden Nro.: {order.id}</p>
                                             <p>Producto: {order.data.product}</p>
-                                            <p>Cantidad: {order.data.quantity}</p>
-                                            <p>Corte: {order.data.corte}</p>
-                                            <p>Forma: {order.data.forma}</p>
+                                            <p>{order.data.corte && (
+                                                <>
+                                                    Corte: {order.data.corte}
+                                                </>
+                                            )}</p>
+                                            <p>{order.data.forma && (
+                                                <>
+                                                    Forma: {order.data.forma}
+                                                </>
+                                            )}</p>
+                                              <p>{order.data.longitud && (
+                                                <>
+                                                    Longitud: {order.data.longitud}
+                                                </>
+                                            )}</p>
+                                              <p>{order.data.acabado && (
+                                                <>
+                                                    Acabado: {order.data.acabado}
+                                                </>
+                                            )}</p>
+                                            <p>{order.data.quantity && (
+                                                <>
+                                                    Cantidad: {order.data.quantity}
+                                                </>
+                                            )}</p>
                                             <p>Precio: ${order.data.price} </p>
                                             <Modal
                                             isOpen={modalDatos.isOpen}

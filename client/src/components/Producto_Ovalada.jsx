@@ -136,7 +136,7 @@ export default function Producto_Ovalada({ imgSrc, product, description }) {
                     quantity: quantity,
                     price: currentPrice,
                     userRef: auth.currentUser.uid,
-                    timestamp: serverTimestamp(),
+                    createdAt: new Date(),
                     preview: "/images/identidad/isotipo.png",
                     approval1: false,
                     approval2: false,

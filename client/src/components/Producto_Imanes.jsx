@@ -141,6 +141,7 @@ export default function Producto_Imanes({ imgSrc, product, description }) {
                     quantity: quantity,
                     price: currentPrice,
                     userRef: auth.currentUser.uid,
+                    createdAt: new Date(),
                     timestamp: serverTimestamp(),
                     preview: "/images/identidad/isotipo.png",
                     approval1: false,

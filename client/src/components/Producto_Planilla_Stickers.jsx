@@ -128,7 +128,7 @@ export default function Producto_Planilla_Stickers({ imgSrc, product, descriptio
                     quantity: quantity,
                     price: currentPrice,
                     userRef: auth.currentUser.uid,
-                    timestamp: serverTimestamp(),
+                    createdAt: new Date(),
                     preview: "/images/identidad/isotipo.png",
                     approval1: false,
                     approval2: false,

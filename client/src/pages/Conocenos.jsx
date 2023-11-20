@@ -34,7 +34,7 @@ export default function Conocenos() {
       </p>
 
       <img
-      className={`absolute -z-10 ${isDesktop ? 'top-[82vh] right-[4vh] h-[53vh]' : 'h-[20vh] right-[9%] top-[42%]'} `} 
+      className={`absolute -z-10 ${isDesktop ? 'top-[82vh] right-[0vh] h-[45vh]' : 'h-[20vh] right-[9%] top-[42%]'} `} 
       src="/images/mascota/kwali-corazon.png" alt="mascota" />
           
       </div>

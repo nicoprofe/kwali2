@@ -123,7 +123,7 @@ export default function Producto_Water_Tape({ imgSrc, product, description }) {
                     quantity: quantity,
                     price: unitPrice,
                     userRef: auth.currentUser.uid,
-                    timestamp: serverTimestamp(),
+                    createdAt: new Date(),
                     preview: "/images/identidad/isotipo.png",
                     approval1: false,
                     approval2: false,
