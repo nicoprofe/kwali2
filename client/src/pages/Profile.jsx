@@ -476,16 +476,16 @@ export default function Profile() {
 
                     <thead className='bg-gray-50 border-b-2 border-gray-200'>
                         <tr>
-                            <th className="p-3 text-sm font-semibold traking-whide text-left">
+                            <th className="p-3 text-sm font-semibold tracking-whide text-left">
                                 Producto
                             </th>
-                            <th className=" p-3 text-sm font-semibold traking-whide text-left">
+                            <th className=" p-3 text-sm font-semibold tracking-whide text-left">
                                 Compra realizada
                             </th>
-                            <th className=" p-3 text-sm font-semibold traking-whide text-left">
+                            <th className=" p-3 text-sm font-semibold tracking-whide text-left">
                                 Prueba de Impresión
                             </th>
-                            <th className=" p-3 text-sm font-semibold traking-whide text-left">
+                            <th className=" p-3 text-sm font-semibold tracking-whide text-left">
                                 Estado
                             </th>
                         </tr>
