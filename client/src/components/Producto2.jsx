@@ -137,7 +137,6 @@ export default function Producto2({ imgSrc, product, description }) {
                     price: currentPrice,
                     userRef: auth.currentUser.uid,
                     createdAt: new Date(),
-                    timestamp: serverTimestamp(),
                     preview: "/images/identidad/isotipo.png",
                     approval1: false,
                     approval2: false,

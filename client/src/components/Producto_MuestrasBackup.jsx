@@ -15,7 +15,7 @@ import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/
 import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
 import guiaDeDimensiones from '../imagesOutsidePublic/guia dimensiones.jpg'
-import comoCrearPlanillas from '../imagesOutsidePublic/guia planillas-02.jpg'
+import lineasDeCorte from '../imagesOutsidePublic/infografia-lineas de corte.jpg'
 import seleccionTamano from '../imagesOutsidePublic/infografia-seleccion tamano.jpg'
 import tamanoPersonalizado from '../imagesOutsidePublic/infografia_tamaño personalizado.jpg'
 import NecesitasAyudaConTusArchivos from './NecesitasAyudaConTusArchivos'
@@ -23,17 +23,16 @@ import PorqueSomosLosMejores from './PorqueSomosLosMejores'
 import tipoDeCorte from '../imagesOutsidePublic/infografia- tipo de corte.jpg'
 import guiaDeFormas from '../imagesOutsidePublic/guia formas-01.jpg'
 
-const priceTable = {
-    '7x11': [55.0, 25.9, 19.8, 13.2],
-    '11x14': [75.0, 35.3, 27.0, 18.0],
-    '14x22': [105.0, 49.4, 37.8, 25.2],
-    '22x28': [150.0, 70.5, 54.0, 36.0],
-  }
+// const priceTable = {
+//     '5x5': [16.0, 9.6, 6.6, 5.9, 5.3, 4.8, 4.3],
+//     '7.5x7.5': [20.0, 12.0, 8.2, 7.4, 6.6, 6.0, 5.4],
+//     '10x10': [23.0, 13.8, 9.4, 8.5, 7.6, 6.9, 6.2],
+//   }
   
-const quantityIndexes = [0, 25, 50, 100]
+// const quantityIndexes = [25, 50, 100, 200, 300, 500, 1000]
 
-// PLANILLA DE STICKERS
-export default function Producto_Muestras({ imgSrc, product, description }) {
+// MUESTRAS
+export default function ProductoMuestrasBackup({ imgSrc, product, description }) {
     // CONFIGS
     const navigate = useNavigate()
     const auth = getAuth()
@@ -46,8 +45,8 @@ export default function Producto_Muestras({ imgSrc, product, description }) {
 
     const modalTamano = useModal()
     const modalPersonalizado = useModal()
-    const modalLongitud = useModal()
-    const modalColor = useModal()
+    const modalKissDie = useModal()
+    const modalForma = useModal()
 
     const [ delayedClose, setDelayedClose ] = useState(false)
 
@@ -67,28 +66,34 @@ export default function Producto_Muestras({ imgSrc, product, description }) {
     // MODAL
     const modalDimensiones = useModal()
     const modalImpresion = useModal()
-    const modalPlanilla = useModal()
+    const modalCorte = useModal()
 
-    const [size, setSize] = useState('7x11');
-    const [quantity, setQuantity] = useState(0);
-    const [unitPrice, setUnitPrice] = useState(0.0);
+    const [size, setSize] = useState(null);
+    const [quantity, setQuantity] = useState(null);
+    const [unitPrice, setUnitPrice] = useState(400.0);
     const [ currentPrice, setCurrentPrice ] = useState(0.0)
 
-    useEffect(() => {
-        const sizeIndex = quantityIndexes.indexOf(quantity);
-        const newUnitPrice = priceTable[size][sizeIndex];
-        setUnitPrice(newUnitPrice);
-    }, [size, quantity]);
+    // useEffect(() => {
+    //     const sizeIndex = quantityIndexes.indexOf(quantity);
+    //     const newUnitPrice = priceTable[size][sizeIndex];
+    //     setUnitPrice(newUnitPrice);
+    // }, [size, quantity]);
 
     // Update currentPrice whenever unitPrice or quantity changes
-    useEffect(() => {
-        const calculatedPrice = ( unitPrice * quantity ).toFixed(2)
-        setCurrentPrice(calculatedPrice)
-    }, [unitPrice, quantity])
+    // useEffect(() => {
+    //     const calculatedPrice = ( unitPrice * quantity ).toFixed(2)
+    //     setCurrentPrice(calculatedPrice)
+    // }, [unitPrice, quantity])
 
-    const baseUnitPrice = priceTable[size][0];
-    const discountPercentage = ((baseUnitPrice - unitPrice) / baseUnitPrice) * 100;
+    // const baseUnitPrice = priceTable[size][0];
+    // const discountPercentage = ((baseUnitPrice - unitPrice) / baseUnitPrice) * 100;
 
+    
+    // CORTE
+    const [ corte, setCorte] = useState('kis-cut')
+
+    // FORMA
+    const [ forma, setForma ] = useState('circular')
    
    // IMAGE PREVIEW
     const [ imagePreviews, setImagePreviews ] = useState([])
@@ -125,6 +130,8 @@ export default function Producto_Muestras({ imgSrc, product, description }) {
                     imgSrc: imgSrc,
                     product: product,
                     size: size,
+                    corte: corte,
+                    forma: forma,
                     quantity: quantity,
                     price: currentPrice,
                     userRef: auth.currentUser.uid,
