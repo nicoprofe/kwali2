@@ -269,11 +269,6 @@ app.get('/send-register-emails', async (req, res ) => {
                        
     
                         <style>
-                            body {
-                                Margin: 0;
-                                padding: 0;
-                                background-color: #f6f9fc;
-                            }
                             .wrapper {
                                 width: 100%;
                                 table-layout: fixed;
