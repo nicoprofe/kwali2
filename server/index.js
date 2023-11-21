@@ -99,65 +99,256 @@ app.get('/send-register-emails', async (req, res ) => {
             to: email,
             subject: '¡Bienvenido a Kwali!',
             html: ` 
-            <table role='presentation' cellspacing='0' cellpadding='0' border='0' align='center'
-            style='max-width: 600px; margin: 0 auto; text-align: center; padding: 20px; >
+            <main class="wrapper">
+            <div class="webkit" >
+                <table class="outer">
+                    <!-- header -->
+                    <tr>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td style="background-color: #388cda;padding: 10px;text-align: center;">
+                                        <a href="#">
+                                            <img src="images/identidad/logo-style2.png" width="180px" alt="Logo" title="Logo">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- banner -->
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <img src="images/identidad/banner tus stickers-07.png" width="600px" alt="Banner" title="Banner"
+                                style="max-width: 100%;">
+                            </a>
+                        </td>
+                    </tr>
+                    <!-- hero -->
+                    <tr>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td class="three-colums">
+                                        <!-- column1 -->
+                                        <table class="column">
+                                            <tr>
+                                                <td class="padding">
+                                                    <table class="content">
+                                                        <tr>
+                                                            <td>
+                                                                <a href="#">
+                                                                    <img src="images/productos/ejmplo-brillante.png" width="150" alt="Product1"
+                                                                    style="max-width: 150px;" class="first-mg">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 10px;">
+                                                                <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
+                                                                <P>Responsive HTML Email Templates 
+                                                                that you can build around to master email development</P>
+                                                                <a href="#">Learn more..</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- column2 -->
+                                        <table class="column">
+                                            <tr>
+                                                <td class="padding">
+                                                    <table class="content">
+                                                        <tr>
+                                                            <td>
+                                                                <a href="#">
+                                                                    <img src="images/productos/ejemplo-matte.png" width="150" alt="Product1"
+                                                                    style="max-width: 150px;" class="second-img">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 10px;">
+                                                                <p style="font-size: 17px;font-weight: bold;">EAR PODS</p>
+                                                                <P>Responsive HTML Email Templates 
+                                                                that you can build around to master email development</P>
+                                                                <a href="#">Learn more..</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- column3 -->
+                                        <table class="column">
+                                            <tr>
+                                                <td class="padding">
+                                                    <table class="content">
+                                                        <tr>
+                                                            <td>
+                                                                <a href="#">
+                                                                    <img src="images/producto/ejemplo-holografico.png" width="150" alt="Product1"
+                                                                    style="max-width: 150px;" class="third-img-last">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 10px;">
+                                                                <p style="font-size: 17px;font-weight: bold;">WATCH BANDS</p>
+                                                                <P>Responsive HTML Email Templates 
+                                                                that you can build around to master email development</P>
+                                                                <a href="#">Learn more..</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <img width='200' height='150' src='https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
-                    </td>
-                </tr>
-                <tr>    
-                    <td>
-                        <p> <strong>Estamos encantados de conocerte.</strong></p>
-                        <p>Tenemos la mejor selección de productos listos para personalizar y ser tuyos, todo desde la <br>
-                        comodidad de tu hogar.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
-                    </td>
-                </tr>  
-                <tr>
-                    <td align='left' style='border-radius: 5px; background-color: #007bff;'> 
-                        <a href='https://kwali2-client.vercel.app/productos' target='_blank' 
-                        style='padding: 10px 20px; display: inline-block; font-family: sans-serif; font-size: 14px; 
-                        color: #ffffff; text-align: center; text-decoration: none; border-radius: 5px; '> 
-                        COMPRAR AHORA 
-                        </a>  
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>¿Aún no sabes por dónde empezar?</p>
-                        <p>Mira aquí todas nuestras guías y tutoriales para que puedas realizar tu pedido sin <br>
-                        problemas</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td align='left' style='border-radius: 5px; background-color: #007bff;'> 
-                        <a href='https://kwali2-client.vercel.app/como-ordenar' target='_blank' 
-                        style='padding: 10px 20px; display: inline-block; font-family: sans-serif; font-size: 14px; 
-                        color: #ffffff; text-align: center; text-decoration: none; border-radius: 5px; '> 
-                        COMO ORDENAR 
-                        </a>  
-                    </td>
-                </tr>
+                    <!-- footer -->
+                    <tr>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td style="background-color: #388cda;padding: 15px;text-align: center;">
+                                        <p style="font-size: 18px;Margin-bottom: 13px;color: #ffffff;">Connect with us</p>
+                                        <a href="#">
+                                            <img src="images/white-facebook.png" width="30" alt="facebook">
+                                            <img src="images/white-twitter.png" width="30" alt="twitter">
+                                            <img src="images/white-youtube.png" width="30" alt="youtube">
+                                            <img src="images/white-linkedin.png" width="30" alt="linkedin">
+                                            <img src="images/white-instagram.png" width="30" alt="instgram">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #efefef;">
+                            <table width="100%">
+                                <tr>
+                                    <td style="padding: 20px;text-align: center;padding-bottom: 10px;">
+                                        <a href="#">
+                                            <img src="images/identidad/isotipo.png" width="160" alt="">
+                                        </a>
+                                        <p style="font-size: 16px;Margin-top: 18px;Margin-top: 10px;">
+                                            w3newbie HTML Email
+                                        </p>
+                                        <p style="font-size: 16px;Margin-bottom: 10px;">
+                                            123 Street Rodad, City, State 55555
+                                        </p>
+                                        <p><a href="mailto:email@example.com">email@example.com</a></p>
+                                        <p><a href="tel:18008888888">+1-800-8888888</a></p>
+                                    </td>
+                                </tr>
+                                <!-- unsubscribe -->
+                                <tr>
+                                    <td style="padding-bottom: 25px;text-align: center;">
+                                        <p><a style="font-size: 13px;" href="#">UNSUBSCRIBE</a></p>
+                                    </td>
+                                </tr>
+                                <!-- blue line -->
+                                <tr>
+                                    <td height="20" style="background-color: #388cda;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                   
 
-
-
-                <style>
-                    @media screen and (max-width: 600px) {
-                        table {
-                            widh: 100% !important;
+                    <style>
+                        body {
+                            Margin: 0;
+                            padding: 0;
+                            background-color: #f6f9fc;
                         }
-                    }
-                </style>
-
-            <table> `
+                        .wrapper {
+                            width: 100%;
+                            table-layout: fixed;
+                            background-color: #f6f9fc;
+                            padding-bottom: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            
+                        }
+                        .webkit {
+                            max-width: 600px;
+                            background-color: #ffffff;
+                        }
+                        .outer {
+                            Margin: 0 auto;
+                            width: 100%;
+                            max-width: 600px;
+                            border-spacing: 0;
+                            font-family: sans-serif;
+                            color: #4a4a4a;
+                        }
+                        table {
+                            border-spacing: 0;
+                            
+                        }
+                        td {
+                            padding: 0;
+                        }
+                        img {
+                            border: 0;
+                        }
+                        .three-colums {
+                            text-align: center;
+                            font-size: 0;
+                            padding-top: 40px;
+                            padding-bottom: 30px;
+                        }
+                        .three-colums .column {
+                            width: 100%;
+                            max-width: 200px;
+                            display: inline-block;
+                            vertical-align: top;
+                        }
+                        .padding {
+                            padding: 15px;
+                        }
+                        .three-colums .content {
+                            font-size: 15px;
+                            line-height: 20px;
+                        }
+                        a {
+                            text-decoration: none;
+                            color: #388cda;
+                            font-size: 16px;
+                        }
+        
+                        @media screen and (max-width: 600px) {
+                            img.third-img-last {
+                                width: 200px!important;
+                                max-width: 200px!important;
+                            }
+                            .padding {
+                                padding-left: 0!important;
+                                padding-right: 0!important;
+                            }
+                        }
+                        @media screen and (max-width: 400px) {
+                            img.first-mg, img.second.img {
+                                width: 200px!important;
+                                max-width: 200px!important;
+                            }
+                        }
+        
+                    </style>
+                </table>
+            </div>
+        </main> `
             
         }
 
