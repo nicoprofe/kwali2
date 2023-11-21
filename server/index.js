@@ -99,7 +99,7 @@ app.get('/send-register-emails', async (req, res ) => {
             to: email,
             subject: '¡Bienvenido a Kwali!',
             html: ` 
-            <table>
+            <table style='display: flex;align-items: center;justify-items: center;'>
             <tr>
             <td>
                 <table width="100%">
