@@ -32,7 +32,7 @@ app.get('/send-newsletter-emails', async (req, res ) => {
 
                 <tr>
                     <td>
-                        <img width='200' height='150' src='https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
+                        <img width='200' height='150' src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
                     </td>
                 </tr>
                 <tr>    
@@ -44,9 +44,9 @@ app.get('/send-newsletter-emails', async (req, res ) => {
                 </tr>
                 <tr>
                     <td>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
                     </td>
                 </tr>  
                 <tr>
@@ -109,7 +109,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                 <tr>
                                     <td style="background-color: #388cda;padding: 10px;text-align: center;">
                                         <a href="#">
-                                            <img src="/images/identidad/logo-style2.png" width="180px" alt="Logo" title="Logo">
+                                            <img src="https://kwali2-client.vercel.app/images/identidad/logo-style2.png" width="180px" alt="Logo" title="Logo">
                                         </a>
                                     </td>
                                 </tr>
@@ -120,7 +120,7 @@ app.get('/send-register-emails', async (req, res ) => {
                     <tr>
                         <td>
                             <a href="#">
-                                <img src="/images/identidad/banner tus stickers-07.png" width="600px" alt="Banner" title="Banner"
+                                <img src="https://kwali2-client.vercel.app/images/identidad/banner tus stickers-07.png" width="600px" alt="Banner" title="Banner"
                                 style="max-width: 100%;">
                             </a>
                         </td>
@@ -139,7 +139,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                         <tr>
                                                             <td>
                                                                 <a href="#">
-                                                                    <img src="/images/productos/ejmplo-brillante.png" width="150" alt="Product1"
+                                                                    <img src="https://kwali2-client.vercel.app/images/productos/ejmplo-brillante.png" width="150" alt="Product1"
                                                                     style="max-width: 150px;" class="first-mg">
                                                                 </a>
                                                             </td>
@@ -164,7 +164,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                         <tr>
                                                             <td>
                                                                 <a href="#">
-                                                                    <img src="/images/productos/ejemplo-matte.png" width="150" alt="Product1"
+                                                                    <img src="https://kwali2-client.vercel.app/images/productos/ejemplo-matte.png" width="150" alt="Product1"
                                                                     style="max-width: 150px;" class="second-img">
                                                                 </a>
                                                             </td>
@@ -189,7 +189,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                         <tr>
                                                             <td>
                                                                 <a href="#">
-                                                                    <img src="/images/producto/ejemplo-holografico.png" width="150" alt="Product1"
+                                                                    <img src="https://kwali2-client.vercel.app/images/producto/ejemplo-holografico.png" width="150" alt="Product1"
                                                                     style="max-width: 150px;" class="third-img-last">
                                                                 </a>
                                                             </td>
@@ -220,11 +220,11 @@ app.get('/send-register-emails', async (req, res ) => {
                                     <td style="background-color: #388cda;padding: 15px;text-align: center;">
                                         <p style="font-size: 18px;Margin-bottom: 13px;color: #ffffff;">Connect with us</p>
                                         <a href="#">
-                                            <img src="/images/media/white-facebook.png" width="30" alt="facebook">
-                                            <img src="/images/media/white-twitter.png" width="30" alt="twitter">
-                                            <img src="/images/media/white-youtube.png" width="30" alt="youtube">
-                                            <img src="/images/media/white-linkedin.png" width="30" alt="linkedin">
-                                            <img src="/images/media/white-instagram.png" width="30" alt="instgram">
+                                            <img src="https://kwali2-client.vercel.app/images/media/white-facebook.png" width="30" alt="facebook">
+                                            <img src="https://kwali2-client.vercel.app/images/media/white-twitter.png" width="30" alt="twitter">
+                                            <img src="https://kwali2-client.vercel.app/images/media/white-youtube.png" width="30" alt="youtube">
+                                            <img src="https://kwali2-client.vercel.app/images/media/white-linkedin.png" width="30" alt="linkedin">
+                                            <img src="https://kwali2-client.vercel.app/images/media/white-instagram.png" width="30" alt="instgram">
                                         </a>
                                     </td>
                                 </tr>
@@ -237,7 +237,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                 <tr>
                                     <td style="padding: 20px;text-align: center;padding-bottom: 10px;">
                                         <a href="#">
-                                            <img src="/images/identidad/isotipo.png" width="160" alt="">
+                                            <img src="https://kwali2-client.vercel.app/images/identidad/isotipo.png" width="160" alt="">
                                         </a>
                                         <p style="font-size: 16px;Margin-top: 18px;Margin-top: 10px;">
                                             w3newbie HTML Email
@@ -377,7 +377,7 @@ app.get('/send-order-emails', async (req, res ) => {
 
                 <tr>
                     <td>
-                        <img width='200' height='150' src='https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
+                        <img width='200' height='150' src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
                     </td>
                 </tr>
                 <tr>    
@@ -389,9 +389,9 @@ app.get('/send-order-emails', async (req, res ) => {
                 </tr>
                 <tr>
                     <td>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
                         <img src='https://kwali2-client.vercel.app/productos/ejemplo-metalgold.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
                     </td>
                 </tr>  
                 <tr>
@@ -448,7 +448,7 @@ app.get('/send-deliver-emails', async (req, res ) => {
 
                 <tr>
                     <td>
-                        <img width='200' height='150' src='https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
+                        <img width='200' height='150' src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
                     </td>
                 </tr>
                 <tr>    
@@ -460,9 +460,9 @@ app.get('/send-deliver-emails', async (req, res ) => {
                 </tr>
                 <tr>
                     <td>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
                     </td>
                 </tr>  
                 <tr>
