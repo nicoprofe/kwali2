@@ -301,13 +301,13 @@ app.get('/send-register-emails', async (req, res ) => {
                             img {
                                 border: 0;
                             }
-                            .three-colums {
+                            .three-columns {
                                 text-align: center;
                                 font-size: 0;
                                 padding-top: 40px;
                                 padding-bottom: 30px;
                             }
-                            .three-colums .column {
+                            .three-columns .column {
                                 width: 100%;
                                 max-width: 200px;
                                 display: inline-block;
@@ -316,7 +316,7 @@ app.get('/send-register-emails', async (req, res ) => {
                             .padding {
                                 padding: 15px;
                             }
-                            .three-colums .content {
+                            .three-columns .content {
                                 font-size: 15px;
                                 line-height: 20px;
                             }
