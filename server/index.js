@@ -133,7 +133,7 @@ app.get('/send-register-emails', async (req, res ) => {
                             <td>
                                 <table width="100%">
                                     <tr>
-                                        <td class="three-colums">
+                                        <td class="three-columns">
                                             <!-- column1 -->
                                             <table class="column">
                                                 <tr>
