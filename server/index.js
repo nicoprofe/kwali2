@@ -131,7 +131,30 @@ app.get('/send-register-emails', async (req, res ) => {
                         <table class="column" style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
                             <tr>
                                 <td class="padding" style="padding: 15px;">
-                                    <!-- Content for the first column -->
+                                <a href="#">
+                                <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1"
+                                style="max-width: 150px;" class="first-img">
+                            </a>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="column" style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
+                            <tr>
+                                <td class="padding" style="padding: 15px;">
+                                <a href="#">
+                                <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1"
+                                style="max-width: 150px;" class="first-img">
+                            </a>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="column" style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
+                            <tr>
+                                <td class="padding" style="padding: 15px;">
+                                <a href="#">
+                                <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1"
+                                style="max-width: 150px;" class="first-img">
+                            </a>
                                 </td>
                             </tr>
                         </table>
