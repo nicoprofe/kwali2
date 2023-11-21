@@ -342,7 +342,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                 }
                             }
                             @media screen and (max-width: 400px) {
-                                img.first-img, img.second.img {
+                                img.first-img, img.second-img {
                                     width: 200px!important;
                                     max-width: 200px!important;
                                 }
