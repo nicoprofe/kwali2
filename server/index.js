@@ -266,16 +266,12 @@ app.get('/send-register-emails', async (req, res ) => {
                    
 
                     <style>
-                        body {
+                        .wrapper {
                             Margin: 0;
                             padding: 0;
-                            background-color: #f6f9fc;
-                        }
-                        .wrapper {
                             width: 100%;
                             table-layout: fixed;
                             background-color: #f6f9fc;
-                            padding-bottom: 40px;
                             display: flex;
                             align-items: center;
                             justify-content: center;
