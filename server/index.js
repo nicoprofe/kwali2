@@ -139,7 +139,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                         <tr>
                                                             <td>
                                                                 <a href="#">
-                                                                    <img src="https://kwali2-client.vercel.app/images/productos/ejmplo-brillante.png" width="150" alt="Product1"
+                                                                    <img src="https://kwali2-client.vercel.app/images/productos/ejemplo-brillante.png" width="150" alt="Product1"
                                                                     style="max-width: 150px;" class="first-mg">
                                                                 </a>
                                                             </td>
@@ -189,7 +189,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                         <tr>
                                                             <td>
                                                                 <a href="#">
-                                                                    <img src="https://kwali2-client.vercel.app/images/producto/ejemplo-holografico.png" width="150" alt="Product1"
+                                                                    <img src="https://kwali2-client.vercel.app/images/producto/holografico.png" width="150" alt="Product1"
                                                                     style="max-width: 150px;" class="third-img-last">
                                                                 </a>
                                                             </td>
