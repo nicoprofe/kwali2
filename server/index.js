@@ -106,11 +106,11 @@ app.get('/send-register-emails', async (req, res ) => {
                 <!-- Header, Banner, and other sections with inline styles as needed -->
                 <tr>
                     <td>
-                        <table width="100%" style="background-color: #388cda; padding-top: 10px; padding-bottom: 10px; text-align: center;">
+                        <table width="100%" style="background-color: #388cda; padding: 10px; text-align: center;">
                             <tr>
                                 <td>
                                     <a href="#">
-                                        <img src="https://kwali2-client.vercel.app/images/w3newbie-white.png" width="180px" alt="Logo" title="Logo">
+                                        <img src="https://kwali2-client.vercel.app/images/w3newbie-white.png" width="150px" alt="Logo" title="Logo">
                                     </a>
                                 </td>
                             </tr>
@@ -190,6 +190,18 @@ app.get('/send-register-emails', async (req, res ) => {
                     </td>
                 </tr>
                 <!-- Footer Section -->
+                <tr>
+                    <td>
+                        <table width="100%" style="background-color: #388cda; padding: 15px; text-align: center;">
+                            <tr>
+                                <td>
+                                    <p style="font-size: 18px; Margin-bottom: 13px; color: #ffffff;">Connect with us</p>
+                                    <!-- Social media icons -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
                 <tr>
                     <td style="background-color: #efefef;">
                         <table width="100%" style="background-color: #388cda; padding: 20px; text-align: center; padding-bottom: 10px;">
