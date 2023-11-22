@@ -126,7 +126,7 @@ app.get('/send-register-emails', async (req, res ) => {
                 </tr>
                 <!-- Three Columns Section -->
                 <tr>
-                    <td style="text-align: center; font-size: 0; padding-top: 40px; padding-bottom: 30px;">
+                    <td style="text-align: center; padding-top: 40px; padding-bottom: 30px;">
                         <!-- column1 -->
                         <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
                             <tr>
@@ -140,9 +140,9 @@ app.get('/send-register-emails', async (req, res ) => {
                             <tr>
                             <td style="padding: 10px;">
                                 <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
-                                <p>Responsive HTML Email Templates 
+                                <p style="font-size: 15px;">Responsive HTML Email Templates 
                                 that you can build around to master email development</p>
-                                <a href="#">Learn more..</a>
+                                <a style="font-size: 16px;" href="#">Learn more..</a>
                             </td>
                         </tr>
                         </table>
@@ -159,9 +159,9 @@ app.get('/send-register-emails', async (req, res ) => {
                             <tr>
                             <td style="padding: 10px;">
                                 <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
-                                <p>Responsive HTML Email Templates 
+                                <p style="font-size: 15px;">Responsive HTML Email Templates 
                                 that you can build around to master email development</p>
-                                <a href="#">Learn more..</a>
+                                <a style="font-size: 16px;" href="#">Learn more..</a>
                             </td>
                         </tr>
                         </table>
@@ -178,12 +178,13 @@ app.get('/send-register-emails', async (req, res ) => {
                             <tr>
                             <td style="padding: 10px;">
                                 <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
-                                <p>Responsive HTML Email Templates 
+                                <p style="font-size: 15px;">Responsive HTML Email Templates 
                                 that you can build around to master email development</p>
-                                <a href="#">Learn more..</a>
+                                <a style="font-size: 16px;" href="#">Learn more..</a>
                             </td>
                         </tr>
                         </table>
+                       
                         
                         <!-- Repeat similar tables for column2 and column3 -->
                     </td>
@@ -212,11 +213,11 @@ app.get('/send-register-emails', async (req, res ) => {
                                         <td style="background-color: #388cda;padding: 15px;text-align: center;">
                                             <p style="font-size: 18px;Margin-bottom: 13px;color: #ffffff;">Connect with us</p>
                                             <a href="#">
-                                                <img src="images/white-facebook.png" width="30" alt="facebook">
-                                                <img src="images/white-twitter.png" width="30" alt="twitter">
-                                                <img src="images/white-youtube.png" width="30" alt="youtube">
-                                                <img src="images/white-linkedin.png" width="30" alt="linkedin">
-                                                <img src="images/white-instagram.png" width="30" alt="instgram">
+                                                <img src="https://kwali2-client.vercel.app/images/white-facebook.png" width="30" alt="facebook">
+                                                <img src="https://kwali2-client.vercel.app/images/white-twitter.png" width="30" alt="twitter">
+                                                <img src="https://kwali2-client.vercel.app/images/white-youtube.png" width="30" alt="youtube">
+                                                <img src="https://kwali2-client.vercel.app/images/white-linkedin.png" width="30" alt="linkedin">
+                                                <img src="https://kwali2-client.vercel.app/images/white-instagram.png" width="30" alt="instgram">
                                             </a>
                                         </td>
                                     </tr>
