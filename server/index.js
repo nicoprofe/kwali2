@@ -142,8 +142,10 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 </tr>
                                                 <tr>
                                                   <td style="padding: 10px;">
-                                                    <p style="font-size: 17px; font-weight: bold;">WATCH BANDS</p>
-                                                    <p style="font-size: 15px;">Responsive HTML Email Templates that you can build around to master email development</p>
+                                                    <p style="font-size: 17px; font-weight: bold;">HOLOGRAFICO</p>
+                                                    <p style="font-size: 15px;">Stickers impresos en un vinilo que crea un efecto "arcoris" o
+                                                    "tornasol" al reflejar la luz. Dale vida a tus diseños y
+                                                    llama la atención con nuestros stickers holográficos.</p>
                                                     <a style="font-size: 16px; text-decoration: none;
                                                     color: #388cda;" href="#">Learn more..</a>
                                                   </td>
@@ -166,8 +168,10 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 </tr>
                                                 <tr>
                                                   <td style="padding: 10px;">
-                                                    <p style="font-size: 17px; font-weight: bold;">WATCH BANDS</p>
-                                                    <p style="font-size: 15px;">Responsive HTML Email Templates that you can build around to master email development</p>
+                                                    <p style="font-size: 17px; font-weight: bold;">BRILLANTE</p>
+                                                    <p style="font-size: 15px;">Stickers impresos en un vinil blanco resistente al agua y al sol,
+                                                    con un acabado brillante y levemente reflejante. Dale ese
+                                                    toque profesional a tus stickers con nuestro acabado brillante.</p>
                                                     <a style="font-size: 16px; text-decoration: none;
                                                     color: #388cda;" href="#">Learn more..</a>
                                                   </td>
@@ -190,8 +194,10 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 </tr>
                                                 <tr>
                                                     <td style="padding: 10px;">
-                                                        <p style="font-size: 17px; font-weight: bold;">WATCH BANDS</p>
-                                                        <p style="font-size: 15px;">Responsive HTML Email Templates that you can build around to master email development</p>
+                                                        <p style="font-size: 17px; font-weight: bold;">MATE</p>
+                                                        <p style="font-size: 15px;">Stickers impresos en vinil blanco resistente al agua y al sol,
+                                                        con un acabado suave no-reflejante. Perfectos para
+                                                        promocionar tu marca o decorar tus objetos.</p>
                                                         <a style="font-size: 16px; text-decoration: none;
                                                         color: #388cda;" href="#">Learn more..</a>
                                                     </td>
