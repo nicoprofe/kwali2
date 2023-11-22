@@ -110,7 +110,7 @@ app.get('/send-register-emails', async (req, res ) => {
                             <tr>
                                 <td>
                                     <a href="#">
-                                        <img src="https://kwali2-client.vercel.app/images/w3newbie-white.png" width="180px" alt="Logo" title="Logo">
+                                        <img src="https://kwali2-client.vercel.app/images/w3newbie-white.png" width="170px" alt="Logo" title="Logo">
                                     </a>
                                 </td>
                             </tr>
