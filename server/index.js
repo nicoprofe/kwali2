@@ -141,11 +141,12 @@ app.get('/send-register-emails', async (req, res ) => {
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 10px;">
-                                                        <p style="font-size: 17px; font-weight: bold;">APPLE WATCH</p>
-                                                        <p>Responsive HTML Email Templates that you can build around to master email development</p>
-                                                        <a href="#">Learn more..</a>
-                                                    </td>
+                                                  <td style="padding: 10px;">
+                                                    <p style="font-size: 17px; font-weight: bold;">WATCH BANDS</p>
+                                                    <p style="font-size: 15px;">Responsive HTML Email Templates that you can build around to master email development</p>
+                                                    <a style="font-size: 16px; text-decoration: none;
+                                                    color: #388cda;" href="#">Learn more..</a>
+                                                  </td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -164,11 +165,12 @@ app.get('/send-register-emails', async (req, res ) => {
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 10px;">
-                                                        <p style="font-size: 17px; font-weight: bold;">EAR PODS</p>
-                                                        <p>Responsive HTML Email Templates that you can build around to master email development</p>
-                                                        <a href="#">Learn more..</a>
-                                                    </td>
+                                                  <td style="padding: 10px;">
+                                                    <p style="font-size: 17px; font-weight: bold;">WATCH BANDS</p>
+                                                    <p style="font-size: 15px;">Responsive HTML Email Templates that you can build around to master email development</p>
+                                                    <a style="font-size: 16px; text-decoration: none;
+                                                    color: #388cda;" href="#">Learn more..</a>
+                                                  </td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -189,8 +191,9 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 <tr>
                                                     <td style="padding: 10px;">
                                                         <p style="font-size: 17px; font-weight: bold;">WATCH BANDS</p>
-                                                        <p>Responsive HTML Email Templates that you can build around to master email development</p>
-                                                        <a href="#">Learn more..</a>
+                                                        <p style="font-size: 15px;">Responsive HTML Email Templates that you can build around to master email development</p>
+                                                        <a style="font-size: 16px; text-decoration: none;
+                                                        color: #388cda;" href="#">Learn more..</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -248,7 +251,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 </tr>
                                                 <!-- blue line -->
                                                 <tr>
-                                                    <td height="20" style="background-color: #388cda;">
+                                                    <td height="2" style="background-color: #388cda;">
                                                     </td>
                                                 </tr>
                                             </table>
