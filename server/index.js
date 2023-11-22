@@ -191,20 +191,8 @@ app.get('/send-register-emails', async (req, res ) => {
                 </tr>
                 <!-- Footer Section -->
                 <tr>
-                    <td>
-                        <table width="100%" style="background-color: #388cda; padding: 15px; text-align: center;">
-                            <tr>
-                                <td>
-                                    <p style="font-size: 18px; Margin-bottom: 13px; color: #ffffff;">Connect with us</p>
-                                    <!-- Social media icons -->
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
                     <td style="background-color: #efefef;">
-                        <table width="100%" style="padding: 20px; text-align: center; padding-bottom: 10px;">
+                        <table width="100%" style="background-color: #388cda; padding: 20px; text-align: center; padding-bottom: 10px;">
                             <!-- Content for the footer -->
                             <tr>
                             <td>
