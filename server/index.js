@@ -110,7 +110,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                     <tr>
                                         <td>
                                             <a href="#">
-                                                <img src="https://kwali2-client.vercel.app/images/w3newbie-white.png" width="180px" alt="Logo" title="Logo" style="border: 0;">
+                                                <img src="https://kwali2-client.vercel.app/images/identidad/logo-style2.png" width="180px" alt="Logo" title="Logo" style="border: 0;">
                                             </a>
                                         </td>
                                     </tr>
@@ -121,7 +121,7 @@ app.get('/send-register-emails', async (req, res ) => {
                         <tr>
                             <td>
                                 <a href="#">
-                                    <img src="https://kwali2-client.vercel.app/images/1200x700.jpg" width="600px" alt="Banner" title="Banner" style="max-width: 100%; border: 0;">
+                                    <img src="https://kwali2-client.vercel.app/images/identidad/banner tus stickers-07.png" width="600px" alt="Banner" title="Banner" style="max-width: 100%; border: 0;">
                                 </a>
                             </td>
                         </tr>
@@ -136,7 +136,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 <tr>
                                                     <td>
                                                         <a href="#">
-                                                            <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1" style="max-width: 150px; border: 0;">
+                                                            <img src="https://kwali2-client.vercel.app/images/productos/holografico.png" width="150" alt="Product1" style="max-width: 150px; border: 0;">
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -160,7 +160,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 <tr>
                                                     <td>
                                                         <a href="#">
-                                                            <img src="https://kwali2-client.vercel.app/images/380x280-3.jpg" width="150" alt="Product1" style="max-width: 150px; border: 0;">
+                                                            <img src="https://kwali2-client.vercel.app/images/productos/ejemplo-brillante.png" width="150" alt="Product1" style="max-width: 150px; border: 0;">
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -184,7 +184,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 <tr>
                                                     <td>
                                                         <a href="#">
-                                                            <img src="https://kwali2-client.vercel.app/images/380x280-2.jpg" width="150" alt="Product1" style="max-width: 150px; border: 0;">
+                                                            <img src="https://kwali2-client.vercel.app/images/productos/ejemplo-matte.png" width="150" alt="Product1" style="max-width: 150px; border: 0;">
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -209,13 +209,18 @@ app.get('/send-register-emails', async (req, res ) => {
                                     <tr>
                                         <td>
                                             <p style="font-size: 18px; Margin-bottom: 13px; color: #ffffff;">Connect with us</p>
-                                            <a href="#">
+                                            <a href="https://www.facebook.com/checkpoint/1501092823525282/?next=https%3A%2F%2Fwww.facebook.com%2Fkwalimx">
                                                 <img src="https://kwali2-client.vercel.app/images/white-facebook.png" width="30" alt="facebook" style="border: 0;">
-                                                <img src="https://kwali2-client.vercel.app/images/white-twitter.png" width="30" alt="twitter" style="border: 0;">
-                                                <img src="https://kwali2-client.vercel.app/images/white-youtube.png" width="30" alt="youtube" style="border: 0;">
-                                                <img src="https://kwali2-client.vercel.app/images/white-linkedin.png" width="30" alt="linkedin" style="border: 0;">
-                                                <img src="https://kwali2-client.vercel.app/images/white-instagram.png" width="30" alt="instagram" style="border: 0;">
                                             </a>
+                                            <a href="https://www.youtube.com/@KwaliMx">
+                                                <img src="https://kwali2-client.vercel.app/images/white-youtube.png" width="30" alt="youtube" style="border: 0;">
+                                            </a>
+                                            <a href="https://www.instagram.com/kwalimx/">
+                                               <img src="https://kwali2-client.vercel.app/images/white-instagram.png" width="30" alt="instagram" style="border: 0;">
+                                            </a>
+                                            
+
+                                            
                                         </td>
                                     </tr>
                                 </table>
@@ -231,16 +236,16 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 <tr>
                                                     <td style="padding: 20px;text-align: center;padding-bottom: 10px;">
                                                         <a href="#">
-                                                            <img src="https://kwali2-client.vercel.app/images/w3newbie.png" width="160" alt="">
+                                                            <img src="https://kwali2-client.vercel.app/images/identidad/isotipo.png" width="160" alt="">
                                                         </a>
                                                         <p style="font-size: 16px;Margin-top: 18px;Margin-top: 10px;">
-                                                            w3newbie HTML Email
+                                                            Kwali
                                                         </p>
                                                         <p style="font-size: 16px;Margin-bottom: 10px;">
-                                                            123 Street Rodad, City, State 55555
+                                                         Mexicali BC
                                                         </p>
-                                                        <p><a href="mailto:email@example.com">email@example.com</a></p>
-                                                        <p><a href="tel:18008888888">+1-800-8888888</a></p>
+                                                        <p><a href="mailto:info@kwali.us">info@kwali.us</a></p>
+                                                        <p><a href="tel:526869458899">+52 686 945 8899</a></p>
                                                     </td>
                                                 </tr>
                                                 <!-- unsubscribe -->
@@ -251,7 +256,7 @@ app.get('/send-register-emails', async (req, res ) => {
                                                 </tr>
                                                 <!-- blue line -->
                                                 <tr>
-                                                    <td height="2" style="background-color: #388cda;">
+                                                    <td height="1" style="background-color: #388cda;">
                                                     </td>
                                                 </tr>
                                             </table>
