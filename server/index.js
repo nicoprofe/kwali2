@@ -126,38 +126,65 @@ app.get('/send-register-emails', async (req, res ) => {
                 </tr>
                 <!-- Three Columns Section -->
                 <tr>
-                    <td class="three-columns" style="text-align: center; font-size: 0; padding-top: 40px; padding-bottom: 30px;">
+                    <td style="text-align: center; font-size: 0; padding-top: 40px; padding-bottom: 30px;">
                         <!-- column1 -->
-                        <table class="column" style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
+                        <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
                             <tr>
-                                <td class="padding" style="padding: 15px;">
+                                <td style="padding: 15px;">
                                 <a href="#">
                                 <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1"
                                 style="max-width: 150px;" class="first-img">
                             </a>
                                 </td>
                             </tr>
-                        </table>
-                        <table class="column" style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
                             <tr>
-                                <td class="padding" style="padding: 15px;">
+                            <td style="padding: 10px;">
+                                <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
+                                <P>Responsive HTML Email Templates 
+                                that you can build around to master email development</P>
+                                <a href="#">Learn more..</a>
+                            </td>
+                        </tr>
+                        </table>
+                        <!-- column2 -->
+                        <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
+                            <tr>
+                                <td style="padding: 15px;">
                                 <a href="#">
                                 <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1"
                                 style="max-width: 150px;" class="first-img">
                             </a>
                                 </td>
                             </tr>
-                        </table>
-                        <table class="column" style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
                             <tr>
-                                <td class="padding" style="padding: 15px;">
+                            <td style="padding: 10px;">
+                                <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
+                                <P>Responsive HTML Email Templates 
+                                that you can build around to master email development</P>
+                                <a href="#">Learn more..</a>
+                            </td>
+                        </tr>
+                        </table>
+                        <!-- column3 -->
+                        <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
+                            <tr>
+                                <td style="padding: 15px;">
                                 <a href="#">
                                 <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1"
                                 style="max-width: 150px;" class="first-img">
                             </a>
                                 </td>
                             </tr>
+                            <tr>
+                            <td style="padding: 10px;">
+                                <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
+                                <P>Responsive HTML Email Templates 
+                                that you can build around to master email development</P>
+                                <a href="#">Learn more..</a>
+                            </td>
+                        </tr>
                         </table>
+                        
                         <!-- Repeat similar tables for column2 and column3 -->
                     </td>
                 </tr>
