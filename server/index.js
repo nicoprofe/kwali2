@@ -32,7 +32,7 @@ app.get('/send-newsletter-emails', async (req, res ) => {
 
                 <tr>
                     <td>
-                        <img width='200' height='150' src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
+                        <img width='200' height='150' src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
                     </td>
                 </tr>
                 <tr>    
@@ -44,9 +44,9 @@ app.get('/send-newsletter-emails', async (req, res ) => {
                 </tr>
                 <tr>
                     <td>
-                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
                     </td>
                 </tr>  
                 <tr>
@@ -99,125 +99,119 @@ app.get('/send-register-emails', async (req, res ) => {
             to: email,
             subject: '¡Bienvenido a Kwali!',
             html: ` 
-            <body>
-    <main>
-        <div>
-            <table>
-                <!-- Header, Banner, and other sections with inline styles as needed -->
-                <tr>
-                    <td>
-                        <table width="100%" style="background-color: #388cda; padding: 10px; text-align: center;">
-                            <tr>
-                                <td>
-                                    <a href="#">
-                                        <img src="https://kwali2-client.vercel.app/images/w3newbie-white.png" width="150px" alt="Logo" title="Logo">
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="#">
-                            <img src="https://kwali2-client.vercel.app/images/1200x700.jpg" width="600px" alt="Banner" title="Banner" style="max-width: 100%;">
-                        </a>
-                    </td>
-                </tr>
-                <!-- Three Columns Section -->
-                <tr>
-                    <td style="text-align: center; padding-top: 40px; padding-bottom: 30px;">
-                        <!-- column1 -->
-                        <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
-                            <tr>
-                                <td style="padding: 15px;">
-                                <a href="#">
-                                <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1"
-                                style="max-width: 150px;" class="first-img">
-                            </a>
-                                </td>
-                            </tr>
-                            <tr>
-                            <td style="padding: 10px;">
-                                <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
-                                <p style="font-size: 15px;">Responsive HTML Email Templates 
-                                that you can build around to master email development</p>
-                                <a style="font-size: 16px;" href="#">Learn more..</a>
-                            </td>
-                        </tr>
-                        </table>
-                        <!-- column2 -->
-                        <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
-                            <tr>
-                                <td style="padding: 15px;">
-                                <a href="#">
-                                <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1"
-                                style="max-width: 150px;" class="first-img">
-                            </a>
-                                </td>
-                            </tr>
-                            <tr>
-                            <td style="padding: 10px;">
-                                <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
-                                <p style="font-size: 15px;">Responsive HTML Email Templates 
-                                that you can build around to master email development</p>
-                                <a style="font-size: 16px;" href="#">Learn more..</a>
-                            </td>
-                        </tr>
-                        </table>
-                        <!-- column3 -->
-                        <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
-                            <tr>
-                                <td style="padding: 15px;">
-                                <a href="#">
-                                <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1"
-                                style="max-width: 150px;" class="first-img">
-                            </a>
-                                </td>
-                            </tr>
-                            <tr>
-                            <td style="padding: 10px;">
-                                <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
-                                <p style="font-size: 15px;">Responsive HTML Email Templates 
-                                that you can build around to master email development</p>
-                                <a style="font-size: 16px;" href="#">Learn more..</a>
-                            </td>
-                        </tr>
-                        </table>
-                       
-                        
-                        <!-- Repeat similar tables for column2 and column3 -->
-                    </td>
-                </tr>
-                <!-- Footer Section -->
-                <tr>
-                    <td>
-                        <table width="100%" style="background-color: #388cda; padding: 15px; text-align: center;">
-                            <tr>
-                                <td>
-                                    <p style="font-size: 18px; Margin-bottom: 13px; color: #ffffff;">Connect with us</p>
-                                    <!-- Social media icons -->
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="background-color: #efefef;">
-                        <table width="100%" style="background-color: #388cda; padding: 20px; text-align: center; padding-bottom: 10px;">
-                            <!-- Content for the footer -->
-                            <tr>
+            <body style="Margin: 0; padding: 0; background-color: #f6f9fc;">
+            <main style="width: 100%; table-layout: fixed; background-color: #f6f9fc; padding-bottom: 40px; display: flex; align-items: center; justify-content: center;">
+                <div style="max-width: 600px; background-color: #ffffff;">
+                    <table style="Margin: 0 auto; width: 100%; max-width: 600px; border-spacing: 0; font-family: sans-serif; color: #4a4a4a;">
+                        <!-- header -->
+                        <tr>
                             <td>
-                                <table width="100%">
+                                <table width="100%" style="background-color: #388cda; padding: 10px; text-align: center;">
                                     <tr>
-                                        <td style="background-color: #388cda;padding: 15px;text-align: center;">
-                                            <p style="font-size: 18px;Margin-bottom: 13px;color: #ffffff;">Connect with us</p>
+                                        <td>
                                             <a href="#">
-                                                <img src="https://kwali2-client.vercel.app/images/white-facebook.png" width="30" alt="facebook">
-                                                <img src="https://kwali2-client.vercel.app/images/white-twitter.png" width="30" alt="twitter">
-                                                <img src="https://kwali2-client.vercel.app/images/white-youtube.png" width="30" alt="youtube">
-                                                <img src="https://kwali2-client.vercel.app/images/white-linkedin.png" width="30" alt="linkedin">
-                                                <img src="https://kwali2-client.vercel.app/images/white-instagram.png" width="30" alt="instgram">
+                                                <img src="https://kwali2-client.vercel.app/images/w3newbie-white.png" width="180px" alt="Logo" title="Logo" style="border: 0;">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- banner -->
+                        <tr>
+                            <td>
+                                <a href="#">
+                                    <img src="https://kwali2-client.vercel.app/images/1200x700.jpg" width="600px" alt="Banner" title="Banner" style="max-width: 100%; border: 0;">
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- hero -->
+                        <tr>
+                            <td style="text-align: center; font-size: 0; padding-top: 40px; padding-bottom: 30px;">
+                                <!-- column1 -->
+                                <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
+                                    <tr>
+                                        <td style="padding: 15px;">
+                                            <table style="padding: 15px; border-spacing: 0;">
+                                                <tr>
+                                                    <td>
+                                                        <a href="#">
+                                                            <img src="https://kwali2-client.vercel.app/images/380x280.jpg" width="150" alt="Product1" style="max-width: 150px; border: 0;">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px;">
+                                                        <p style="font-size: 17px; font-weight: bold;">APPLE WATCH</p>
+                                                        <p>Responsive HTML Email Templates that you can build around to master email development</p>
+                                                        <a href="#">Learn more..</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- column2 -->
+                                <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
+                                    <tr>
+                                        <td style="padding: 15px;">
+                                            <table style="padding: 15px; border-spacing: 0;">
+                                                <tr>
+                                                    <td>
+                                                        <a href="#">
+                                                            <img src="https://kwali2-client.vercel.app/images/380x280-3.jpg" width="150" alt="Product1" style="max-width: 150px; border: 0;">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px;">
+                                                        <p style="font-size: 17px; font-weight: bold;">EAR PODS</p>
+                                                        <p>Responsive HTML Email Templates that you can build around to master email development</p>
+                                                        <a href="#">Learn more..</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- column3 -->
+                                <table style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top;">
+                                    <tr>
+                                        <td style="padding: 15px;">
+                                            <table style="padding: 15px; border-spacing: 0;">
+                                                <tr>
+                                                    <td>
+                                                        <a href="#">
+                                                            <img src="https://kwali2-client.vercel.app/images/380x280-2.jpg" width="150" alt="Product1" style="max-width: 150px; border: 0;">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px;">
+                                                        <p style="font-size: 17px; font-weight: bold;">WATCH BANDS</p>
+                                                        <p>Responsive HTML Email Templates that you can build around to master email development</p>
+                                                        <a href="#">Learn more..</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- footer -->
+                        <tr>
+                            <td>
+                                <table width="100%" style="background-color: #388cda; padding: 15px; text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <p style="font-size: 18px; Margin-bottom: 13px; color: #ffffff;">Connect with us</p>
+                                            <a href="#">
+                                                <img src="https://kwali2-client.vercel.app/images/white-facebook.png" width="30" alt="facebook" style="border: 0;">
+                                                <img src="https://kwali2-client.vercel.app/images/white-twitter.png" width="30" alt="twitter" style="border: 0;">
+                                                <img src="https://kwali2-client.vercel.app/images/white-youtube.png" width="30" alt="youtube" style="border: 0;">
+                                                <img src="https://kwali2-client.vercel.app/images/white-linkedin.png" width="30" alt="linkedin" style="border: 0;">
+                                                <img src="https://kwali2-client.vercel.app/images/white-instagram.png" width="30" alt="instagram" style="border: 0;">
                                             </a>
                                         </td>
                                     </tr>
@@ -226,43 +220,65 @@ app.get('/send-register-emails', async (req, res ) => {
                         </tr>
                         <tr>
                             <td style="background-color: #efefef;">
-                                <table width="100%">
+                                <table width="100%" style="padding: 20px; text-align: center; padding-bottom: 10px;">
                                     <tr>
-                                        <td style="padding: 20px;text-align: center;padding-bottom: 10px;">
-                                            <a href="#">
-                                                <img src="images/w3newbie.png" width="160" alt="">
-                                            </a>
-                                            <p style="font-size: 16px;Margin-top: 18px;Margin-top: 10px;">
-                                                w3newbie HTML Email
-                                            </p>
-                                            <p style="font-size: 16px;Margin-bottom: 10px;">
-                                                123 Street Rodad, City, State 55555
-                                            </p>
-                                            <p><a href="mailto:email@example.com">email@example.com</a></p>
-                                            <p><a href="tel:18008888888">+1-800-8888888</a></p>
+                                        <td>
+                                            <table width="100%">
+                                                <tr>
+                                                    <td style="background-color: #388cda;padding: 15px;text-align: center;">
+                                                        <p style="font-size: 18px;Margin-bottom: 13px;color: #ffffff;">Connect with us</p>
+                                                        <a href="#">
+                                                            <img src="https://kwali2-client.vercel.app/images/white-facebook.png" width="30" alt="facebook" style="border: 0;">
+                                                            <img src="https://kwali2-client.vercel.app/images/white-twitter.png" width="30" alt="twitter" style="border: 0;">
+                                                            <img src="https://kwali2-client.vercel.app/images/white-youtube.png" width="30" alt="youtube" style="border: 0;">
+                                                            <img src="https://kwali2-client.vercel.app/images/white-linkedin.png" width="30" alt="linkedin" style="border: 0;">
+                                                            <img src="https://kwali2-client.vercel.app/images/white-instagram.png" width="30" alt="instagram" style="border: 0;">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </td>
                                     </tr>
-                                    <!-- unsubscribe -->
                                     <tr>
-                                        <td style="padding-bottom: 25px;text-align: center;">
-                                            <p><a style="font-size: 13px;" href="#">UNSUBSCRIBE</a></p>
-                                        </td>
-                                    </tr>
-                                    <!-- blue line -->
-                                    <tr>
-                                        <td height="20" style="background-color: #388cda;">
+                                        <td style="background-color: #efefef;">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td style="padding: 20px;text-align: center;padding-bottom: 10px;">
+                                                        <a href="#">
+                                                            <img src="https://kwali2-client.vercel.app/images/w3newbie.png" width="160" alt="">
+                                                        </a>
+                                                        <p style="font-size: 16px;Margin-top: 18px;Margin-top: 10px;">
+                                                            w3newbie HTML Email
+                                                        </p>
+                                                        <p style="font-size: 16px;Margin-bottom: 10px;">
+                                                            123 Street Rodad, City, State 55555
+                                                        </p>
+                                                        <p><a href="mailto:email@example.com">email@example.com</a></p>
+                                                        <p><a href="tel:18008888888">+1-800-8888888</a></p>
+                                                    </td>
+                                                </tr>
+                                                <!-- unsubscribe -->
+                                                <tr>
+                                                    <td style="padding-bottom: 25px;text-align: center;">
+                                                        <p><a style="font-size: 13px;" href="#">UNSUBSCRIBE</a></p>
+                                                    </td>
+                                                </tr>
+                                                <!-- blue line -->
+                                                <tr>
+                                                    <td height="20" style="background-color: #388cda;">
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </main>
-</body>
+                    </table>
+                </div>
+            </main>
+        </body>
+        
 `
             
         }
@@ -292,7 +308,7 @@ app.get('/send-order-emails', async (req, res ) => {
 
                 <tr>
                     <td>
-                        <img width='200' height='150' src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
+                        <img width='200' height='150' src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
                     </td>
                 </tr>
                 <tr>    
@@ -304,9 +320,9 @@ app.get('/send-order-emails', async (req, res ) => {
                 </tr>
                 <tr>
                     <td>
-                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
                         <img src='https://kwali2-client.vercel.app/productos/ejemplo-metalgold.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
                     </td>
                 </tr>  
                 <tr>
@@ -363,7 +379,7 @@ app.get('/send-deliver-emails', async (req, res ) => {
 
                 <tr>
                     <td>
-                        <img width='200' height='150' src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
+                        <img width='200' height='150' src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/identidad/isotipo.png'/>
                     </td>
                 </tr>
                 <tr>    
@@ -375,9 +391,9 @@ app.get('/send-deliver-emails', async (req, res ) => {
                 </tr>
                 <tr>
                     <td>
-                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
-                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-holografico.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalgold.png' width='200' height='150'/>
+                        <img src='https://kwali2-client.vercel.apphttps://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/https://kwali2-client.vercel.app/images/productos/ejemplo-metalsilver.png' width='200' height='150'/>
                     </td>
                 </tr>  
                 <tr>
