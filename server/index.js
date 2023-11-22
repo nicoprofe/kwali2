@@ -140,8 +140,8 @@ app.get('/send-register-emails', async (req, res ) => {
                             <tr>
                             <td style="padding: 10px;">
                                 <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
-                                <P>Responsive HTML Email Templates 
-                                that you can build around to master email development</P>
+                                <p>Responsive HTML Email Templates 
+                                that you can build around to master email development</p>
                                 <a href="#">Learn more..</a>
                             </td>
                         </tr>
@@ -159,8 +159,8 @@ app.get('/send-register-emails', async (req, res ) => {
                             <tr>
                             <td style="padding: 10px;">
                                 <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
-                                <P>Responsive HTML Email Templates 
-                                that you can build around to master email development</P>
+                                <p>Responsive HTML Email Templates 
+                                that you can build around to master email development</p>
                                 <a href="#">Learn more..</a>
                             </td>
                         </tr>
@@ -178,8 +178,8 @@ app.get('/send-register-emails', async (req, res ) => {
                             <tr>
                             <td style="padding: 10px;">
                                 <p style="font-size: 17px;font-weight: bold;">APPLE WATCH</p>
-                                <P>Responsive HTML Email Templates 
-                                that you can build around to master email development</P>
+                                <p>Responsive HTML Email Templates 
+                                that you can build around to master email development</p>
                                 <a href="#">Learn more..</a>
                             </td>
                         </tr>
@@ -205,6 +205,56 @@ app.get('/send-register-emails', async (req, res ) => {
                     <td style="background-color: #efefef;">
                         <table width="100%" style="padding: 20px; text-align: center; padding-bottom: 10px;">
                             <!-- Content for the footer -->
+                            <tr>
+                            <td>
+                                <table width="100%">
+                                    <tr>
+                                        <td style="background-color: #388cda;padding: 15px;text-align: center;">
+                                            <p style="font-size: 18px;Margin-bottom: 13px;color: #ffffff;">Connect with us</p>
+                                            <a href="#">
+                                                <img src="images/white-facebook.png" width="30" alt="facebook">
+                                                <img src="images/white-twitter.png" width="30" alt="twitter">
+                                                <img src="images/white-youtube.png" width="30" alt="youtube">
+                                                <img src="images/white-linkedin.png" width="30" alt="linkedin">
+                                                <img src="images/white-instagram.png" width="30" alt="instgram">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #efefef;">
+                                <table width="100%">
+                                    <tr>
+                                        <td style="padding: 20px;text-align: center;padding-bottom: 10px;">
+                                            <a href="#">
+                                                <img src="images/w3newbie.png" width="160" alt="">
+                                            </a>
+                                            <p style="font-size: 16px;Margin-top: 18px;Margin-top: 10px;">
+                                                w3newbie HTML Email
+                                            </p>
+                                            <p style="font-size: 16px;Margin-bottom: 10px;">
+                                                123 Street Rodad, City, State 55555
+                                            </p>
+                                            <p><a href="mailto:email@example.com">email@example.com</a></p>
+                                            <p><a href="tel:18008888888">+1-800-8888888</a></p>
+                                        </td>
+                                    </tr>
+                                    <!-- unsubscribe -->
+                                    <tr>
+                                        <td style="padding-bottom: 25px;text-align: center;">
+                                            <p><a style="font-size: 13px;" href="#">UNSUBSCRIBE</a></p>
+                                        </td>
+                                    </tr>
+                                    <!-- blue line -->
+                                    <tr>
+                                        <td height="20" style="background-color: #388cda;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
                         </table>
                     </td>
                 </tr>
