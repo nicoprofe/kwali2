@@ -106,7 +106,7 @@ app.get('/send-register-emails', async (req, res ) => {
                 <!-- Header, Banner, and other sections with inline styles as needed -->
                 <tr>
                     <td>
-                        <table width="100%" style="background-color: #388cda; padding: 10px 0; text-align: center;">
+                        <table width="100%" style="background-color: #388cda; padding-top: 10px; padding-bottom: 10px; text-align: center;">
                             <tr>
                                 <td>
                                     <a href="#">
