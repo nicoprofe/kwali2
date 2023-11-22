@@ -106,11 +106,11 @@ app.get('/send-register-emails', async (req, res ) => {
                 <!-- Header, Banner, and other sections with inline styles as needed -->
                 <tr>
                     <td>
-                        <table width="100%" style="background-color: #388cda; padding: 10px; text-align: center;">
+                        <table width="100%" style="background-color: #388cda; padding: 10px 0; text-align: center;">
                             <tr>
                                 <td>
                                     <a href="#">
-                                        <img src="https://kwali2-client.vercel.app/images/w3newbie-white.png" width="170px" alt="Logo" title="Logo">
+                                        <img src="https://kwali2-client.vercel.app/images/w3newbie-white.png" width="180px" alt="Logo" title="Logo">
                                     </a>
                                 </td>
                             </tr>
