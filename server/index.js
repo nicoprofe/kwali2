@@ -221,24 +221,7 @@ app.get('/send-register-emails', async (req, res ) => {
                         <tr>
                             <td style="background-color: #efefef;">
                                 <table width="100%" style="padding: 20px; text-align: center; padding-bottom: 10px;">
-                                    <tr>
-                                        <td>
-                                            <table width="100%">
-                                                <tr>
-                                                    <td style="background-color: #388cda;padding: 15px;text-align: center;">
-                                                        <p style="font-size: 18px;Margin-bottom: 13px;color: #ffffff;">Connect with us</p>
-                                                        <a href="#">
-                                                            <img src="https://kwali2-client.vercel.app/images/white-facebook.png" width="30" alt="facebook" style="border: 0;">
-                                                            <img src="https://kwali2-client.vercel.app/images/white-twitter.png" width="30" alt="twitter" style="border: 0;">
-                                                            <img src="https://kwali2-client.vercel.app/images/white-youtube.png" width="30" alt="youtube" style="border: 0;">
-                                                            <img src="https://kwali2-client.vercel.app/images/white-linkedin.png" width="30" alt="linkedin" style="border: 0;">
-                                                            <img src="https://kwali2-client.vercel.app/images/white-instagram.png" width="30" alt="instagram" style="border: 0;">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
+                                    
                                     <tr>
                                         <td style="background-color: #efefef;">
                                             <table width="100%">
